@@ -5,8 +5,8 @@
 @import "normalize-css/normalize";
 
 // chj
-@import "chj-mixins";
-@import "chj-neat";
+@import "chj-framework/scss/mixins";
+@import "chj-framework/scss/neat";
 
 // Config
 @import "base/config";
