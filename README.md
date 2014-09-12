@@ -5,7 +5,7 @@ Nové stránky vinařství Bzenia.
 ### Instalace
 - __npm install__
 - __bower install__
-- přepsat koncovku souboru bower_components/normalize-css/normalize.css na .scss (pro @import)
+- přepsat koncovku souboru __bower_components/normalize-css/normalize.css__ na .scss (pro @import)
 
 ### Příkazy
 - __gulp__ spustí server běžící na localhostu
