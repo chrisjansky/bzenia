@@ -17,8 +17,9 @@ node_modules
 bower_components
 
 source_files
+assets/css
 public
-assets/css/
+/*.html
 
 ## Sass
 .sass-cache
