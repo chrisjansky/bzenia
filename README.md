@@ -1,9 +1,12 @@
-bzenia
-======
+# Bzenia
 
 Nové stránky vinařství Bzenia.
 
-# Příkazy
+### Instalace
+- npm install
+- bower install
+
+### Příkazy
 - __gulp__ spustí server běžící na localhostu
 - __gulp compile__ zkompiluje pracovní verzi pro lokální vývoj
 - __gulp build__ zkompiluje produkční verzi projektu do složky public/
