@@ -1,0 +1,59 @@
+// General wrapper.
+.l-wrapper {
+  @include clearfix;
+  @include collapse-children;
+  margin: 0 auto;
+  padding: em($ratio--b);
+  @include media($tablet--portrait) {
+    padding: em($ratio--m);
+  }
+  @include media($tablet--landscape) {
+    // padding: em($ratio--l);
+    padding: em($ratio--l) 7.5%;
+  }
+  @include media($desktop) {
+    padding: em($ratio--l) 7.5%;
+  }
+  @include media($desktop--wide) {
+    padding: em($ratio--l) 12.5%;
+  }
+}
+.l-wrapper--only-vertical {
+  padding-left: 0;
+  padding-right: 0;
+}
+.l-wrapper--only-horizontal {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.l-wrapper--big {
+  padding-top: em($ratio--m);
+  padding-bottom: em($ratio--m);
+  @include media($tablet--portrait) {
+    padding-top: em($ratio--l);
+    padding-bottom: em($ratio--l);
+  }
+  @include media($tablet--landscape__up) {
+    padding-top: em($ratio--xl);
+    padding-bottom: em($ratio--xl);
+  }
+}
+.l-wrapper--narrow {
+  max-width: em(1024);
+}
+// Full-bleed container.
+.l-bleed {
+  padding-left: em($ratio--g);
+}
+// Class for <section> instances.
+.l-section--white {
+  background-color: white;
+}
+.l-section--light {
+  color: $c-grey6;
+  background-color: $c-grey1;
+}
+.l-section--dark {
+  background-color: $c-grey8;
+  color: white;
+}

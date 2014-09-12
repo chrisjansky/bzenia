@@ -1,0 +1,137 @@
+// Logo
+.o-logo {
+  display: inline-block;
+  text-align: center;
+  .o-logo__title {
+    margin-top: em($ratio--b);
+  }
+}
+.o-logo__symbol {
+  display: inline-block;
+  width: em(32);
+  height: em(32);
+  border: $line--b solid black;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.o-logo__link {
+  display: block;
+  text-decoration: none;
+  @include link-state {
+    color: black;
+  }
+  @include hover-state {
+    color: $c-grey6;
+  }
+}
+.o-logo__title {
+  display: block;
+  vertical-align: middle;
+  border-bottom: 1px solid;
+  text-transform: uppercase;
+  letter-spacing: .125em;
+  @include transition(opacity $duration--b);
+}
+// A basic button.
+.o-button {
+  display: inline-block;
+  padding: em($ratio--s) em($ratio--b);
+  line-height: 1;
+  border: 2px solid;
+  border-radius: $radius--b;
+  font-family: $font--sans;
+  font-weight: $sans--bold;
+  font-size: em($unit--s);
+  text-decoration: none;
+}
+.o-button--simple {
+  text-decoration: none;
+  font-family: $font--sans;
+  font-weight: $sans--bold;
+  border-bottom: 1px solid;
+}
+// List with a middot style.
+.o-middot {
+  list-style: none;
+  padding-left: 0;
+  li {padding-left: em($ratio--s); }
+  li:before {content: '\b7\a0'; }
+}
+.o-middot--inline {
+  li {
+    display: inline-block;
+    &:before {margin-right: em($ratio--s); }
+  }
+  li:first-child {
+    padding-left: 0;
+    &:before {display: none; }
+  }
+}
+.o-middot--stacked {
+  li {
+    position: relative;
+    &:before {
+      position: absolute;
+      left: 0;
+    }
+  }
+  li + li {margin-top: em($ratio--xs); }
+}
+// Switch.
+.o-switch {
+  display: inline-block;
+  width: rem(32);
+  height: rem(32);
+  line-height: em(36);
+  border: $line--b solid;
+  border-radius: 50%;
+  vertical-align: middle;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: $font--sans;
+  font-weight: $sans--bold;
+  font-size: em($unit--xs);
+  @include link-state {
+    color: $c-grey4;
+  }
+  @include hover-state {
+    color: $c-grey8;
+  }
+}
+// Text block.
+.o-text-block {
+  width: 100%;
+  .line-break {
+    display: block;
+  }
+  p {
+    color: rgba($c-grey8, .5);
+    margin-top: -3.5em;
+    margin-left: 20em;
+    max-width: 30em;
+  }
+}
+// Long text.
+.o-long-read {
+  .line-break {
+    display: block;
+  }
+  p {
+    color: $c-grey5;
+  }
+  .t-big {
+    color: $c-grey8;
+  }
+  .o-button--simple {
+    float: right;
+    margin-top: em($ratio--b);
+  }
+}
+// Waves container.
+.o-waves {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  top: 0;
+}

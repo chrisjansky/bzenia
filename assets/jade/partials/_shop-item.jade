@@ -1,0 +1,20 @@
+.m-item
+  .m-item__name
+    if (instance.category === "bílé")
+      .m-item__category.m-item__category--white
+        != instance.year
+    else
+      .m-item__category.m-item__category--red
+        != instance.year
+    h4.t-h4
+      = instance.name
+    em.m-item__type= instance.type
+  p.m-item__description
+    = instance.description
+    |  
+    a(href="#") Poznejte víno blíže (video).
+  ul.item-stats
+    li Bezcukerný extrakt 22,8&thinsp;g/l
+    li Redukující cukry 6,6&thinsp;g/l
+    li Obsah kyselin 6,4&thinsp;g/l
+  a.o-button(href="#") Do košíku

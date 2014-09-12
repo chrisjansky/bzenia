@@ -1,0 +1,52 @@
+$font--display: "acta-display", serif;
+$font--serif: "leitura-news", serif;
+$font--sans: "adelle-sans", sans-serif;
+
+$sans--bold: 600;
+$serif--bold: 600;
+
+// Units
+$unit--l:  22;
+$unit--b:  18;
+$unit--s:  14;
+$unit--xs: 12;
+
+$radius--b: 2px;
+
+$line--l: 4px;
+$line--b: 2px;
+$line--s: 1px;
+
+// Golden ratio
+$ratio--g:   round(golden-ratio($unit--b,  5));
+$ratio--xxl: round(golden-ratio($unit--b,  4));
+$ratio--xl:  round(golden-ratio($unit--b,  3));
+$ratio--l:   round(golden-ratio($unit--b,  2));
+$ratio--m:   round(golden-ratio($unit--b,  1));
+$ratio--b:   $unit--b;
+$ratio--s:   round(golden-ratio($unit--b, -1));
+$ratio--xs:  round(golden-ratio($unit--b, -2));
+$ratio--xxs: round(golden-ratio($unit--b, -3));
+
+// Colors
+$c-color1: #97bf1d;
+$c-color2: #f23d6a;
+$c-color3: #a9e441;
+$c-hover: tint($c-color1, 25%);
+
+$c-grey1: #f2f0ed;
+$c-grey2: #e6e2dc;
+$c-grey3: #ccc6c0;
+$c-grey4: #b3aba4;
+$c-grey5: #807973;
+$c-grey6: #66625e;
+$c-grey7: #4d4a48;
+$c-grey8: #333231;
+
+// Transitions
+$duration--l: .5s;
+$duration--b: .25s;
+$duration--s: .125s;
+
+// Bourbon settings
+$em-base: $unit--b;

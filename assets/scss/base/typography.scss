@@ -1,0 +1,65 @@
+body {
+  font-family: $font--serif;
+  font-size: em($unit--b, 16);
+  font-weight: 300;
+  line-height: 1.5;
+}
+::selection {
+  background-color: lighten($c-color1, 25%);
+  color: shade($c-color1, 50%);
+  text-shadow: none;
+}
+.t-small {
+  font-size: em($unit--s);
+}
+.t-big {
+  font-size: em($unit--l);
+}
+.t-h1 {
+  font-family: $font--display;
+  line-height: 1.125;
+  font-size: em($ratio--xl);
+  margin: em($ratio--xs) 0;
+}
+.t-h2 {
+  font-family: $font--display;
+  font-size: em($ratio--l);
+  line-height: 1.25;
+  margin: em($ratio--s) 0;
+}
+.t-h3 {
+  font-size: em($unit--l);
+  margin: em($ratio--s) 0;
+}
+.t-h4 {
+  font-size: em($ratio--m);
+  font-weight: $serif--bold;
+  margin: em($ratio--xs) 0;
+}
+// .t-perex {
+//   font-size: em($unit--l);
+// }
+// p {
+//   max-width: 30em;
+//   margin-left: auto;
+//   margin-right: auto;
+// }
+
+// Interactive.
+a {
+  @include link-state {color: $c-color1; }
+  @include hover-state {color: $c-hover; }
+}
+.t-link--light {
+  @include link-state {color: $c-grey3; }
+  @include hover-state {color: $c-grey4; }
+}
+.t-link--dark {
+  @include link-state {color: $c-grey4; }
+  @include hover-state {color: $c-grey6; }
+}
+.t-link--selected {
+  cursor: default;
+  color: $c-grey4;
+  @include hover-state {color: $c-grey4; }
+}

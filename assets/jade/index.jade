@@ -1,0 +1,60 @@
+include partials/_html-head
+
+body.offscreen--not-active
+  nav.m-offscreen
+    .o-logo
+      a(href="index.html").o-logo__symbol
+      strong.o-logo__title Bzenia
+    ul.m-offscreen__menu
+      li: a(href="o-vinarstvi.html") O vinařství
+      li: a(href="nabidka.html") Nabídka
+      li: a(href="navstivte-nas.html") Navštivte nás
+  header.m-intro
+    .m-intro__overlay.l-wrapper
+      strong.o-logo__title Bzenia
+      nav.m-nav
+        ul.o-middot.o-middot--inline.m-nav__pages
+          li: a(href="o-vinarstvi.html") O vinařství
+          li: a(href="nabidka.html") Nabídka
+          li: a(href="navstivte-nas.html") Navštivte nás
+        a(href="#").m-nav__language.o-switch En
+      .o-text-block
+        h1.t-h1
+          | Moderní, ekologické 
+          span.line-break vinařství
+        p Krátký text popisující, v čem je Bzenia výjimečná&thinsp;&mdash;&thinsp;nejlépe do tří vět. Vlastníme 10 hektarů vinic na nejkvalitnějších viničních tratích ve Bzenci.
+        a(href="#").o-button--simple
+          | Příběh vinařství Bzenia
+    canvas.o-waves#js-waves(resize)
+  section.m-brief
+    .l-bleed
+      //- .m-hero.m-hero--primary
+      //-   .m-hero__image
+      .l-wrapper.l-wrapper--narrow
+        .o-long-read
+          a.o-button--simple(href="nabidka.html") Nabídka vín
+          h2.t-h2
+            | Krátký popis vinařství
+            //- | Objevte vášeň ukrytou 
+            //- span.line-break v každé láhvi
+          p.t-big Every one but myself&thinsp;&mdash;&thinsp;men, women, and children&thinsp;&mdash;&thinsp;were heavily armed, and at the tail of each chariot trotted a Martian hound.
+          p My own beast following closely behind ours; in fact, the faithful creature never left me voluntarily during the entire ten years I spent on Mars.
+          p Our way led out across the little valley before the city, through the hills, and down into the dead sea bottom which I had traversed on my journey from the incubator to the plaza. The incubator, as it proved, was the terminal point of our journey this day, and, as the entire cavalcade broke into a mad gallop as soon as we reached the level expanse of sea bottom, we were soon within sight of our goal.
+        //- ul.m-circles
+        //-   li.m-circles__item.m-circles__item--first Item
+        //-   li.m-circles__item.m-circles__item--second Item
+        //-   li.m-circles__item.m-circles__item--third Item
+        //- .o-long-read
+        //-   p Every one but myself&thinsp;&mdash;&thinsp;men, women, and children&thinsp;&mdash;&thinsp;were heavily armed, and at the tail of each chariot trotted a Martian hound.
+        //-   p My own beast following closely behind ours; in fact, the faithful creature never left me voluntarily during the entire ten years I spent on Mars.
+        //-   p Our way led out across the little valley before the city, through the hills, and down into the dead sea bottom which I had traversed on my journey from the incubator to the plaza. The incubator, as it proved, was the terminal point of our journey this day, and, as the entire cavalcade broke into a mad gallop as soon as we reached the level expanse of sea bottom, we were soon within sight of our goal.
+  section
+    .m-hero.m-hero--secondary
+      .m-hero__content.l-wrapper
+        h2.t-h2 Vína s rozšířenou realitou
+        p My own beast following closely behind ours; in fact, the faithful creature never left me voluntarily during the entire ten years I spent on Mars.
+        a.o-button(href="#") Jak to funguje?
+      .m-hero__overlay
+      .m-hero__image
+
+  include partials/_html-foot
