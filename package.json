@@ -1,0 +1,28 @@
+{
+  "name": "bzenia",
+  "version": "0.0.0",
+  "description": "Project of Christian Jánský.",
+  "main": "public/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "latest",
+    "gulp": "latest",
+    "gulp-changed": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-jade": "latest",
+    "gulp-kss": "latest",
+    "gulp-minify-css": "latest",
+    "gulp-plumber": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "latest",
+    "gulp-uglify": "latest",
+    "gulp-usemin": "latest",
+    "gulp-watch": "latest",
+    "node-bourbon": "latest",
+    "node-neat": "latest"
+  }
+}

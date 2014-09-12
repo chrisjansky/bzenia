@@ -1,0 +1,25 @@
+{
+  "name": "bzenia",
+  "version": "0.0.0",
+  "authors": [
+    "chrisjansky"
+  ],
+  "main": "public/index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {},
+  "dependencies": {
+    "normalize-css": "latest",
+    "jquery": "latest",
+    "modernizr": "latest",
+    "paper": "latest",
+    "jquery-waypoints": "latest"
+  }
+}
