@@ -35,10 +35,10 @@ var paths = {
 gulp.task('styles', function () {
   return gulp.src(paths.scss)
     .pipe(plumber())
-    .pipe(changed(paths.css, {extension: '.css'}))
+    // .pipe(changed(paths.css, {extension: '.css'}))
     .pipe(sass({
       errLogToConsole: true,
-      includePaths: require('node-neat').with('./bower_components/', '../chj_framework/')
+      includePaths: require('node-neat').with('bower_components/')
     }))
     .pipe(gulp.dest(paths.css))
     .pipe(bsync.reload({stream:true}));
@@ -65,7 +65,7 @@ gulp.task('templates', function() {
 //   gulp.src(paths.kss_css)
 //     .pipe(sass({
 //       errLogToConsole: true,
-//       includePaths: require('node-neat').with('./bower_components/', '../chj_framework/')
+//       includePaths: require('node-neat').with('bower_components/')
 //     }))
 //     .pipe(minify())
 //     .pipe(rename('kss-min.css'))

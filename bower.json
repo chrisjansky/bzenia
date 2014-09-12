@@ -4,7 +4,6 @@
   "authors": [
     "chrisjansky"
   ],
-  "main": "",
   "license": "MIT",
   "private": true,
   "ignore": [
@@ -20,6 +19,7 @@
     "jquery": "latest",
     "modernizr": "latest",
     "paper": "latest",
-    "jquery-waypoints": "latest"
+    "jquery-waypoints": "latest",
+    "chj-framework": "latest"
   }
 }
