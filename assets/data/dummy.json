@@ -1,0 +1,46 @@
+{
+  "shopItems": [
+    {
+      "name": "Rulandské šedé",
+      "category": "bílé",
+      "type": "výběr z hroznů, polosladké, 11%",
+      "year": "&rsquo;13",
+      "description": "Hodí se k jeseteru a tvrdším sýrům."
+    },
+    {
+      "name": "Sauvignon",
+      "category": "červené",
+      "type": "pozdní sběr, polosuché, 8%",
+      "year": "&rsquo;12",
+      "description": "Výborný k lososovi."
+    },
+    {
+      "name": "Ryzlink rýnský",
+      "category": "bílé",
+      "type": "kabinet, suché, 10.5%",
+      "year": "&rsquo;06",
+      "description": "To pravé víno pro horké letní večery."
+    },
+    {
+      "name": "Tramín červený",
+      "category": "bílé",
+      "type": "výběr z hroznů, sladké, 9%",
+      "year": "&rsquo;09",
+      "description": "Kvalitní české víno."
+    },
+    {
+      "name": "Frankovka",
+      "category": "červené",
+      "type": "jakostní, suché, 10%",
+      "year": "&rsquo;08",
+      "description": "Naše jedinečné červené víno."
+    },
+    {
+      "name": "Rulandské bílé",
+      "category": "bílé",
+      "type": "kabinet, suché, 9.5%",
+      "year": "&rsquo;06",
+      "description": "To pravé víno pro horké letní večery."
+    }
+  ]
+}
