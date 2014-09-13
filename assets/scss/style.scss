@@ -16,10 +16,12 @@
 @import "layout/layout";
 
 @import "objects/objects";
-// @import "objects/icons";
+@import "objects/icons";
+@import "objects/o-product";
 
 @import "modules/modules";
 
+@import "misc/z-index";
 @import "misc/states";
 @import "misc/styleguide";
 @import "misc/shame";
