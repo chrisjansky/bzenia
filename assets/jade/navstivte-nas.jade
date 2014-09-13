@@ -1,20 +1,90 @@
+- var navActive = 2
 include partials/_html-head
 
 body.offscreen--not-active
-  include partials/_nav-main
   include partials/_nav-offscreen
-  section.temp-screen.temp-screen--dark
-    .temp-center
-      h2.t-h2 Mapa
-      span Adresa, jak se k nám dostat.
-    .temp-bg(style="background-image: url('assets/images/img3.jpg')")
-  section.l-wrapper
-    h2.t-h2.temp-text-center Kontakt
-    .l-columns.l-columns--two
-      .l-column
-        p As I came to a halt before him, Tars Tarkas pointed over the incubator and said, "Sak." I saw that he wanted me to repeat my performance of yesterday for the edification of Lorquas Ptomel, and, as I must confess that my prowess gave me no little satisfaction.
-      .l-column
-        p As I returned, Lorquas Ptomel grunted something at me, and turning to his warriors gave a few words of command relative to the incubator. They paid no further attention to me and I was thus permitted to remain close and watch their operations.
-    .temp-box Objednávkový formulář degustace
+  include partials/_nav-main
+  section.l-section--white
+    .l-wrapper
+      h1.t-h1
+        | Přijeďte ochutnat to pravé 
+        span.line-break moravské víno
+      p Adresa, jak se k nám dostat.
+    .l-wrapper.l-wrapper--only-horizontal.l-wrapper--bleed
+      iframe(src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2618.9730401074858!2d17.270420200000004!3d48.9730376!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47133cba9fc7643f%3A0x1c8a1127a4c2b93!2sKarla+%C4%8Capka+1542%2C+696+81+Bzenec!5e0!3m2!1sen!2scz!4v1410621816581", width="100%", height="400", frameborder="0")
+  section.m-form
+    .l-wrapper.l-wrapper--big
+      h2.t-h2 Objednejte si degustaci našich vín
+      form
+        table.m-form__table
+          tr.m-form__row
+            td.m-form__cell(colspan="2")
+              input.o-input(type="text", placeholder="Vaše jméno")
+          tr.m-form__row
+            td.m-form__cell
+              input.o-input(type="text", placeholder="Telefon")
+            td.m-form__cell
+              input.o-input(type="text", placeholder="E-mail")
+          tr.m-form__row.m-form__options
+            td.m-form__cell(colspan="2")
+              .l-inline
+                .l-inline__row
+                  .l-inline__cell
+                    label.o-label Termín
+                    .o-select
+                      select
+                        option Co nejdříve
+                        option Tento měsíc
+                        option Výhledově
+                      span.ss-navigatedown
+                  .l-inline__cell
+                    label.o-label Lokace
+                    label.o-radio
+                      input(type="radio", name="location")
+                      | Náš vinohrad
+                    label.o-radio
+                      input(type="radio", name="location")
+                      | Naše pražská pobočka
+                    label.o-radio
+                      input(type="radio", name="location")
+                      | Dle vašeho výběru
+          tr.m-form__row
+            td.m-form__cell(colspan="2")
+              textarea.o-textarea(placeholder="Vaše poznámky")
+          tr.m-form__row
+            td.m-form__cell
+              p S upřesněním možné degustace Vás budeme obratem kontaktovat.
+            td.m-form__cell
+              input.o-submit(type="submit", value="Odeslat")
+  section.m-contacts
+    .l-wrapper.l-wrapper--big
+      h2.t-h2
+        | Kontaktní údaje
+      .l-columns
+        .l-column--half
+          .m-contacts__block
+            h3.t-h3 Adresa sídla
+            ul.o-nolist
+              li Arvina s.r.o.
+              li Sklep č. 6 
+              li ul. Karla Čapka 1542
+              li 696 81 Bzenec
+          .m-contacts__block
+            h3.t-h3 Adresa pražské pobočky
+            ul.o-nolist
+              li Na Košince 2369/5a
+              li Praha 8 Libeň
+        .l-column--half
+          h3.t-h3 Kontakty na jednatele
+          .m-contacts__person
+            ul.o-nolist
+              li Aleš Maleňák
+              li mob. +420 774 414 011
+              li: a(href="mailto:ales.malenak@arvina.cz") ales.malenak@arvina.cz
+          .m-contacts__person
+            ul.o-nolist
+              li Zdeněk Maleňák
+              li &nbsp;
+              li: a(href="mailto:zdenek.malenak@arvina.cz") zdenek.malenak@arvina.cz
 
   include partials/_html-foot

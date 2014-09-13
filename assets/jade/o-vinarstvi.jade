@@ -1,48 +1,61 @@
+- var navActive = 0
 include partials/_html-head
 
-body.offscreen--not-active
-  include partials/_nav-main
+body
   include partials/_nav-offscreen
-  section.temp-screen.temp-screen--dark
-    .temp-center
-      h2.t-h2 Tradice a filozofie
-      .l-columns.l-columns--two.l-wrapper
-        .l-column
+  include partials/_nav-main
+  section.m-hero.m-hero--full.m-hero--flush
+    .m-hero__content.l-wrapper
+      h1.t-h1 Tradice a filozofie
+      .l-columns
+        .l-column.l-column--half
           p As I came to a halt before him, Tars Tarkas pointed over the incubator and said, "Sak." I saw that he wanted me to repeat my performance of yesterday for the edification of Lorquas Ptomel, and, as I must confess that my prowess gave me no little satisfaction.
-        .l-column
+        .l-column.l-column--half
           p As I returned, Lorquas Ptomel grunted something at me, and turning to his warriors gave a few words of command relative to the incubator. They paid no further attention to me and I was thus permitted to remain close and watch their operations.
-    .temp-bg(style="background-image: url('assets/images/img1.jpg')")
-  section.l-wrapper
+    .m-hero__bg(style="background-image: url('assets/images/img1.jpg')")
+  section.l-wrapper.l-wrapper--big.l-offset
     h2.t-h2.temp-text-center Popis vinohradu, sklepu
-    .l-columns.l-columns--two
-      .l-column
-        p As I came to a halt before him, Tars Tarkas pointed over the incubator and said, "Sak." I saw that he wanted me to repeat my performance of yesterday for the edification of Lorquas Ptomel, and, as I must confess that my prowess gave me no little satisfaction.
-      .l-column
+    article.o-article
+      p.t-big They paid no further attention to me and I was thus permitted to remain close and watch their operations.
+      .l-columns
+        .l-column.l-column--half
+          p As I came to a halt before him, Tars Tarkas pointed over the incubator and said, "Sak." I saw that he wanted me to repeat my performance of yesterday for the edification of Lorquas Ptomel, and, as I must confess that my prowess gave me no little satisfaction.
+        .l-column.l-column--half
+          p As I returned, Lorquas Ptomel grunted something at me, and turning to his warriors gave a few words of command relative to the incubator.
+  section.m-gallery.l-wrapper.l-wrapper--bleed.l-offset
+    h3.t-h3 Prohlédněte si naše vinice
+    ul.o-carousel
+      each galleryItem, index in [1, 2, 3, 4, 5, 6, 7]
+        li.o-photo__item
+          a.o-photo__link(href="#")
+            img(src="http://lorempixel.com/200/200/nature/#{index}", alt="lorempixel")
+          span.o-photo__caption Popis fotky.
+  section.l-wrapper.l-wrapper--only-horizontal.l-offset.l-wrapper--bleed
+    .m-hero.m-hero--centered.m-hero--dark
+      .m-hero__content.l-wrapper.l-wrapper--big
+        h2.t-h2 Vysvětlení bio přístupu
+        p.t-big As I came to a halt before him, Tars Tarkas pointed over the incubator.
         p As I returned, Lorquas Ptomel grunted something at me, and turning to his warriors gave a few words of command relative to the incubator. They paid no further attention to me and I was thus permitted to remain close and watch their operations.
-    .temp-box Fotogalerie
-  section.temp-screen.temp-screen--primary
-    .temp-center
-      h2.t-h2 Vysvětlení bio přístupu
-      .l-columns.l-columns--two.l-wrapper
-        .l-column
-          p As I came to a halt before him, Tars Tarkas pointed over the incubator and said, "Sak." I saw that he wanted me to repeat my performance of yesterday for the edification of Lorquas Ptomel, and, as I must confess that my prowess gave me no little satisfaction.
-        .l-column
-          p As I returned, Lorquas Ptomel grunted something at me, and turning to his warriors gave a few words of command relative to the incubator. They paid no further attention to me and I was thus permitted to remain close and watch their operations.
-    .temp-bg(style="background-image: url('assets/images/vino1.jpg')")
-  section.l-wrapper
-      h2.t-h2.temp-text-center Jak vzniká naše víno
-      .l-columns.l-columns--three
-        .l-column
-          .m-circles__item.m-circles__item--first Vinná réva
-          p As I came to a halt before him, Tars Tarkas pointed over the incubator and said, "Sak." I saw that he wanted me to repeat my performance of yesterday for the edification of Lorquas Ptomel, and, as I must confess that my prowess gave me no little satisfaction.
-        .l-column
-          .m-circles__item.m-circles__item--second Sudy
-          p As I returned, Lorquas Ptomel grunted something at me, and turning to his warriors gave a few words of command relative to the incubator. They paid no further attention to me and I was thus permitted to remain close and watch their operations.
-        .l-column
-          .m-circles__item.m-circles__item--third Víno
-          p As I returned, Lorquas Ptomel grunted something at me, and turning to his warriors gave a few words of command relative to the incubator. They paid no further attention to me and I was thus permitted to remain close and watch their operations.
-      .temp-box
-        h3.t-h3 Chcete ochutnat opravdové bio víno?
-        a.o-button--simple(href="nabidka.html") Proklik do nabídky
+        a(href="#").o-button.o-button--block Více informací
+      .m-hero__bg(style="background-image: url('assets/images/vino1.jpg')")
+  section.l-wrapper.l-offset
+    h2.t-h2 Jak vzniká naše víno
+    .o-triplet
+      .o-triplet__item
+        .o-circle.o-circle--primary Vinná réva
+        p As I came to a halt before him, Tars Tarkas pointed over the incubator and said, "Sak." I saw that he wanted me to repeat my performance of yesterday for the edification of Lorquas Ptomel, and, as I must confess that my prowess gave me no little satisfaction.
+      .o-triplet__item
+        .o-circle Sudy
+        p As I returned, Lorquas Ptomel grunted something at me, and turning to his warriors gave a few words of command relative to the incubator. They paid no further attention to me and I was thus permitted to remain close and watch their operations.
+      .o-triplet__item
+        .o-circle.o-circle--secondary Víno
+        p As I returned, Lorquas Ptomel grunted something at me, and turning to his warriors gave a few words of command relative to the incubator. They paid no further attention to me and I was thus permitted to remain close and watch their operations.
+  footer.o-action
+    .l-wrapper.l-inline
+      .l-inline__row
+        .l-inline__cell
+          h3.t-h3 Chcete ochutnat opravdové bio víno?
+        .l-inline__cell
+          a.o-button.o-button--block(href="nabidka.html") Sortiment vín Bzenia
 
   include partials/_html-foot
