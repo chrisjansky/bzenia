@@ -18,10 +18,24 @@ body {
   background-color: $c-grey1;
 }
 img {
-  width: 100%;
+  // width: 100%;
   display: block;
 }
-canvas {
+canvas,
+iframe {
   display: block;
   width: 100%;
+}
+table {
+  width: 100%;
+}
+input[type="text"],
+input[type="password"],
+input[type="number"],
+textarea {
+  width: 100%;
+}
+// Custom styles.
+.line-break {
+  display: block;
 }
