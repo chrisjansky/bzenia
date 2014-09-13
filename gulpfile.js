@@ -35,7 +35,7 @@ var paths = {
 gulp.task('styles', function () {
   return gulp.src(paths.scss)
     .pipe(plumber())
-    // .pipe(changed(paths.css, {extension: '.css'}))
+    .pipe(changed(paths.css))
     .pipe(sass({
       errLogToConsole: true,
       includePaths: require('node-neat').with('bower_components/')
@@ -47,7 +47,7 @@ gulp.task('styles', function () {
 gulp.task('templates', function() {
   return gulp.src(paths.jade)
     .pipe(plumber())
-    .pipe(changed(paths.dev, {extension: '.html'}))
+    .pipe(changed(paths.dev))
     .pipe(jade({
       pretty: true,
       locals: JSON.parse(fs.readFileSync(paths.data, 'utf8'))
