@@ -1,196 +1,163 @@
 // Header.
 .m-header {
   @include clearfix;
-  position: absolute;
-  z-index: 50;
-  width: 100%;
+  position: absolute; // z-index
+  top: 0;
+  left: 0;
+  right: 0;
 }
-// Intro module.
-.m-intro {
-  height: 100%;
-  min-height: em(600);
-  background: url("../images/img1.jpg") no-repeat center;
-  background-size: cover;
-  overflow: hidden;
-  .o-logo__title {
-    float: left;
-  }
-  .m-nav {
-    float: right;
-  }
-  .o-text-block {
-    margin-top: em($ratio--m);
-    overflow: auto;
-  }
-}
-.m-intro__overlay {
+// Fullscreen module.
+.m-hero {
   position: relative;
-  z-index: 50;
+  overflow: hidden;
+  // background-color: $c-grey7;
 }
-// Navigation.
-.m-nav__pages {
-  font-family: $font--sans;
-  display: inline-block;
-  margin: 0;
+.m-hero--full {
+  height: 80%;
+  max-height: em(800);
 }
-.m-nav__language {
-  margin-left: em($ratio--m);
+.m-hero__bg {
+  @include stretch-overlay;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-// Circle list.
-.m-circles {
-  @include list-reset;
-  margin: em($ratio--l) 0;
+.m-hero__content {
+  position: relative; // z-index
+}
+.m-hero--centered {
+  @include pseudo-center--parent;
+  white-space: nowrap;
   text-align: center;
-  li + li {
-    margin-left: em($ratio--l);
+  .m-hero__content {
+    max-width: 60em;
+    white-space: normal;
+    @include pseudo-center--child;
+  }
+  .m-hero__bg {
+    opacity: .375;
   }
 }
-.m-circles__item {
-  display: inline-block;
-  width: em(180);
-  height: em(180);
-  text-align: center;
-  border: $line--b solid;
-  border-radius: 50%;
-  line-height: em(180);
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: em($ratio--m);
+.m-hero--flush {
+  .m-hero__bg {
+    opacity: .75;
   }
-.m-circles__item--first {
-  border-color: $c-color1;
-  color: $c-color1;
 }
-.m-circles__item--second {
-  border-color: $c-grey6;
-  color: $c-grey6;
+.m-hero__lead {
+  color: rgba($c-grey8, .5);
+  margin-top: -3.5em;
+  margin-left: 20em;
+  max-width: 30em;
 }
-.m-circles__item--third {
-  border-color: $c-color2;
-  color: $c-color2;
+.m-hero--dark {
+  color: white;
+  background-color: $c-grey8;
+}
+// .m-hero--primary {
+//   background-color: darken($c-color2, 25%);
+//   color: white;
+// }
+// .temp-screen--secondary {
+//   background-color: $c-color2;
+//   color: white;
+// }
+// .temp-screen--dark {
+//   background-color: $c-grey7;
+//   color: white;
+// }
+// .temp-screen--light {
+//   background-color: $c-grey5;
+// }
+// Contacts.
+.m-contacts {
+  color: white;
+  background-color: $c-grey8;
+  li {color: $c-grey3; }
+  // .l-column--primary {
+  //   @include span-columns(8);
+  // }
+  // .l-column--secondary {
+  //   @include span-columns(4);
+  // }
+  // .l-columns {
+  //   position: relative;
+  // }
+  // .t-h2 {
+  //   position: absolute;
+  //   bottom: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   @include transform-origin(left top);
+  //   @include transform(rotate(270deg) translateX(-100%));
+  // }
+}
+// .m-contacts__head {
+//   height: em($ratio--xl);
+//   @include collapse-children;
+// }
+.m-contacts__block {
+  @include span-columns(3 of 6);
+  @include collapse-children;
+  // .m-contacts__head + & {
+  //   @include shift(2);
+  // }
+}
+.m-contacts__person {
+  @include span-columns(3 of 6);
 }
 // Offscreen navigation.
 .m-offscreen {
-  position: fixed;
-  z-index: 100;
+  position: fixed; // z-index
   left: 0;
   top: 0;
   padding: em($ratio--l) 0 em($ratio--l) em($ratio--m);
+  // &:hover {
+  //   .m-offscreen__menu {
+  //     @include transform(translate3d(0, 0, 0));
+  //   }
+  // }
 }
 .m-offscreen__menu {
   list-style: none;
   padding-left: 0;
   margin-top: em($ratio--m);
-  @include transition(all $duration--b);
+  // @include transition(all $duration--b);
+  // @include transform(translate3d(-100%, 0, 0));
   li + li {
     margin-top: em($ratio--xs);
   }
 }
-// Brief introduction.
-.m-brief {
-  position: relative;
-  z-index: 10;
-}
-// Hero image.
-.m-hero {
-  position: relative;
-  background-color: $c-grey6;
-  &.is-active {
-    .m-hero__content {opacity: 1; }
-    .m-hero__image {opacity: 1; }
-  }
-}
-.m-hero__content {
-  position: absolute;
-  z-index: 200;
-  left: em($ratio--xxl);
-  max-width: 50em;
-  top: 0;
-  @include transition(opacity $duration--l);
-  opacity: 0;
-}
-.m-hero__image {
-  opacity: .25;
-  padding-bottom: 50%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  @include transition(opacity $duration--b);
-}
-.m-hero--primary {
-  background-color: $c-color1;
-  .m-hero__image {
-    background-image: url("../images/img2.jpg");
-  }
-}
-.m-hero--secondary {
-  background-color: $c-grey6;
-  .m-hero__image {
-    background-image: url("../images/vino1.jpg");
-  }
-  .m-hero__overlay {
-    background-image: url("../images/vino1_overlay.png");
-  }
-}
-.m-hero__overlay {
-  @include stretch-overlay;
-  z-index: 20;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-// Side by side.
-.m-bar {
-  & > :first-child {
-    float: left;
-  }
-  & > :last-child {
-    float: right;
-  }
-}
-// Shop item.
-.m-item-list {
+// Product list.
+.m-products {
   @include clearfix;
   margin-top: em($ratio--m);
 }
-.m-item {
-  border-top: $line--b solid $c-grey2;
-  padding-top: em($ratio--b);
-  margin-bottom: em($ratio--m);
-  @include span-columns(4);
-  @include omega(3n);
-  @include collapse-children;
+// Form.
+.m-form {
+  background-color: $c-color1;
+  color: white;
 }
-.m-item__name {
-  line-height: 1;
-  .t-h4 {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: em($ratio--xxs);
+.m-form__table {
+  color: shade($c-color1, 35%);
+}
+.m-form__row {
+  &:last-child .m-form__cell:last-child {
+    text-align: right;
   }
 }
-.m-item__category {
-  float: right;
-  width: em($ratio--l);
-  height: em($ratio--l);
-  line-height: em($ratio--l);
-  margin-top: em($ratio--s);
-  margin-left: em($ratio--s);
-  font-size: em($unit--s);
-  font-family: $font--sans;
-  color: white;
-  background-color: $c-grey6;
-  text-align: center;
-  border-radius: 50%;
+.m-form__cell {
+  padding-bottom: em($unit--l);
+  .m-form__row:last-child & {
+    padding-bottom: 0;
+  }
+  & + & {
+    padding-left: em($ratio--m);
+  }
 }
-.m-item__category--white {background-color: $c-color1; }
-.m-item__category--red {background-color: $c-color2; }
-.m-item__type {
-  font-size: em($ratio--m);
-  color: $c-grey4;
-  vertical-align: middle;
-  margin-right: em($ratio--xxs);
+.m-form__options {
+ font-family: $font--sans;
+ font-weight: $sans--regular;
 }
-.m-item__description {
-  font-size: em($unit--s);
+.m-gallery {
+  padding-top: 0;
 }

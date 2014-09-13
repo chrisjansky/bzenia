@@ -12,7 +12,7 @@
   height: em(32);
   border: $line--b solid black;
   border-radius: 50%;
-  vertical-align: middle;
+  // vertical-align: middle;
 }
 .o-logo__link {
   display: block;
@@ -20,35 +20,51 @@
   @include link-state {
     color: black;
   }
-  @include hover-state {
-    color: $c-grey6;
+  @include active-state {
+    color: rgba(black, .5);
   }
 }
 .o-logo__title {
-  display: block;
-  vertical-align: middle;
+  // vertical-align: middle;
   border-bottom: 1px solid;
   text-transform: uppercase;
   letter-spacing: .125em;
   @include transition(opacity $duration--b);
 }
 // A basic button.
+[class^="o-button"],
+[class*=" o-button"] {
+  text-decoration: none;
+  font-family: $font--sans;
+  font-weight: $sans--semibold;
+  &:after {
+    font-size: em($icon--b);
+    margin-left: em($ratio--xs);
+    vertical-align: middle;
+  }
+}
 .o-button {
   display: inline-block;
-  padding: em($ratio--s) em($ratio--b);
-  line-height: 1;
-  border: 2px solid;
-  border-radius: $radius--b;
-  font-family: $font--sans;
-  font-weight: $sans--bold;
-  font-size: em($unit--s);
-  text-decoration: none;
+  // font-size: em($unit--s);
+  border: $line--b solid;
 }
-.o-button--simple {
-  text-decoration: none;
-  font-family: $font--sans;
-  font-weight: $sans--bold;
-  border-bottom: 1px solid;
+.o-button--block {
+  padding: em($ratio--s) em($ratio--b);
+}
+.o-button--stretch {
+  display: block;
+  text-align: center;
+  line-height: em($ratio--l);
+  @include transition(all $duration--b);
+  @include link-state {
+    background-color: white;
+    border-color: $c-grey2;
+  }
+  @include active-state {
+    color: white;
+    background-color: $c-color1;
+    border-color: shade($c-color1, 15%);
+  }
 }
 // List with a middot style.
 .o-middot {
@@ -75,7 +91,11 @@
       left: 0;
     }
   }
-  li + li {margin-top: em($ratio--xs); }
+}
+// List with no styling.
+.o-nolist {
+  list-style: none;
+  padding-left: 0;
 }
 // Switch.
 .o-switch {
@@ -89,49 +109,210 @@
   text-transform: uppercase;
   text-align: center;
   font-family: $font--sans;
-  font-weight: $sans--bold;
+  font-weight: $sans--semibold;
   font-size: em($unit--xs);
   @include link-state {
     color: $c-grey4;
   }
-  @include hover-state {
+  @include active-state {
     color: $c-grey8;
   }
 }
-// Text block.
-.o-text-block {
-  width: 100%;
-  .line-break {
-    display: block;
-  }
-  p {
-    color: rgba($c-grey8, .5);
-    margin-top: -3.5em;
-    margin-left: 20em;
-    max-width: 30em;
-  }
+// Navigation.
+.o-nav__pages {
+  font-family: $font--sans;
+  font-weight: $sans--regular;
+  display: inline-block;
+  margin: 0;
+}
+.o-nav__pages--selected {
+  color: rgba($c-grey8, .75) !important;
+  border-bottom: $line--b solid rgba($c-grey6, .25);
+}
+.o-nav__language {
+  margin-left: em($ratio--m);
 }
 // Long text.
-.o-long-read {
-  .line-break {
-    display: block;
+.o-article {
+  .t-big {
+    color: $c-grey8;
   }
   p {
     color: $c-grey5;
   }
-  .t-big {
-    color: $c-grey8;
-  }
   .o-button--simple {
-    float: right;
     margin-top: em($ratio--b);
   }
 }
 // Waves container.
 .o-waves {
-  position: fixed;
-  z-index: 10;
+  position: fixed; // z-index
   left: 0;
   right: 0;
   top: 0;
+}
+// Triplet.
+.o-triplet {
+  @include list-reset;
+  @include clearfix;
+  margin: em($ratio--l) 0;
+}
+.o-triplet__item {
+  @include span-columns(4);
+  color: $c-grey5;
+  text-align: center;
+}
+// Circle icon.
+.o-circle {
+  display: block;
+  width: em($ratio--xxl);
+  height: em($ratio--xxl);
+  margin-left: auto;
+  margin-right: auto;
+  border: $line--b solid;
+  border-radius: 50%;
+  text-align: center;
+  color: $c-grey6;
+  font-family: $font--sans;
+  font-weight: $sans--semibold;
+  @include pseudo-center--parent;
+  }
+.o-circle--primary {color: $c-color1; }
+.o-circle--secondary {color: $c-color2; }
+.o-circle--tertiary {color: $c-color3; }
+.o-circle__content {
+  padding: em($ratio--s);
+  line-height: 1.25;
+  @include pseudo-center--child;
+}
+// Inputs.
+.o-input,
+.o-textarea {
+  border: none;
+  outline: none;
+  border-bottom: $line--b solid $c-hover;
+  color: shade($c-color1, 80%);
+  // @include transition(border $duration--b);
+  @include placeholder {
+    color: shade($c-color1, 40%);
+  }
+  @include hover-state {
+    border-bottom-color: lighten($c-hover, 20%);
+  }
+  @include focus-state {
+    border-bottom-color: white;
+  }
+}
+.o-input {
+  background-color: transparent;
+  padding: 0 0 em($ratio--s) 0;
+  // font-family: $font--sans;
+  font-size: em($unit--l);
+  font-weight: $serif--bold;
+}
+// Textarea.
+.o-textarea {
+  background-color: shade($c-color1, 5%);
+  padding: em($ratio--b);
+  @include focus-state {
+    background-color: shade($c-color1, 10%);
+  }
+}
+// Dropdown.
+.o-select {
+  display: inline-block;
+  border-bottom: $line--b solid $c-hover;
+  select {
+    @include appearance(none);
+    padding: em($ratio--xs) em($ratio--m) em($ratio--xs) 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    @include focus-state {
+      outline: 0;
+    }
+  }
+  @include hover-state {
+    // color: shade($c-color1, 60%);
+    border-bottom-color: lighten($c-hover, 20%);
+  }
+}
+.o-submit {
+  outline: none;
+  border: $line--b solid shade($c-color1, 15%);
+  padding: em($ratio--s) em($ratio--b);
+  color: shade($c-color1, 60%);
+  background-color: transparent;
+  font-family: $font--sans;
+  font-weight: $sans--semibold;
+  @include hover-state {
+    color: shade($c-color1, 80%);
+    border-color: shade($c-color1, 25%);
+  }
+  @include focus-state {
+    color: shade($c-color1, 90%);
+    border-color: lighten($c-hover, 20%);
+  }
+}
+// Label.
+.o-label {
+  margin-right: em($ratio--m);
+  color: shade($c-color1, 50%);
+}
+// Radio checkbox.
+.o-radio {
+  cursor: pointer;
+  input {
+    margin-right: em($ratio--s);
+  }
+  & + & {
+    margin-left: em($ratio--b);
+  }
+}
+// Generic carousel.
+.o-carousel {
+  width: 100%;
+  list-style: none;
+  padding-left: 0;
+  margin-left: em(-$ratio--b);
+  white-space: nowrap;
+  overflow: hidden;
+}
+// Circular photo item.
+.o-photo__item {
+  display: inline-block;
+  white-space: normal;
+  text-align: center;
+  & + & {
+    margin-left: em($ratio--b);
+  }
+}
+.o-photo__link {
+  position: relative;
+  display: block;
+  margin-bottom: em($ratio--m);
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: $c-grey8;
+  &:after {
+    content: "";
+    background-color: rgba($c-grey8, .75);
+    opacity: .5;
+    @include stretch-overlay;
+    @include transition(background $duration--b);
+  }
+  @include active-state {
+    &:after {
+      background-color: transparent;
+    }
+  }
+}
+.o-photo__caption {
+  color: $c-grey4;
+}
+// Call to action.
+.o-action {
+  background-color: $c-grey8;
+  // text-align: center;
+  color: white;
 }
