@@ -1,20 +1,51 @@
-.m-item
-  .m-item__name
-    if (instance.category === "bílé")
-      .m-item__category.m-item__category--white
-        != instance.year
-    else
-      .m-item__category.m-item__category--red
-        != instance.year
-    h4.t-h4
-      = instance.name
-    em.m-item__type= instance.type
-  p.m-item__description
+- var productCategory
+case instance.category
+  when "bílé"
+    - productCategory = "white"
+  when "červené"
+    - productCategory = "red"
+  when "růžové"
+    - productCategory = "rose"
+  default
+    - productCategory = "default"
+
+article.o-product(class="o-product--#{productCategory}")
+  .o-product__category!= instance.year
+  .o-product__name
+    h4.t-h4= instance.name
+    em.o-product__type= instance.type
+  p.o-product__description
     = instance.description
     |  
-    a(href="#") Poznejte víno blíže (video).
-  ul.item-stats
-    li Bezcukerný extrakt 22,8&thinsp;g/l
-    li Redukující cukry 6,6&thinsp;g/l
-    li Obsah kyselin 6,4&thinsp;g/l
-  a.o-button(href="#") Do košíku
+    a(href="#") Poznejte víno blíže.
+  ul.o-product__extra.o-middot.o-middot--inline
+    each productExtra in instance.extra
+      li= productExtra
+  ul.o-product__info.o-middot.o-middot--inline
+    each productInfo in instance.info
+      li.t-spaced= productInfo
+  .l-inline.l-inline--top
+    .l-inline__row
+      .l-inline__cell
+        .o-product__price
+          strong.t-spaced= instance.price
+      .l-inline__cell
+        a(href="#").o-button.o-button--stretch.ss-plus.right Vložit do košíku
+    
+//- .o-product__name
+//-   if (instance.category === "bílé")
+//-     .o-product__category.o-product__category--white
+//-       = instance.year
+//-   else
+//-     .o-product__category.o-product__category--red
+//-       = instance.year
+//-   em.o-product__type= instance.type
+//- p.o-product__description
+//-   = instance.description
+//-   |  
+//-   a(href="#") Poznejte víno blíže (video).
+//- ul.item-stats
+//-   li Bezcukerný extrakt 22,8&thinsp;g/l
+//-   li Redukující cukry 6,6&thinsp;g/l
+//-   li Obsah kyselin 6,4&thinsp;g/l
+//- a.o-button(href="#") Do košíku
