@@ -20,8 +20,12 @@ $line--s: 1px;
 
 $icon--b: 26;
 
+// Common element height
+$height--b: 40;
+
 // Golden ratio
-$ratio--g:   round(golden-ratio($unit--b,  5));
+$ratio--xh:   round(golden-ratio($unit--b,  6));
+$ratio--h:   round(golden-ratio($unit--b,  5));
 $ratio--xxl: round(golden-ratio($unit--b,  4));
 $ratio--xl:  round(golden-ratio($unit--b,  3));
 $ratio--l:   round(golden-ratio($unit--b,  2));

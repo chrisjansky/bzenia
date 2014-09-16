@@ -11,10 +11,17 @@
   position: relative;
   overflow: hidden;
   // background-color: $c-grey7;
+  .o-lead {
+    color: rgba($c-grey8, .75);
+  }
 }
 .m-hero--full {
-  height: 80%;
+  height: 95%;
   max-height: em(800);
+}
+.m-hero--half {
+  height: 60%;
+  max-height: em(500);
 }
 .m-hero__bg {
   @include stretch-overlay;
@@ -25,33 +32,34 @@
 .m-hero__content {
   position: relative; // z-index
 }
-.m-hero--centered {
-  @include pseudo-center--parent;
-  white-space: nowrap;
-  text-align: center;
-  .m-hero__content {
-    max-width: 60em;
-    white-space: normal;
-    @include pseudo-center--child;
-  }
-  .m-hero__bg {
-    opacity: .375;
-  }
-}
-.m-hero--flush {
-  .m-hero__bg {
-    opacity: .75;
-  }
-}
-.m-hero__lead {
-  color: rgba($c-grey8, .5);
-  margin-top: -3.5em;
-  margin-left: 20em;
-  max-width: 30em;
-}
+// .m-hero--centered {
+//   @include pseudo-center--parent;
+//   white-space: nowrap;
+//   text-align: center;
+//   .m-hero__content {
+//     max-width: 60em;
+//     white-space: normal;
+//     @include pseudo-center--child;
+//   }
+//   .m-hero__bg {
+//     opacity: .375;
+//   }
+// }
+// .m-hero--flush {
+//   // .m-hero__bg {
+//   //   opacity: .75;
+//   // }
+//   .o-lead {
+//     margin-top: -3.5em;
+//     margin-left: 20em;
+//   }
+// }
 .m-hero--dark {
   color: white;
   background-color: $c-grey8;
+  .m-hero__bg {
+    opacity: .5;
+  }
 }
 // .m-hero--primary {
 //   background-color: darken($c-color2, 25%);
@@ -130,7 +138,7 @@
 // Product list.
 .m-products {
   @include clearfix;
-  margin-top: em($ratio--m);
+  margin-top: em($ratio--xl);
 }
 // Form.
 .m-form {
@@ -159,5 +167,7 @@
  font-weight: $sans--regular;
 }
 .m-gallery {
-  padding-top: 0;
+  .t-h3 {
+    margin-top: 0;
+  }
 }

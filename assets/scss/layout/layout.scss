@@ -28,6 +28,9 @@
   padding-top: 0;
   padding-bottom: 0;
 }
+.l-wrapper--no-bottom {
+  padding-bottom: 0;
+}
 .l-wrapper--big {
   padding-top: em($ratio--m);
   padding-bottom: em($ratio--m);
@@ -51,6 +54,9 @@
   @include media($desktop) {
     padding-left: 17.5%;
   }
+}
+.l-offset--optical {
+  padding-left: 16%;
 }
 // Compositing layer for z-index.
 [class^="l-layer"],

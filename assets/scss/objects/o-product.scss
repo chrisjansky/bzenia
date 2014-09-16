@@ -10,6 +10,10 @@
       margin-right: em($ratio--xxs);
     }
   }
+  .o-button {
+    float: right;
+    padding-left: em($ratio--m);
+  }
 }
 .o-product__name {
   line-height: 1.25;
@@ -54,19 +58,20 @@
   border-bottom: none;
   margin: 0;
   padding: em($ratio--xs) 0;
-  color: $c-grey5;
+  color: $c-grey4;
   text-transform: uppercase;
   font-size: em($unit--xs);
   text-align: center;
-  line-height: em($ratio--l);
+  // line-height: em($ratio--l);
 }
 .o-product__price {
-  font-size: em($unit--s);
+  // font-size: em($unit--s);
   color: $c-grey7;
   text-align: center;
   border: $line--b solid $c-grey2;
+  line-height: em($height--b);
   border-right: none;
-  line-height: em($ratio--l);
+  overflow: auto;
 }
 .o-product__description {
   a {

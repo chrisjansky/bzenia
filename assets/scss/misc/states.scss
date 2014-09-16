@@ -1,14 +1,21 @@
 .offscreen--not-active {
   .m-offscreen {
-    .o-logo__title {opacity: 0; }
+    // .o-logo__title {opacity: 0; }
   }
   .m-offscreen__menu {
-    display: none;
+    // display: none;
   }
 }
-
 .offscreen--is-active {
   .m-offscreen {
-    width: em($ratio--g);
+    width: em($ratio--h);
   }
 }
+// section {
+//   @include transition(all $duration--b);
+// }
+// .content--is-offset {
+//   section {
+//     @include transform(translate3d(10em, 0, 0));
+//   }
+// }

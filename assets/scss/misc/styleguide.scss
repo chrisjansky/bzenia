@@ -72,9 +72,9 @@
   }
 }
 .sg-ratio__item--g {
-  width: em($ratio--g);
-  height: em($ratio--g);
+  width: em($ratio--h);
+  height: em($ratio--h);
   &:after {
-    content: "#{$ratio--g}";
+    content: "#{$ratio--h}";
   }
 }

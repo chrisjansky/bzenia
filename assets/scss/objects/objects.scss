@@ -45,25 +45,31 @@
 }
 .o-button {
   display: inline-block;
-  // font-size: em($unit--s);
   border: $line--b solid;
-}
-.o-button--block {
-  padding: em($ratio--s) em($ratio--b);
+  padding-left: em($ratio--b);
+  padding-right: em($ratio--b);
+  line-height: em($height--b);
+  &:after {
+    line-height: 1em;
+  }
 }
 .o-button--stretch {
   display: block;
   text-align: center;
-  line-height: em($ratio--l);
-  @include transition(all $duration--b);
+  padding-left: 0;
+  padding-right: 0;
+}
+.o-button--white {
+  // @include transition(all $duration--b);
+  background-color: white;
   @include link-state {
-    background-color: white;
     border-color: $c-grey2;
   }
   @include active-state {
-    color: white;
-    background-color: $c-color1;
-    border-color: shade($c-color1, 15%);
+    color: $c-hover;
+    // background-color: $c-grey2;
+    // border-color: shade($c-color1, 15%);
+    border-color: $c-hover;
   }
 }
 // List with a middot style.
@@ -112,10 +118,10 @@
   font-weight: $sans--semibold;
   font-size: em($unit--xs);
   @include link-state {
-    color: $c-grey4;
+    color: rgba($c-grey4, .5);
   }
   @include active-state {
-    color: $c-grey8;
+    color: rgba($c-grey6, .75);
   }
 }
 // Navigation.
@@ -126,8 +132,10 @@
   margin: 0;
 }
 .o-nav__pages--selected {
-  color: rgba($c-grey8, .75) !important;
-  border-bottom: $line--b solid rgba($c-grey6, .25);
+  @include link-state {
+    color: rgba($c-grey8, .75);
+    border-bottom: $line--b solid rgba($c-grey6, .25);
+  }
 }
 .o-nav__language {
   margin-left: em($ratio--m);
@@ -140,10 +148,10 @@
   p {
     color: $c-grey5;
   }
-  .o-button--simple {
+}
+.o-article__link {
     margin-top: em($ratio--b);
   }
-}
 // Waves container.
 .o-waves {
   position: fixed; // z-index
@@ -165,8 +173,8 @@
 // Circle icon.
 .o-circle {
   display: block;
-  width: em($ratio--xxl);
-  height: em($ratio--xxl);
+  width: em($ratio--h);
+  height: em($ratio--h);
   margin-left: auto;
   margin-right: auto;
   border: $line--b solid;
@@ -273,13 +281,11 @@
 .o-carousel {
   width: 100%;
   list-style: none;
-  padding-left: 0;
-  margin-left: em(-$ratio--b);
+  // margin-left: em(-$ratio--b);
   white-space: nowrap;
   overflow: hidden;
 }
-// Circular photo item.
-.o-photo__item {
+.o-carousel__item {
   display: inline-block;
   white-space: normal;
   text-align: center;
@@ -287,13 +293,26 @@
     margin-left: em($ratio--b);
   }
 }
+// Circular photo item.
+.o-photo {
+  margin: 0;
+  display: inline-block;
+}
+.o-photo__content {
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    width: em($ratio--h);
+    height: auto;
+  }
+}
+.o-photo--big img {
+  width: em($ratio--xh);
+}
 .o-photo__link {
   position: relative;
   display: block;
   margin-bottom: em($ratio--m);
-  border-radius: 50%;
-  overflow: hidden;
-  background-color: $c-grey8;
   &:after {
     content: "";
     background-color: rgba($c-grey8, .75);
@@ -315,4 +334,16 @@
   background-color: $c-grey8;
   // text-align: center;
   color: white;
+}
+// Text object.
+.o-lead {
+  max-width: 40em;
+}
+// Image and text.
+.o-media {
+  @include clearfix;
+}
+.o-media__image {
+  float: left;
+  margin-right: em($ratio--l);
 }
