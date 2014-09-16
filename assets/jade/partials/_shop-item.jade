@@ -24,13 +24,9 @@ article.o-product(class="o-product--#{productCategory}")
   ul.o-product__info.o-middot.o-middot--inline
     each productInfo in instance.info
       li.t-spaced= productInfo
-  .l-inline.l-inline--top
-    .l-inline__row
-      .l-inline__cell
-        .o-product__price
-          strong.t-spaced= instance.price
-      .l-inline__cell
-        a(href="#").o-button.o-button--stretch.ss-plus.right Vložit do košíku
+  a(href="#").o-button.o-button--white.ss-plus.right Vložit do košíku
+  .o-product__price
+    strong.t-spaced= instance.price
     
 //- .o-product__name
 //-   if (instance.category === "bílé")
