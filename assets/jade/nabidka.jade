@@ -1,40 +1,58 @@
 - var navActive = 1
+- var canvasEnabled = false
+
 include partials/_html-head
 
-body
+body.temp-header--white
+  if canvasEnabled
+    canvas.o-waves#js-waves(resize)
   include partials/_nav-offscreen
   include partials/_nav-main
-  section.m-hero.m-hero--full.m-hero--flush
+
+  section.m-hero.temp-hero--dark.m-hero--half
     .m-hero__content.l-wrapper
-      h2.t-h2 V čem jsou vína Bzenia jiná
-      p As I returned, Lorquas Ptomel grunted something at me, and turning to his warriors gave a few words of command relative to the incubator. They paid no further attention to me and I was thus permitted to remain close and watch their operations.
-    .m-hero__bg(style="background-image: url('assets/images/img2.jpg')")
-  //- canvas.o-waves#js-waves(resize)
-  section.l-wrapper.l-section--light.l-layer--top
-    h2.t-h2 Naše nabídka
+      h1.t-h1 Naše nabídka
+    .m-hero__bg(style="background-image: url('assets/images/bottles1.jpg')")
+  section.l-wrapper.l-section--light
+    //- h2.t-h2 Naše nabídka
     .temp-box Filtrování
     .m-products
       each instance in shopItems
         include partials/_shop-item
 
-  section.l-wrapper.l-offset.l-section--white
+  section.l-wrapper.l-section--white
       h2.t-h2 Mohlo by Vás zajímat
       .o-triplet
         .o-triplet__item
           .o-circle.o-circle--primary
-            span.o-circle__content Rozšířená realita
-          p As I came to a halt before him, Tars Tarkas pointed over the incubator and said, "Sak." I saw that he wanted me to repeat my performance of yesterday for the edification of Lorquas Ptomel, and, as I must confess that my prowess gave me no little satisfaction.
+            span.o-circle__content Adopce sudu na dálku
+          p Nabízíme Vám možnost stát se majitelem originálního vína z naší produkce, na jehož výrobě se můžete sami přímo podílet. Za dohledu našich odborníků máte možnost ovlivnit konečnou chuť vína dle svých chuťových požadavků. Také můžete vytvářet vlastní speciální kupáže. Zvolené víno, resp. kupáž, u nás necháme vyzrát na dubovém sudu. Délku zrání vína na sudu si určuje zákazník podle svých preferencí za našeho dohledu a poradenství. Váš sud s vínem bude po celou dobu až do nalahvování vína uskladněn v našem archivním sklepě číslo 6.
         .o-triplet__item
           .o-circle.o-circle--secondary
-            span.o-circle__content Adopce sudu
+            span.o-circle__content Investiční vína
           p As I returned, Lorquas Ptomel grunted something at me, and turning to his warriors gave a few words of command relative to the incubator. They paid no further attention to me and I was thus permitted to remain close and watch their operations.
         .o-triplet__item
           .o-circle
-            span.o-circle__content Investiční vína
-          p As I returned, Lorquas Ptomel grunted something at me, and turning to his warriors gave a few words of command relative to the incubator. They paid no further attention to me and I was thus permitted to remain close and watch their operations.
-      .temp-box
-        h3.t-h3 Pořádáme také degustace a ochutnávky
-        p As I returned, Lorquas Ptomel grunted something at me, and turning to his warriors gave a few words of command relative to the incubator. They paid no further attention to me and I was thus permitted to remain close and watch their operations.
-        a.o-button--simple(href="nabidka.html") Objednat ochutnávku
+            span.o-circle__content Degustace a ochutnávky
+          p Na objednávku pořádáme řízené degustace našich vín včetně občerstvení dle výběru zákazníka. Degustace se konají buď v exkluzivních prostorách našeho sklepa číslo 6, nebo přímo ve vinici na stylové rozhledně postavené ze starých dubových sudů. Rozhledna se nachází uprostřed naší vinice Novosady a nabízí krásný výhled na panorama Buchlovských hor a Pálavských vrchů.
+          p Cenu degustací řešíme individuálně. Občerstvení pro nás připravují kuchaři Restaurace a penzionu Beta ve Bzenci, kde je i možnost ubytování.
+          p Řízené degustace pořádáme také na naší pražské pobočce. Rovněž můžeme uskutečnit ochutnávku přímo u vás doma nebo na firmě.
+      //- .temp-box
+      //-   h3.t-h3 Pořádáme také degustace a ochutnávky
+      //-   p As I returned, Lorquas Ptomel grunted something at me, and turning to his warriors gave a few words of command relative to the incubator. They paid no further attention to me and I was thus permitted to remain close and watch their operations.
+      //-   a.o-button--simple(href="nabidka.html") Objednat ochutnávku
 
   include partials/_html-foot
+
+//- Co získáte?
+//- 225 l vína z naší produkce
+//- dubový sud o objemu 225 l
+//- příslušná dokumentace k vínu
+//- nalahvování
+//- 300 lahví o objemu 0,75 l
+//- 300 kvalitních celokorkových špuntů
+//- speciální etiketa dle Vašeho přání
+//- možnost uskladnění nalahvovaného vína v našem archivním sklepě číslo 6
+//- poradenství a průběžná péče o své víno
+//- originální víno, které nemá nikdo jiný
+//- Celé toto dobrodružství s vínem, které Vás vtáhne do tajů jeho výroby, můžete mít za cenu 105.000,- Kč včetně DPH.

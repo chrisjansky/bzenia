@@ -1,7 +1,11 @@
 - var navActive = 2
+- var canvasEnabled = false
+
 include partials/_html-head
 
-body.offscreen--not-active
+body
+  if canvasEnabled
+    canvas.o-waves#js-waves(resize)
   include partials/_nav-offscreen
   include partials/_nav-main
   section.l-section--white
@@ -65,7 +69,7 @@ body.offscreen--not-active
           .m-contacts__block
             h3.t-h3 Adresa sídla
             ul.o-nolist
-              li Arvina s.r.o.
+              li Bzenia s.r.o.
               li Sklep č. 6 
               li ul. Karla Čapka 1542
               li 696 81 Bzenec

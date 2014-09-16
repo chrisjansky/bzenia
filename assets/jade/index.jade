@@ -1,59 +1,60 @@
 - var navActive = null
+- var canvasEnabled = true
+
 include partials/_html-head
 
 body
+  if canvasEnabled
+    canvas.o-waves#js-waves(resize)
   include partials/_nav-offscreen
   include partials/_nav-main
-  section.m-hero.m-hero--full.m-hero--flush
+
+  section.m-hero.m-hero--full
     .m-hero__content.l-wrapper
       h1.t-h1
-        | Moderní, ekologické 
-        span.line-break vinařství
-      p.m-hero__lead Krátký text popisující, v čem je Bzenia výjimečná&thinsp;&mdash;&thinsp;nejlépe do tří vět. Vlastníme 10 hektarů vinic na nejkvalitnějších viničních tratích ve Bzenci.
-      a(href="#").o-button--simple.ss-navigateright.right Příběh vinařství Bzenia
-    .m-hero__bg(style="background-image: url('assets/images/img1.jpg')")
-  canvas.o-waves#js-waves(resize)
-  section.l-section--light.l-layer--top
-    .l-wrapper.l-wrapper--big.l-offset
-      article.o-article
-        .l-inline
-          .l-inline__row
-            .l-inline__cell
-              h2.t-h2
-                | Objevte vášeň ukrytou 
-                span.line-break v každé láhvi
-            .l-inline__cell
-              a.o-button--simple.ss-navigateright.right(href="nabidka.html") Nabídka vín
-        p.t-big Every one but myself&thinsp;&mdash;&thinsp;men, women, and children&thinsp;&mdash;&thinsp;were heavily armed, and at the tail of each chariot trotted a Martian hound.
-        p My own beast following closely behind ours; in fact, the faithful creature never left me voluntarily during the entire ten years I spent on Mars.
-        p Our way led out across the little valley before the city, through the hills, and down into the dead sea bottom which I had traversed on my journey from the incubator to the plaza. The incubator, as it proved, was the terminal point of our journey this day, and, as the entire cavalcade broke into a mad gallop as soon as we reached the level expanse of sea bottom, we were soon within sight of our goal.
-    .l-wrapper.l-wrapper--only-horizontal.l-offset.l-wrapper--bleed
-      .m-hero.m-hero--centered.m-hero--dark
-        .m-hero__content.l-wrapper.l-wrapper--big
-          h2.t-h2 Nadpis
-          p Another retiring gentleman, with a brimstone belly, doubtless got by scraping along the Tartarian tiles in some of his profounder divings. He is seldom seen; at least I have never seen him except in the remoter southern seas.
-        .m-hero__bg(style="background-image: url('assets/images/vino1.jpg')")
-    .l-wrapper.l-wrapper--big.l-offset
-      ul.o-triplet
-        li.o-triplet__item
-          .o-circle.o-circle--secondary
-            span.o-circle__content Item with words
-          p My own beast following closely behind ours; in fact, the faithful creature never left me.
-        li.o-triplet__item
-          .o-circle.o-circle--primary
-            span.o-circle__content Item
-          p The incubator, as it proved, was the terminal point of our journey this day, and, as the entire cavalcade broke.
-          a(href="#").o-button.o-button--block Více informací
-        li.o-triplet__item
-          .o-circle.o-circle--tertiary
-            span.o-circle__content Another item
-          p Our way led out across the little valley before the city, through the hills, and down into the dead sea bottom.
-  section.m-hero.m-hero--full.m-hero--flush
-    .m-hero__content.l-wrapper
-      h1.t-h1
-        | Vína s rozšířenou 
-        span.line-break realitou
-      p.m-hero__lead Another retiring gentleman, with a brimstone belly, doubtless got by scraping along the Tartarian tiles in some of his profounder divings. He is seldom seen; at least I have never seen him except in the remoter southern seas.
-    .m-hero__bg(style="background-image: url('assets/images/img3.jpg')")
+        | Víno rozšiřující  
+        span.line-break realitu
+      .o-lead
+        p Bzenec v srdci Slovácka je s vinařstvím spojován odpradávna. Naše rodina zde pěstuje a vyrábí kvalitní přívlastková vína posledních 11 let. Nyní bychom Vám rádi předali něco z výsledků své práce: vína, které rozšiřuje realitu.
+    .m-hero__bg(style="background-image: url('assets/images/vinery1c.jpg'); background-position-y: top;")
+
+  main.l-wrapper.l-wrapper--big.l-offset.l-section--light.l-layer--top
+    article.o-article
+      .l-inline
+        .l-inline__row
+          .l-inline__cell
+            h2.t-h2
+              | O vinařství
+          .l-inline__cell
+            a.o-article__link.o-button--simple.ss-navigateright.right(href="o-vinarstvi.html") Více o nás
+      p.t-big Jsme moderní rodinné vinařství, které bylo založeno v roce 2003. Vlastníme vinice na nejkvalitnějších viničních tratích ve Bzenci&thinsp;&mdash;&thinsp;Novosadech a Prostřední hoře.
+      .l-columns
+        .l-column--half
+          p Při výsadbě vinic jsme vsadili na tradiční a prověřené odrůdy, jako je Ryzlink rýnský, nejtypičtější odrůda pěstovaná v Bzenci. Dále pěstujeme odrůdy Rulandské bílé, Rulandské šedé, Ryzlink vlašský, Sauvignon, Tramín červený, Svatovavřinecké, Frankovka a Rulandské modré.
+        .l-column--half
+          p Oba majitelé, Aleš a Zdeněk Maleňákovi, jsou ve sklepech každý den, a jsou tak přímo účastni dění ve vinařství.
+    //-   ul.o-triplet
+    //-     li.o-triplet__item
+    //-       .o-circle.o-circle--secondary
+    //-         span.o-circle__content Item with words
+    //-       p My own beast following closely behind ours; in fact, the faithful creature never left me.
+    //-     li.o-triplet__item
+    //-       .o-circle.o-circle--primary
+    //-         span.o-circle__content Item
+    //-       p The incubator, as it proved, was the terminal point of our journey this day, and, as the entire cavalcade broke.
+    //-       a(href="#").o-button Více informací
+    //-     li.o-triplet__item
+    //-       .o-circle.o-circle--tertiary
+    //-         span.o-circle__content Another item
+    //-       p Our way led out across the little valley before the city, through the hills, and down into the dead sea bottom.
+
+  section.m-hero
+    .m-hero__content.l-wrapper.l-wrapper--big.l-offset
+      h2.t-h2
+        | Vína rozšiřující 
+        span.line-break realitu
+      .o-lead
+        p Bude upřesněno. Another retiring gentleman, with a brimstone belly, doubtless got by scraping along the Tartarian tiles in some of his profounder divings. He is seldom seen; at least I have never seen him except in the remoter southern seas.
+    .m-hero__bg(style="background-image: url('assets/images/vino1.jpg')")
 
   include partials/_html-foot
