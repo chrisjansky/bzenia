@@ -1,6 +1,7 @@
-// var paperscript = {};
-
-// alert("lol");
+var gallerySwiper = new Swiper('.swiper-container', {
+  slideElement: "li",
+  slidesPerView: "auto",
+});
 
 // $('.m-brief')
 //   .waypoint(function(direction) {
