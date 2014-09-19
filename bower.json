@@ -20,6 +20,7 @@
     "modernizr": "latest",
     "paper": "latest",
     "jquery-waypoints": "latest",
-    "chj-framework": "latest"
+    "chj-framework": "latest",
+    "idangerous-swiper": "latest"
   }
 }
