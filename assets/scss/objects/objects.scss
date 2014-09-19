@@ -279,18 +279,19 @@
 }
 // Generic carousel.
 .o-carousel {
-  width: 100%;
+  @include box-sizing(content-box);
+  @include user-select(none);
+}
+.o-carousel__list {
   list-style: none;
-  // margin-left: em(-$ratio--b);
   white-space: nowrap;
-  overflow: hidden;
 }
 .o-carousel__item {
   display: inline-block;
   white-space: normal;
   text-align: center;
   & + & {
-    margin-left: em($ratio--b);
+    padding-left: em($ratio--b);
   }
 }
 // Circular photo item.
