@@ -99,10 +99,13 @@ gulp.task('build--fast', function() {
 gulp.task('server', function() {
   bsync({
     server: {
-      baseDir: paths.dev,
-      online: false,
-      tunnel: false
-    }
+      baseDir: paths.dev
+    },
+    online: false,
+    tunnel: false,
+    xip: false,
+    minify: false,
+    notify: false
   });
 });
 
