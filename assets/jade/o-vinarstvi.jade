@@ -27,13 +27,14 @@ body.temp-header--white
   section.m-gallery.l-section--white.l-wrapper.l-wrapper--only-vertical
     .l-wrapper--bleed.l-offset
       h3.t-h3 Prohlédněte si naše vinice
-    ul.o-carousel.l-offset--optical
-      each galleryItem, index in [1, 2, 3, 4, 5, 6, 7]
-        li.o-carousel__item
-          figure.o-photo
-            a.o-photo__link.o-photo__content(href="#")
-              img(src="http://lorempixel.com/200/200/nature/#{index}", alt="lorempixel")
-            figcaption.o-photo__caption Popis fotky.
+    .o-carousel.swiper-container.l-wrapper.l-wrapper--only-horizontal.l-offset--optical
+      ul.o-carousel__list.swiper-wrapper
+        each galleryItem, index in [1, 2, 3, 4, 5, 6, 7, 8, 9]
+          li.o-carousel__item.swiper-slide
+            figure.o-photo
+              a.o-photo__link.o-photo__content(href="#")
+                img(src="http://lorempixel.com/200/200/nature/#{index}", alt="lorempixel")
+              figcaption.o-photo__caption Popis fotky.
 
   //- section.m-hero.m-hero--dark
   //-   .m-hero__content.l-wrapper.l-wrapper--big.l-offset
