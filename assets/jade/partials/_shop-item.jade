@@ -16,8 +16,9 @@ article.o-product(class="o-product--#{productCategory}")
     em.o-product__type= instance.type
   p.o-product__description
     = instance.description
-    |  
-    a(href="#") Poznejte víno blíže.
+    if (index % 2 == 0)
+      |  
+      a(href="#") Poznejte víno blíže.
   ul.o-product__extra.o-middot.o-middot--inline
     each productExtra in instance.extra
       li= productExtra
