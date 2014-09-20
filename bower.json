@@ -22,6 +22,7 @@
     "jquery-waypoints": "latest",
     "chj-framework": "latest",
     "idangerous-swiper": "latest",
-    "featherlight": "latest"
+    "featherlight": "latest",
+    "jquery-pjax": "latest"
   }
 }
