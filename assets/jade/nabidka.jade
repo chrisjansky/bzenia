@@ -1,26 +1,27 @@
-- var navActive = 1
-- var canvasEnabled = false
+extends templates/_basic
 
-include partials/_html-head
+block template-variables
+  - var pageSettings = {title: "Nabídka"}
+  - var navActive = 1
+  - var canvasEnabled = false
 
-body.temp-header--white
+block template-body
   if canvasEnabled
     canvas.o-waves#js-waves(resize)
-  include partials/_nav-offscreen
-  include partials/_nav-main
 
   section.m-hero.temp-hero--dark.m-hero--half
     .m-hero__content.l-wrapper
       h1.t-h1 Naše nabídka
     .m-hero__bg(style="background-image: url('assets/images/bottles1.jpg')")
-  section.l-wrapper.l-section--light
+
+  section.l-wrapper.l-section--white
     //- h2.t-h2 Naše nabídka
     .temp-box Filtrování
     .m-products
       each instance, index in shopItems
         include partials/_shop-item
 
-  section.l-wrapper.l-section--white
+  section.l-wrapper.l-section--light
       h2.t-h2 Mohlo by Vás zajímat
       .o-triplet
         .o-triplet__item
@@ -37,12 +38,6 @@ body.temp-header--white
           p Na objednávku pořádáme řízené degustace našich vín včetně občerstvení dle výběru zákazníka. Degustace se konají buď v exkluzivních prostorách našeho sklepa číslo 6, nebo přímo ve vinici na stylové rozhledně postavené ze starých dubových sudů. Rozhledna se nachází uprostřed naší vinice Novosady a nabízí krásný výhled na panorama Buchlovských hor a Pálavských vrchů.
           p Cenu degustací řešíme individuálně. Občerstvení pro nás připravují kuchaři Restaurace a penzionu Beta ve Bzenci, kde je i možnost ubytování.
           p Řízené degustace pořádáme také na naší pražské pobočce. Rovněž můžeme uskutečnit ochutnávku přímo u vás doma nebo na firmě.
-      //- .temp-box
-      //-   h3.t-h3 Pořádáme také degustace a ochutnávky
-      //-   p As I returned, Lorquas Ptomel grunted something at me, and turning to his warriors gave a few words of command relative to the incubator. They paid no further attention to me and I was thus permitted to remain close and watch their operations.
-      //-   a.o-button--simple(href="nabidka.html") Objednat ochutnávku
-
-  include partials/_html-foot
 
 //- Co získáte?
 //- 225 l vína z naší produkce

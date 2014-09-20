@@ -1,0 +1,19 @@
+block template-variables
+
+doctype
+html.no-js(lang="cs")
+  head
+    block template-head
+      include ../partials/_html-head
+
+  body
+    // script alert("Refresh!")
+    include ../partials/_nav-offscreen
+    include ../partials/_nav-main
+
+    main#js-pjax
+      block template-body
+        p Basic template.
+
+    block template-foot
+      include ../partials/_html-foot

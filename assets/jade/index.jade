@@ -1,24 +1,25 @@
-- var navActive = null
-- var canvasEnabled = true
+extends templates/_basic
 
-include partials/_html-head
+block template-variables
+  - var pageSettings = {title: "Hlavní stránka"}
+  - var navActive = null
+  - var canvasEnabled = false
 
-body
+block template-body
   if canvasEnabled
     canvas.o-waves#js-waves(resize)
-  include partials/_nav-offscreen
-  include partials/_nav-main
+    img(src="assets/images/vinery1c.jpg", id="js-waves__bg", style="display: none; ", alt="Paper.js background")
 
-  section.m-hero.m-hero--full
+  section.m-hero.m-hero--full.temp-hero--dark
     .m-hero__content.l-wrapper
       h1.t-h1
         | Víno rozšiřující  
         span.line-break realitu
       .o-lead
         p Bzenec v srdci Slovácka je s vinařstvím spojován odpradávna. Naše rodina zde pěstuje a vyrábí kvalitní přívlastková vína posledních 11 let. Nyní bychom Vám rádi předali něco z výsledků své práce: vína, které rozšiřuje realitu.
-    .m-hero__bg(style="background-image: url('assets/images/vinery1c.jpg'); background-position-y: top;")
+    //- .m-hero__bg(style="background-image: url('assets/images/vinery1c.jpg'); background-position-y: top;")
 
-  main.l-wrapper.l-wrapper--big.l-offset.l-section--light.l-layer--top
+  section.l-wrapper.l-wrapper--big.l-offset.l-section--light.l-layer--top
     article.o-article
       .l-inline
         .l-inline__row
@@ -33,20 +34,6 @@ body
           p Při výsadbě vinic jsme vsadili na tradiční a prověřené odrůdy, jako je Ryzlink rýnský, nejtypičtější odrůda pěstovaná v Bzenci. Dále pěstujeme odrůdy Rulandské bílé, Rulandské šedé, Ryzlink vlašský, Sauvignon, Tramín červený, Svatovavřinecké, Frankovka a Rulandské modré.
         .l-column--half
           p Oba majitelé, Aleš a Zdeněk Maleňákovi, jsou ve sklepech každý den, a jsou tak přímo účastni dění ve vinařství.
-    //-   ul.o-triplet
-    //-     li.o-triplet__item
-    //-       .o-circle.o-circle--secondary
-    //-         span.o-circle__content Item with words
-    //-       p My own beast following closely behind ours; in fact, the faithful creature never left me.
-    //-     li.o-triplet__item
-    //-       .o-circle.o-circle--primary
-    //-         span.o-circle__content Item
-    //-       p The incubator, as it proved, was the terminal point of our journey this day, and, as the entire cavalcade broke.
-    //-       a(href="#").o-button Více informací
-    //-     li.o-triplet__item
-    //-       .o-circle.o-circle--tertiary
-    //-         span.o-circle__content Another item
-    //-       p Our way led out across the little valley before the city, through the hills, and down into the dead sea bottom.
 
   section.m-hero
     .m-hero__content.l-wrapper.l-wrapper--big.l-offset
@@ -56,5 +43,3 @@ body
       .o-lead
         p Bude upřesněno. Another retiring gentleman, with a brimstone belly, doubtless got by scraping along the Tartarian tiles in some of his profounder divings. He is seldom seen; at least I have never seen him except in the remoter southern seas.
     .m-hero__bg(style="background-image: url('assets/images/vino1.jpg')")
-
-  include partials/_html-foot

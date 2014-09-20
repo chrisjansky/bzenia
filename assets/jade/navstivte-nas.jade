@@ -1,13 +1,14 @@
-- var navActive = 2
-- var canvasEnabled = false
+extends templates/_basic
 
-include partials/_html-head
+block template-variables
+  - var pageSettings = {title: "Navštivte nás"}
+  - var navActive = 2
+  - var canvasEnabled = false
 
-body
+block template-body
   if canvasEnabled
     canvas.o-waves#js-waves(resize)
-  include partials/_nav-offscreen
-  include partials/_nav-main
+
   section.l-section--white
     .l-wrapper
       h1.t-h1
@@ -16,6 +17,7 @@ body
       p Adresa, jak se k nám dostat.
     .l-wrapper.l-wrapper--only-horizontal.l-wrapper--bleed
       iframe(src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2618.9730401074858!2d17.270420200000004!3d48.9730376!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47133cba9fc7643f%3A0x1c8a1127a4c2b93!2sKarla+%C4%8Capka+1542%2C+696+81+Bzenec!5e0!3m2!1sen!2scz!4v1410621816581", width="100%", height="400", frameborder="0")
+
   section.m-form
     .l-wrapper.l-wrapper--big
       h2.t-h2 Objednejte si degustaci našich vín
@@ -62,24 +64,23 @@ body
               input.o-submit(type="submit", value="Odeslat")
   section.m-contacts
     .l-wrapper.l-wrapper--big
-      h2.t-h2
-        | Kontaktní údaje
+      h2.t-h2 Kontaktní údaje
       .l-columns
         .l-column--half
           .m-contacts__block
-            h3.t-h3 Adresa sídla
+            h4.t-h4 Adresa sídla
             ul.o-nolist
               li Bzenia s.r.o.
               li Sklep č. 6 
               li ul. Karla Čapka 1542
               li 696 81 Bzenec
           .m-contacts__block
-            h3.t-h3 Adresa pražské pobočky
+            h4.t-h4 Adresa pražské pobočky
             ul.o-nolist
               li Na Košince 2369/5a
               li Praha 8 Libeň
         .l-column--half
-          h3.t-h3 Kontakty na jednatele
+          h4.t-h4 Kontakty na jednatele
           .m-contacts__person
             ul.o-nolist
               li Aleš Maleňák
@@ -90,5 +91,3 @@ body
               li Zdeněk Maleňák
               li &nbsp;
               li: a(href="mailto:zdenek.malenak@arvina.cz") zdenek.malenak@arvina.cz
-
-  include partials/_html-foot

@@ -1,13 +1,13 @@
-- var navActive = 0
-- var canvasEnabled = false
+extends templates/_basic
 
-include partials/_html-head
+block template-variables
+  - var pageSettings = {title: "O vinařství"}
+  - var navActive = 0
+  - var canvasEnabled = false
 
-body.temp-header--white
+block template-body
   if canvasEnabled
     canvas.o-waves#js-waves(resize)
-  include partials/_nav-offscreen
-  include partials/_nav-main
 
   section.m-hero.temp-hero--dark.m-hero--half
     .m-hero__content.l-wrapper
@@ -26,7 +26,7 @@ body.temp-header--white
 
   section.m-gallery.l-section--white.l-wrapper.l-wrapper--only-vertical
     .l-wrapper--bleed.l-offset
-      h3.t-h3 Prohlédněte si naše vinice
+      h4.t-h4 Prohlédněte si naše vinice
     .o-carousel.swiper-container.l-wrapper.l-wrapper--only-horizontal.l-offset--optical
       ul.o-carousel__list.swiper-wrapper
         each galleryItem, index in [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -35,16 +35,6 @@ body.temp-header--white
               a.o-photo__link.o-photo__content(href="http://lorempixel.com/1280/720/nature/#{index}", data-js-featherlight)
                 img(src="http://lorempixel.com/200/200/nature/#{index}", alt="lorempixel")
               figcaption.o-photo__caption Popis fotky.
-
-  //- section.m-hero.m-hero--dark
-  //-   .m-hero__content.l-wrapper.l-wrapper--big.l-offset
-  //-     h2.t-h2 Sklep číslo 6
-  //-     .l-columns
-  //-       .l-column--half
-  //-         p Ve sklepě číslo 6 naše vína dozrávají na láhvi po dlouhá léta, než jsou zařazena do prodeje. Jde o unikátní křížový sklep, jehož chodby měří přes 400 metrů a mají místy více než pětsetletou historii. Nachází se v památkovém centru města Bzenec a patří k velkým lákadlům všech milovníků vína.
-  //-       .l-column--half
-  //-         p Je to místo, kde se psala historie moravského vinařství&thinsp;&mdash;&thinsp;právě v těchto sklepech bylo založeno první vinařské družstvo v ČR. Sklep byl v minulosti využíván k archivaci vín místním vinařským podnikem.
-  //-   .m-hero__bg(style="background-image: url('assets/images/cellar2.jpg')")
 
   section.l-wrapper.l-wrapper--big.l-offset--optical
     article.o-media.o-article
@@ -63,23 +53,10 @@ body.temp-header--white
       p Všechny naše vinice byly zařazeny do ekologického zemědělství, v němž není povoleno využití chemických prostředků pro ochranu vinic ani při samotné výrobě vína. V roce 2011 naše vinařství získalo ochrannou známku BIO.
     .m-hero__bg(style="background-image: url('assets/images/wine1.jpg')")
 
-  //-   .o-triplet
-  //-     .o-triplet__item
-  //-       .o-circle.o-circle--primary Vinná réva
-  //-       p As I came to a halt before him, Tars Tarkas pointed over the incubator and said, "Sak." I saw that he wanted me to repeat my performance of yesterday for the edification.
-  //-     .o-triplet__item
-  //-       .o-circle Sudy
-  //-       p They paid no further attention to me and I was thus permitted to remain close and watch their operations.
-  //-     .o-triplet__item
-  //-       .o-circle.o-circle--secondary Víno
-  //-       p As I returned, Lorquas Ptomel grunted something at me, and turning to his warriors gave a few words of command relative to the incubator.
-
   footer.o-action
     .l-wrapper.l-inline
       .l-inline__row
         .l-inline__cell
-          h3.t-h3 Chcete ochutnat opravdové bio víno?
+          h4.t-h4 Chcete ochutnat opravdové bio víno?
         .l-inline__cell
           a.o-button(href="nabidka.html") Sortiment vín Bzenia
-
-  include partials/_html-foot

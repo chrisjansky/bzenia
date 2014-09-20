@@ -10,9 +10,15 @@ case instance.category
     - productCategory = "default"
 
 article.o-product(class="o-product--#{productCategory}")
+  figure.o-photo
+    .o-photo__content
+      if (index % 2 == 0)
+        img(src="assets/images/thumbnail3.jpg", alt="Thumbnail")
+      else
+        img(src="assets/images/thumbnail1.jpg", alt="Thumbnail")
   .o-product__category!= instance.year
   .o-product__name
-    h4.t-h4= instance.name
+    h3.t-h3= instance.name
     em.o-product__type= instance.type
   p.o-product__description
     = instance.description
