@@ -1,8 +1,13 @@
 body {
   font-family: $font--serif;
-  // font-size: em($unit--b, 16);
   font-weight: 300;
   line-height: 1.5;
+  @include media($phone) {
+    font-size: em(14);
+  }
+  @include media($desktop--wide) {
+    font-size: em(18);
+  }
 }
 ::selection {
   background-color: lighten($c-color1, 25%);
@@ -29,6 +34,7 @@ body {
   line-height: 1.125;
   font-size: em($ratio--xl);
   margin: em($ratio--xs) 0;
+  @include animation(showTitle $duration--b $duration--s backwards);
 }
 .t-h2 {
   font-family: $font--display;

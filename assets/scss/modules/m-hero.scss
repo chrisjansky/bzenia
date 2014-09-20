@@ -13,10 +13,6 @@
 .m-hero--half {
   height: 60%;
   max-height: em(500);
-
-  .t-h1 {
-    @include animation(showTitle $duration--b $duration--s backwards);
-  }
 }
 .m-hero__bg {
   @include stretch-overlay;

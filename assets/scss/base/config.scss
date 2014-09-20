@@ -24,7 +24,8 @@ $icon--b: 26;
 $height--b: 40;
 
 // Golden ratio
-$ratio--xh:   round(golden-ratio($unit--b,  6));
+$ratio--xxh: round(golden-ratio($unit--b,  7));
+$ratio--xh:  round(golden-ratio($unit--b,  6));
 $ratio--h:   round(golden-ratio($unit--b,  5));
 $ratio--xxl: round(golden-ratio($unit--b,  4));
 $ratio--xl:  round(golden-ratio($unit--b,  3));

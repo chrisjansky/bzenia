@@ -1,0 +1,39 @@
+// Circular photo item.
+.o-photo {
+  margin: 0;
+  display: inline-block;
+}
+.o-photo__content {
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    width: em($ratio--h);
+    height: auto;
+  }
+}
+.o-photo--big img {
+  width: em($ratio--xh);
+}
+.o-photo--huge img {
+  width: em($ratio--xxh);
+}
+.o-photo__link {
+  position: relative;
+  display: block;
+  margin-bottom: em($ratio--m);
+  &:after {
+    content: "";
+    background-color: rgba($c-grey8, .75);
+    opacity: .5;
+    @include stretch-overlay;
+    @include transition(background $duration--b);
+  }
+  @include active-state {
+    &:after {
+      background-color: transparent;
+    }
+  }
+}
+.o-photo__caption {
+  color: $c-grey4;
+}
