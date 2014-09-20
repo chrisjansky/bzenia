@@ -37,15 +37,15 @@ body {
   margin: em($ratio--s) 0;
 }
 .t-h3 {
+  font-size: em($ratio--m);
+  font-weight: $serif--bold;
+  margin: em($ratio--xs) 0;
+}
+.t-h4 {
   font-size: em($unit--l);
   font-family: $font--sans;
   font-weight: $sans--regular;
   margin: em($ratio--b) 0;
-}
-.t-h4 {
-  font-size: em($ratio--m);
-  font-weight: $serif--bold;
-  margin: em($ratio--xs) 0;
 }
 
 // Interactive.
