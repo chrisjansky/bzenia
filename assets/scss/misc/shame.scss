@@ -1,0 +1,7 @@
+// Suboptimal, rushed code.
+.temp-box {
+  border: $line--b solid rgba($c-grey8, .25);
+  padding: em($ratio--m);
+  margin-top: em($ratio--l);
+  text-align: center;
+}
