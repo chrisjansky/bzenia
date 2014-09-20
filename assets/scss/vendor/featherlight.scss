@@ -13,15 +13,16 @@
     position: relative;
     float: right;
     width: em($ratio--l);
-    height: em($ratio--l);
-    line-height: em($ratio--l + 2);
+    line-height: em($ratio--l);
     margin-bottom: em($ratio--b);
-    margin-right: em(-$ratio--xs);
+    margin-right: em(-$ratio--xxs);
+    background-color: transparent;
+    color: $c-color1;
+    border: $line--b solid;
     border-radius: 50%;
-    background-color: $c-color1;
-    color: white;
+    @include box-sizing(content-box);
     @include active-state {
-      background-color: $c-hover;
+      color: $c-hover;
     }
   }
 }
