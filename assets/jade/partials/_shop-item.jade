@@ -24,7 +24,7 @@ article.o-product(class="o-product--#{productCategory}")
     = instance.description
     if (index % 2 == 0)
       |  
-      a(href="#") Poznejte víno blíže.
+      a(href="detail-produktu.html", data-pjax--aside) Poznejte víno blíže.
   ul.o-product__extra.o-middot.o-middot--inline
     each productExtra in instance.extra
       li= productExtra

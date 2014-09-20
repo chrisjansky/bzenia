@@ -7,13 +7,16 @@ html.no-js(lang="cs")
       include ../partials/_html-head
 
   body
-    .o-view#js-pjax
+    .o-whole#js-pjax--whole
       include ../partials/_nav-offscreen
       include ../partials/_nav-main
 
-      main.o-main
+      main.o-main#js-pjax--main
         block template-body
           p Basic template.
+
+      aside.o-aside#js-pjax--aside
+        block template-aside
 
     block template-foot
       include ../partials/_html-foot

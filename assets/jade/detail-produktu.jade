@@ -1,0 +1,17 @@
+extends templates/_basic
+
+block template-variables
+  - var pageSettings = {title: "Detail produktu", index: null, paperCanvas: false, theme: "light"}
+
+block template-body
+  section.m-detail
+    .l-wrapper.l-wrapper--top
+      figure.o-photo.o-photo--huge
+        .o-photo__content
+          img(src="assets/images/thumbnail3.jpg", alt="Thumbnail")
+      h1.t-h1 Sauvignon
+      p Popis vína.
+      p Ahoj.
+
+block template-aside
+  p Fluff.
