@@ -10,21 +10,11 @@ if ($.support.pjax) {
   $body.addClass("is-ready");
 
   $(document).on("click", "[data-pjax]", function(event) {
-    var
-      $currentAnchor = $(this),
-      $otherAnchors = $(".o-pages__item").not($currentAnchor),
-      pagesClass = "o-pages__item",
-      selectedClass = "o-pages__item--selected";
-
+    
     $.pjax.click(event, {
       container: $pjaxContainer,
       fragment: "#js-pjax"
     });
-
-    if ($currentAnchor.hasClass(pagesClass)) {
-      $otherAnchors.removeClass(selectedClass);
-      $currentAnchor.addClass(selectedClass);
-    }
 
   });
 
