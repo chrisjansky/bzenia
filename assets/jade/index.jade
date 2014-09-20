@@ -1,23 +1,21 @@
 extends templates/_basic
 
 block template-variables
-  - var pageSettings = {title: "Hlavní stránka"}
-  - var navActive = null
-  - var canvasEnabled = false
+  - var pageSettings = {title: "Vítejte", index: null, paperCanvas: false, theme: "light"}
 
 block template-body
-  if canvasEnabled
+  if pageSettings.paperCanvas
     canvas.o-waves#js-waves(resize)
     img(src="assets/images/vinery1c.jpg", id="js-waves__bg", style="display: none; ", alt="Paper.js background")
 
-  section.m-hero.m-hero--full.temp-hero--dark
-    .m-hero__content.l-wrapper
+  section.m-hero.m-hero--full(class="m-hero--#{pageSettings.theme}")
+    .m-hero__content.l-wrapper.l-wrapper--top
       h1.t-h1
         | Víno rozšiřující  
         span.line-break realitu
       .o-lead
         p Bzenec v srdci Slovácka je s vinařstvím spojován odpradávna. Naše rodina zde pěstuje a vyrábí kvalitní přívlastková vína posledních 11 let. Nyní bychom Vám rádi předali něco z výsledků své práce: vína, které rozšiřuje realitu.
-    //- .m-hero__bg(style="background-image: url('assets/images/vinery1c.jpg'); background-position-y: top;")
+    .m-hero__bg(style="background-image: url('assets/images/vinery1c.jpg'); background-position-y: top;")
 
   section.l-wrapper.l-wrapper--big.l-offset.l-section--light.l-layer--top
     article.o-article

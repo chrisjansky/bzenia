@@ -1,16 +1,14 @@
 extends templates/_basic
 
 block template-variables
-  - var pageSettings = {title: "O vinařství"}
-  - var navActive = 0
-  - var canvasEnabled = false
+  - var pageSettings = {title: "O vinařství", index: 0, paperCanvas: false, theme: "dark"}
 
 block template-body
-  if canvasEnabled
+  if pageSettings.paperCanvas
     canvas.o-waves#js-waves(resize)
 
-  section.m-hero.temp-hero--dark.m-hero--half
-    .m-hero__content.l-wrapper
+  section.m-hero.m-hero--half(class="m-hero--#{pageSettings.theme}")
+    .m-hero__content.l-wrapper.l-wrapper--top
       h1.t-h1 O vinařství
     .m-hero__bg(style="background-image: url('assets/images/cellar1.jpg'); ")
 

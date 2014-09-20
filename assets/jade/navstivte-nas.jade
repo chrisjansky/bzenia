@@ -1,16 +1,14 @@
 extends templates/_basic
 
 block template-variables
-  - var pageSettings = {title: "Navštivte nás"}
-  - var navActive = 2
-  - var canvasEnabled = false
+  - var pageSettings = {title: "Navštivte nás", index: 2, paperCanvas: false, theme: "light"}
 
 block template-body
-  if canvasEnabled
+  if pageSettings.paperCanvas
     canvas.o-waves#js-waves(resize)
 
-  section.l-section--white
-    .l-wrapper
+  section.l-section--white(class="m-hero--#{pageSettings.theme}")
+    .l-wrapper.l-wrapper--top
       h1.t-h1
         | Přijeďte ochutnat to pravé 
         span.line-break moravské víno
@@ -62,6 +60,7 @@ block template-body
               p S upřesněním možné degustace Vás budeme obratem kontaktovat.
             td.m-form__cell
               input.o-submit(type="submit", value="Odeslat")
+
   section.m-contacts
     .l-wrapper.l-wrapper--big
       h2.t-h2 Kontaktní údaje
