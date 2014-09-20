@@ -21,6 +21,7 @@
     "paper": "latest",
     "jquery-waypoints": "latest",
     "chj-framework": "latest",
-    "idangerous-swiper": "latest"
+    "idangerous-swiper": "latest",
+    "featherlight": "latest"
   }
 }

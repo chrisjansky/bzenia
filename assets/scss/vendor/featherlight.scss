@@ -1,0 +1,27 @@
+// Custom styles overriding the default ones from bower_components/
+.featherlight {
+  z-index: 1500;
+
+  .featherlight-content {
+    padding: 0;
+    border-bottom: 0;
+    background-color: transparent;
+    overflow: visible;
+  }
+
+  .featherlight-close-icon {
+    position: relative;
+    float: right;
+    width: em($ratio--l);
+    height: em($ratio--l);
+    line-height: em($ratio--l + 2);
+    margin-bottom: em($ratio--b);
+    margin-right: em(-$ratio--xs);
+    border-radius: 50%;
+    background-color: $c-color1;
+    color: white;
+    @include active-state {
+      background-color: $c-hover;
+    }
+  }
+}
