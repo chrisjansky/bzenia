@@ -5,6 +5,7 @@ var swiperActive = false;
 var gallerySwiper = new Swiper('.swiper-container', {
   slideElement: "li",
   slidesPerView: "auto",
+  calculateHeight: true,
   onTouchMove: function() {
     swiperActive = true;
   },
