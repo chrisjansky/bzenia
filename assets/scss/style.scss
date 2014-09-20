@@ -9,14 +9,20 @@
 @import "base/config";
 @import "base/default";
 @import "base/typography";
+@import "base/animations";
 
 @import "layout/layout";
 
 @import "objects/objects";
 @import "objects/icons";
+@import "objects/o-switch";
 @import "objects/o-product";
 
 @import "modules/modules";
+@import "modules/m-header";
+@import "modules/m-offscreen";
+@import "modules/m-hero";
+@import "modules/m-contacts";
 
 @import "vendor/featherlight";
 

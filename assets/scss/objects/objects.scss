@@ -39,8 +39,9 @@
   font-weight: $sans--semibold;
   &:after {
     font-size: em($icon--b);
-    margin-left: em($ratio--xs);
+    line-height: 1;
     vertical-align: middle;
+    margin-left: em($ratio--xs);
   }
 }
 .o-button {
@@ -103,35 +104,15 @@
   list-style: none;
   padding-left: 0;
 }
-// Switch.
-.o-switch {
-  display: inline-block;
-  width: rem(32);
-  height: rem(32);
-  line-height: em(36);
-  border: $line--b solid;
-  border-radius: 50%;
-  vertical-align: middle;
-  text-transform: uppercase;
-  text-align: center;
-  font-family: $font--sans;
-  font-weight: $sans--semibold;
-  font-size: em($unit--xs);
-  @include link-state {
-    color: rgba($c-grey4, .5);
-  }
-  @include active-state {
-    color: rgba($c-grey6, .75);
-  }
-}
 // Navigation.
-.o-nav__pages {
-  font-family: $font--sans;
-  font-weight: $sans--regular;
+.o-pages {
   display: inline-block;
   margin: 0;
+  font-family: $font--sans;
+  font-weight: $sans--regular;
+  color: $c-grey4;
 }
-.o-nav__pages--selected {
+.o-pages__item--selected {
   @include link-state {
     color: rgba($c-grey8, .75);
     border-bottom: $line--b solid rgba($c-grey6, .25);
@@ -347,4 +328,8 @@
 .o-media__image {
   float: left;
   margin-right: em($ratio--l);
+}
+// Main view.
+.o-view {
+  height: 100%;
 }

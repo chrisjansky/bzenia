@@ -1,0 +1,21 @@
+// Switch.
+.o-switch {
+  display: inline-block;
+  width: rem(32);
+  height: rem(32);
+  line-height: em(36);
+  border: $line--b solid;
+  border-radius: 50%;
+  vertical-align: middle;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: $font--sans;
+  font-weight: $sans--semibold;
+  font-size: em($unit--xs);
+  @include link-state {
+    color: rgba($c-grey6, .5);
+  }
+  @include active-state {
+    color: rgba($c-grey8, .75);
+  }
+}

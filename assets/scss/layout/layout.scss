@@ -16,9 +16,6 @@
   @include media($desktop--wide) {
     padding: em($ratio--l) 12.5%;
   }
-  .m-header + * &:first-child {
-    padding-top: em($ratio--xxl);
-  }
 }
 .l-wrapper--only-vertical {
   padding-left: 0;
@@ -42,6 +39,9 @@
     padding-top: em($ratio--xl);
     padding-bottom: em($ratio--xl);
   }
+}
+.l-wrapper--top {
+  padding-top: em($ratio--xxl);
 }
 .l-wrapper--bleed {
   padding-right: 0;
@@ -68,11 +68,11 @@
   display: table;
   width: 100%;
 }
-.l-inline--top {
-  .l-inline__cell {
-    vertical-align: top;
-  }
-}
+// .l-inline--top {
+//   .l-inline__cell {
+//     vertical-align: top;
+//   }
+// }
 .l-inline__row {
   display: table-row;
 }

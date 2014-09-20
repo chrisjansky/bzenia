@@ -1,0 +1,35 @@
+// Header.
+.m-header {
+  @include clearfix;
+  position: absolute; // z-index
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.m-header--dark {
+  .o-logo__link {
+    @include link-state {
+      color: white;
+    }
+    @include active-state {
+      color: rgba(white, .5);
+    }
+  }
+  .o-pages {
+    color: rgba($c-grey2, .5);
+  }
+  .o-pages__item--selected {
+    @include link-state {
+      color: white;
+      border-color: rgba(white, .25);
+    }
+  }
+  .o-switch {
+    @include link-state {
+      color: rgba($c-grey2, .5);
+    }
+    @include active-state {
+      color: rgba(white, .75);
+    }
+  }
+}
