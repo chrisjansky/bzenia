@@ -1,3 +1,6 @@
+.is-ready:after {
+  z-index: -1;
+}
 .o-waves {
   z-index: 10;
 }
@@ -6,6 +9,9 @@
 }
 .m-hero__content {
   z-index: 50;
+}
+.is-loading:after {
+  z-index: 80;
 }
 .m-header {
   z-index: 100;

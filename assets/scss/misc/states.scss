@@ -19,3 +19,17 @@
 //     @include transform(translate3d(10em, 0, 0));
 //   }
 // }
+
+.is-ready:after {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  @include transition(background-color $duration--s);
+}
+.is-loading:after {
+  background-color: rgba($c-grey8, .75);
+}

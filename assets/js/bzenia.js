@@ -1,5 +1,8 @@
 // Prevent opening Featherlight lightbox when touching Swiper.
-var swiperActive = false;
+var
+  $body = $("body"),
+  $pjaxContainer = $("#js-pjax"),
+  swiperActive = false;
 
 // Initialize Swiper.
 var gallerySwiper = new Swiper('.swiper-container', {
@@ -26,3 +29,20 @@ $("[data-js-featherlight]").on("click", function(e) {
     });
   }
 });
+
+// Set-up pjax.
+if ($.support.pjax) {
+  $body.addClass("is-ready");
+  $(document)
+    .pjax('[data-pjax]', $("#js-pjax"), {
+      fragment: '#js-pjax'
+    })
+    .on({
+      'pjax:send': function() {
+        $body.addClass("is-loading");
+      },
+      'pjax:complete': function() {
+        $body.removeClass("is-loading");
+      }
+    });
+}

@@ -2,14 +2,14 @@ header.m-header
   .l-wrapper.l-inline
     .l-inline__row
       .l-inline__cell
-        a.o-logo__link(href="index.html")
+        a.o-logo__link(href="index.html", data-pjax)
           strong.o-logo__title Bzenia
       .l-inline__cell
         nav.o-nav
           ul.o-middot.o-middot--inline.o-nav__pages
             each instance, index in navItems
               if (navActive == index)
-                li: a.o-nav__pages--selected(href=instance.link)!= instance.name
+                li: a.o-nav__pages--selected(href=instance.link, data-pjax)!= instance.name
               else
-                li: a(href=instance.link)!= instance.name
+                li: a(href=instance.link, data-pjax)!= instance.name
           a(href="#").o-nav__language.o-switch En
