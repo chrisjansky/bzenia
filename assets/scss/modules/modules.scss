@@ -1,7 +1,18 @@
 // Product list.
 .m-products {
   @include clearfix;
-  margin-top: em($ratio--xl);
+}
+.m-products__item {
+  margin-top: em($ratio--b);
+  margin-bottom: em($ratio--b);
+  @include media($tablet--landscape) {
+    @include span-columns(6);
+    @include omega(2n);
+  }
+  @include media($desktop) {
+    @include span-columns(4);
+    @include omega(3n);
+  }
 }
 // Form.
 .m-form {
