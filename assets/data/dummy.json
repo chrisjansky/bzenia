@@ -2,7 +2,7 @@
   "shopItems": [
     {
       "name": "Rulandské šedé",
-      "category": "bílé",
+      "category": "růžové",
       "type": "výběr z hroznů",
       "year": "&rsquo;13",
       "description": "Hodí se k jeseteru a tvrdším sýrům.",
@@ -16,7 +16,7 @@
         "Bezcukerný extrakt 23,4 g/l",
         "Celkový obsah kyselin 5,6 g/l"
       ],
-      "price": "250 Kč"
+      "price": "240"
     },
     {
       "name": "Sauvignon",
@@ -34,7 +34,7 @@
         "Bezcukerný extrakt 23,4 g/l",
         "Celkový obsah kyselin 5,6 g/l"
       ],
-      "price": "250 Kč"
+      "price": "180"
     },
     {
       "name": "Ryzlink rýnský",
@@ -52,11 +52,11 @@
         "Bezcukerný extrakt 23,4 g/l",
         "Celkový obsah kyselin 5,6 g/l"
       ],
-      "price": "250 Kč"
+      "price": "215"
     },
     {
       "name": "Tramín červený",
-      "category": "bílé",
+      "category": "růžové",
       "type": "výběr z hroznů",
       "year": "&rsquo;09",
       "description": "Kvalitní české víno.",
@@ -70,7 +70,7 @@
         "Bezcukerný extrakt 23,4 g/l",
         "Celkový obsah kyselin 5,6 g/l"
       ],
-      "price": "250 Kč"
+      "price": "190"
     },
     {
       "name": "Frankovka",
@@ -88,7 +88,7 @@
         "Bezcukerný extrakt 23,4 g/l",
         "Celkový obsah kyselin 5,6 g/l"
       ],
-      "price": "250 Kč"
+      "price": "280"
     },
     {
       "name": "Rulandské bílé",
@@ -106,7 +106,7 @@
         "Bezcukerný extrakt 23,4 g/l",
         "Celkový obsah kyselin 5,6 g/l"
       ],
-      "price": "250 Kč"
+      "price": "190"
     }
   ],
   "navItems": [
