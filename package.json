@@ -11,7 +11,6 @@
     "browser-sync": "latest",
     "glob": "latest",
     "gulp": "latest",
-    "gulp-cached": "latest",
     "gulp-imagemin": "latest",
     "gulp-jade": "latest",
     "gulp-kss": "latest",

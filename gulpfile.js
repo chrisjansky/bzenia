@@ -14,7 +14,6 @@ var
   uncss = require("gulp-uncss"),
   rename = require("gulp-rename"),
   plumber = require("gulp-plumber"),
-  cache = require("gulp-cached"),
   bsync = require("browser-sync");
 
 var paths = {
@@ -39,7 +38,6 @@ var paths = {
 gulp.task("styles", function () {
   return gulp.src(paths.scss)
     .pipe(plumber())
-    .pipe(cache("temp-styles"))
     .pipe(sass({
       errLogToConsole: true,
       includePaths: require("node-neat").with("bower_components/")
@@ -51,7 +49,6 @@ gulp.task("styles", function () {
 gulp.task("templates", function() {
   return gulp.src(paths.jade)
     .pipe(plumber())
-    .pipe(cache("temp-templates"))
     .pipe(jade({
       pretty: true,
       locals: JSON.parse(fs.readFileSync(paths.data, "utf8"))
@@ -127,13 +124,21 @@ gulp.task("server", ["compile"], function() {
 });
 
 gulp.task("scan", function () {
-  gulp.watch(paths.glob_scss, ["styles"]);
-  gulp.watch(paths.glob_jade, ["templates"]);
-  gulp.watch(paths.data, ["templates"]);
-  // Using gulp-watch, deprecated
-  // watch(paths.glob_scss, function() {
-  //   gulp.start("styles");  
-  // });
+  // Traditional watch not working.
+  // gulp.watch(paths.glob_scss, ["styles"]);
+  // gulp.watch(paths.glob_jade, ["templates"]);
+  // gulp.watch(paths.data, ["templates"]);
+
+  // Using gulp.start, soon to be deprecated
+  watch(paths.glob_scss, function() {
+    gulp.start("styles");  
+  });
+  watch(paths.glob_jade, function() {
+    gulp.start("templates");  
+  });
+  watch(paths.data, function() {
+    gulp.start("templates");  
+  });
   watch(paths.pages, function() {
     bsync.reload();
   });
