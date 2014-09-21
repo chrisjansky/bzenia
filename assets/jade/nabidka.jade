@@ -12,14 +12,37 @@ block template-body
       h1.t-h1 Naše nabídka
     .m-hero__bg(style="background-image: url('assets/images/bottles1.jpg')")
 
-  section.l-wrapper.l-section--white
-    //- h2.t-h2 Naše nabídka
-    .temp-box Filtrování
-    .m-products
-      each instance, index in shopItems
-        include partials/_shop-item
+  section
+    .l-wrapper.l-section--white
+      .m-filter
+        .l-inline
+          .l-inline__row
+            .l-inline__cell
+              label.o-label Vyberte kategorii vín prosím
+              label.o-radio
+                input(type="radio", name="category", checked)
+                | Tradiční
+              label.o-radio
+                input(type="radio", name="category")
+                | Archivní
+              label.o-radio
+                input(type="radio", name="category")
+                | Speciální
+            .l-inline__cell
+              label.o-label Řazení
+              .o-select
+                select
+                  option Dle názvu
+                  option Dle typu
+                  option Dle ročníku
+                  option Dle ceny
+                span.ss-navigatedown
+    .l-wrapper.l-wrapper--big
+      .m-products
+        each instance, index in shopItems
+          include partials/_shop-item
 
-  section.l-wrapper.l-section--light
+  section.l-wrapper.l-section--white
       h2.t-h2 Mohlo by Vás zajímat
       .o-triplet
         .o-triplet__item

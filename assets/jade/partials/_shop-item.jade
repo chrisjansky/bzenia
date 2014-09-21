@@ -9,14 +9,22 @@ case instance.category
   default
     - productCategory = "default"
 
-article.o-product(class="o-product--#{productCategory}")
-  figure.o-photo
-    .o-photo__content
-      if (index % 2 == 0)
-        img(src="assets/images/thumbnail3.jpg", alt="Thumbnail")
-      else
-        img(src="assets/images/thumbnail1.jpg", alt="Thumbnail")
-  .o-product__category!= instance.year
+article.m-products__item.o-product(class="o-product--#{productCategory}")
+  .o-product__thumbnail
+    figure.o-photo
+      a(href="#").o-photo__link.o-photo__content
+        //- .o-photo__overlay
+        //-   span.ss-zoomin.o-icon--big
+        if (index % 3 == 0)
+          img(src="assets/images/thumbnail1.jpg", alt="Thumbnail")
+        else if (index % 2 == 0)
+          img(src="assets/images/thumbnail2.jpg", alt="Thumbnail")
+        else
+          img(src="assets/images/thumbnail3.jpg", alt="Thumbnail")
+    .o-product__category!= instance.year
+    .o-product__price
+      strong= instance.price
+      |  Kč
   .o-product__name
     h3.t-h3= instance.name
     em.o-product__type= instance.type
@@ -24,31 +32,13 @@ article.o-product(class="o-product--#{productCategory}")
     = instance.description
     if (index % 2 == 0)
       |  
-      a(href="detail-produktu.html", data-pjax--aside) Poznejte víno blíže.
-  ul.o-product__extra.o-middot.o-middot--inline
-    each productExtra in instance.extra
-      li= productExtra
-  ul.o-product__info.o-middot.o-middot--inline
-    each productInfo in instance.info
-      li.t-spaced= productInfo
-  a(href="#").o-button.o-button--white.ss-plus.right Vložit do košíku
-  .o-product__price
-    strong.t-spaced= instance.price
-    
-//- .o-product__name
-//-   if (instance.category === "bílé")
-//-     .o-product__category.o-product__category--white
-//-       = instance.year
-//-   else
-//-     .o-product__category.o-product__category--red
-//-       = instance.year
-//-   em.o-product__type= instance.type
-//- p.o-product__description
-//-   = instance.description
-//-   |  
-//-   a(href="#") Poznejte víno blíže (video).
-//- ul.item-stats
-//-   li Bezcukerný extrakt 22,8&thinsp;g/l
-//-   li Redukující cukry 6,6&thinsp;g/l
-//-   li Obsah kyselin 6,4&thinsp;g/l
-//- a.o-button(href="#") Do košíku
+      a(href="#") Poznejte víno blíže.
+  //- ul.o-product__extra.o-middot.o-middot--inline
+  //-   each productExtra in instance.extra
+  //-     li= productExtra
+  //- ul.o-product__info.o-middot.o-middot--inline
+  //-   each productInfo in instance.info
+  //-     li.t-spaced= productInfo
+  //- a(href="#").o-button.o-button--white.ss-plus.right Více o tomto víně
+  //- .o-product__price
+  //-   strong.t-spaced= instance.price
