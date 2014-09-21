@@ -1,0 +1,40 @@
+// A basic button.
+[class^="o-button"],
+[class*=" o-button"] {
+  text-decoration: none;
+  font-family: $font--sans;
+  font-weight: $sans--semibold;
+  &:after {
+    font-size: em($icon--b);
+    margin-left: em($ratio--xs);
+  }
+}
+.o-button {
+  display: inline-block;
+  border: $line--b solid;
+  padding-left: em($ratio--b);
+  padding-right: em($ratio--b);
+  line-height: em($height--b);
+  &:after {
+    line-height: 1em;
+  }
+}
+.o-button--stretch {
+  display: block;
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+.o-button--white {
+  // @include transition(all $duration--b);
+  background-color: white;
+  @include link-state {
+    border-color: $c-grey2;
+  }
+  @include active-state {
+    color: $c-hover;
+    // background-color: $c-grey2;
+    // border-color: shade($c-color1, 15%);
+    border-color: $c-hover;
+  }
+}

@@ -31,48 +31,6 @@
   letter-spacing: .125em;
   @include transition(opacity $duration--b);
 }
-// A basic button.
-[class^="o-button"],
-[class*=" o-button"] {
-  text-decoration: none;
-  font-family: $font--sans;
-  font-weight: $sans--semibold;
-  &:after {
-    font-size: em($icon--b);
-    line-height: 1;
-    vertical-align: middle;
-    margin-left: em($ratio--xs);
-  }
-}
-.o-button {
-  display: inline-block;
-  border: $line--b solid;
-  padding-left: em($ratio--b);
-  padding-right: em($ratio--b);
-  line-height: em($height--b);
-  &:after {
-    line-height: 1em;
-  }
-}
-.o-button--stretch {
-  display: block;
-  text-align: center;
-  padding-left: 0;
-  padding-right: 0;
-}
-.o-button--white {
-  // @include transition(all $duration--b);
-  background-color: white;
-  @include link-state {
-    border-color: $c-grey2;
-  }
-  @include active-state {
-    color: $c-hover;
-    // background-color: $c-grey2;
-    // border-color: shade($c-color1, 15%);
-    border-color: $c-hover;
-  }
-}
 // List with a middot style.
 .o-middot {
   list-style: none;
@@ -181,7 +139,6 @@
   outline: none;
   border-bottom: $line--b solid $c-hover;
   color: shade($c-color1, 80%);
-  // @include transition(border $duration--b);
   @include placeholder {
     color: shade($c-color1, 40%);
   }
@@ -195,7 +152,6 @@
 .o-input {
   background-color: transparent;
   padding: 0 0 em($ratio--s) 0;
-  // font-family: $font--sans;
   font-size: em($unit--l);
   font-weight: $serif--bold;
 }
@@ -210,7 +166,7 @@
 // Dropdown.
 .o-select {
   display: inline-block;
-  border-bottom: $line--b solid $c-hover;
+  border-bottom: $line--b solid $c-grey3;
   select {
     @include appearance(none);
     padding: em($ratio--xs) em($ratio--m) em($ratio--xs) 0;
@@ -222,7 +178,12 @@
     }
   }
   @include hover-state {
-    // color: shade($c-color1, 60%);
+    border-bottom-color: $c-grey2;
+  }
+}
+.o-select--primary {
+  border-bottom-color: $c-hover;
+  @include hover-state {
     border-bottom-color: lighten($c-hover, 20%);
   }
 }
@@ -246,6 +207,9 @@
 // Label.
 .o-label {
   margin-right: em($ratio--m);
+  color: $c-grey4;
+}
+.o-label--primary {
   color: shade($c-color1, 50%);
 }
 // Radio checkbox.
@@ -278,7 +242,6 @@
 // Call to action.
 .o-action {
   background-color: $c-grey8;
-  // text-align: center;
   color: white;
 }
 // Text object.

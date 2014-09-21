@@ -1,0 +1,17 @@
+// An icon object using .ss- classes.
+[class^="ss-"]:before,
+[class*=" ss-"]:before,
+[class^="ss-"].right:after,
+[class*=" ss-"].right:after {
+  line-height: 1;
+  vertical-align: middle;
+}
+.o-icon {
+  font-size: em($icon--b);
+}
+.o-icon--medium {
+  font-size: em($icon--m);
+}
+.o-icon--big {
+  font-size: em($icon--l);
+}
