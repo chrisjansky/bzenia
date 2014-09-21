@@ -1,24 +1,27 @@
 // Product item.
 .o-product {
-  margin-bottom: em($ratio--l);
-  @include span-columns(4);
-  @include omega(3n);
-  li {
-    display: inline;
-    padding-left: em($ratio--xxs);
-    &:before {
-      margin-right: em($ratio--xxs);
-    }
-  }
+  text-align: center;
+  // li {
+    // display: inline;
+    // padding-left: em($ratio--xxs);
+    // &:before {
+      // margin-right: em($ratio--xxs);
+    // }
+  // }
   .o-button {
-    float: right;
     padding-left: em($ratio--m);
   }
+}
+.o-product__thumbnail {
+  display: inline-block;
+  position: relative;
+  padding-left: em($ratio--l);
+  padding-right: em($ratio--l);
 }
 .o-product__name {
   line-height: 1.25;
   overflow: auto;
-  min-height: em($ratio--xl);
+  // min-height: em($ratio--xl);
   .t-h3 {
     display: inline-block;
     margin: 0 em($ratio--xxs) 0 0;
@@ -29,23 +32,25 @@
   color: $c-grey4;
 }
 .o-product__category {
-  float: left;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: em($ratio--l);
-  height: em($ratio--l);
   line-height: em($ratio--l);
-  margin-right: em($ratio--b);
-  margin-top: em(-$ratio--xs);
   font-size: em($unit--s);
   font-family: $font--sans;
   color: white;
-  background-color: $c-grey7;
   text-align: center;
+  background-color: $c-grey6;
   border-radius: 50%;
   .o-product--white & {
     background-color: $c-color1;
   }
   .o-product--red & {
     background-color: $c-color2;
+  }
+  .o-product--rose & {
+    background-color: $c-color3;
   }
 }
 .o-product__extra {
@@ -65,13 +70,21 @@
   // line-height: em($ratio--l);
 }
 .o-product__price {
+  position: absolute;
+  top: .125em;
+  right: em(-$ratio--m);
   // font-size: em($unit--s);
-  color: $c-grey7;
-  text-align: center;
-  border: $line--b solid $c-grey2;
-  line-height: em($height--b);
-  border-right: none;
-  overflow: auto;
+  color: $c-grey4;
+  // text-align: center;
+  // border: $line--b solid $c-grey2;
+  // line-height: em($height--b);
+  // border-right: none;
+  // overflow: auto;
+  strong {
+    font-size: em($ratio--m);
+    color: $c-grey6;
+    vertical-align: middle;
+  }
 }
 .o-product__description {
   a {

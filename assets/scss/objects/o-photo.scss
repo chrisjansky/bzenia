@@ -1,7 +1,7 @@
 // Circular photo item.
 .o-photo {
-  margin: 0;
   display: inline-block;
+  margin: 0;
 }
 .o-photo__content {
   border-radius: 50%;
@@ -10,6 +10,15 @@
     width: em($ratio--h);
     height: auto;
   }
+}
+.o-photo__overlay {
+  color: white;
+  opacity: 0;
+  @include stretch-overlay;
+  @include pseudo-center--parent;
+  @include transition(opacity $duration--b);
+  // [class^="o-icon"],
+  // [class*=" o-icon"] {}
 }
 .o-photo--big img {
   width: em($ratio--xh);
@@ -21,6 +30,7 @@
   position: relative;
   display: block;
   margin-bottom: em($ratio--m);
+  text-decoration: none;
   &:after {
     content: "";
     background-color: rgba($c-grey8, .75);
@@ -29,6 +39,9 @@
     @include transition(background $duration--b);
   }
   @include active-state {
+    .o-photo__overlay {
+      opacity: 1;
+    }
     &:after {
       background-color: transparent;
     }
