@@ -11,21 +11,23 @@
 @import "base/typography";
 @import "base/animations";
 
+@import "vendor/featherlight";
+@import "vendor/symbolset";
+
 @import "layout/layout";
 
 @import "objects/objects";
-@import "objects/icons";
+@import "objects/o-button";
 @import "objects/o-switch";
 @import "objects/o-product";
 @import "objects/o-photo";
+@import "objects/o-icon";
 
 @import "modules/modules";
 @import "modules/m-header";
 @import "modules/m-offscreen";
 @import "modules/m-hero";
 @import "modules/m-contacts";
-
-@import "vendor/featherlight";
 
 @import "misc/z-index";
 @import "misc/states";
