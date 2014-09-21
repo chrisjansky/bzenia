@@ -10,15 +10,18 @@
 .m-hero__content {
   z-index: 50;
 }
+.o-photo__overlay {
+  z-index: 50;
+}
 .is-loading:after {
-  z-index: 80;
+  z-index: 600;
 }
 .m-header {
-  z-index: 100;
+  z-index: 700;
 }
 .m-offscreen {
-  z-index: 150;
+  z-index: 750;
 }
 .featherlight {
-  z-index: 500;
+  z-index: 800;
 }
