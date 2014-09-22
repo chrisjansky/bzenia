@@ -173,6 +173,10 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+    // Extremely stupid fix for Firefox styling.
+    // https://bugzilla.mozilla.org/show_bug.cgi?id=649849
+    text-indent: .1px;
+    text-overflow: "";
     @include focus-state {
       outline: 0;
     }
