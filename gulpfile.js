@@ -14,26 +14,32 @@ var
   uncss = require("gulp-uncss"),
   rename = require("gulp-rename"),
   plumber = require("gulp-plumber"),
+  clean = require("gulp-clean"),
   bsync = require("browser-sync");
 
 var paths = {
-  dev: ".",
+  development: "./",
   pages: "*.html",
   jade: "assets/jade/*.jade",
   glob_jade: "assets/jade/**/*.jade",
   js: "assets/js/*.js",
   scss: "assets/scss/*.scss",
-  glob_scss: "assets/scss/**/*.scss",
   css: "assets/css",
+  glob_scss: "assets/scss/**/*.scss",
+  glob_css: "assets/css/*.css",
+  images: "assets/images",
+  glob_images: "assets/images/*",
+  data: "assets/data/dummy.json",
   // kss: "assets/kss/*.html",
   // kss_css: "assets/scss/kss.scss",
-  img: "assets/images/*",
-  data: "assets/data/dummy.json",
-  dist: "public",
-  dist_css: "public/assets/css",
-  dist_glob_css: "public/assets/css/*.css",
-  dist_img: "public/assets/images"
+  production: "public/",
 };
+
+// Declare files to move to public/ during "build" task.
+var productionFiles = [
+  "assets/fonts/*",
+  "assets/js/bzenia-paper.js"
+]
 
 gulp.task("styles", function () {
   return gulp.src(paths.scss)
@@ -46,7 +52,7 @@ gulp.task("styles", function () {
     .pipe(bsync.reload({stream:true}));
 });
 
-gulp.task("render", ["templates"], function() {
+gulp.task("pages", ["templates"], function() {
   bsync.reload();
 });
 
@@ -57,7 +63,7 @@ gulp.task("templates", function() {
       pretty: true,
       locals: JSON.parse(fs.readFileSync(paths.data, "utf8"))
     }))
-    .pipe(gulp.dest(paths.dev));
+    .pipe(gulp.dest(paths.development));
 });
 
 // gulp.task("kss", function() {
@@ -74,11 +80,11 @@ gulp.task("templates", function() {
 //     }))
 //     .pipe(minify())
 //     .pipe(rename("kss-min.css"))
-//     .pipe(gulp.dest(paths.dist_css));
+//     .pipe(gulp.dest(paths.production + paths.css));
 // });
 
-gulp.task("produce", function() {
-  // Minify CSS and JS.
+// Minify CSS and JS.
+gulp.task("produce", ["wipe"], function() {
   return gulp.src(paths.pages)
     .pipe(plumber())
     .pipe(usemin({
@@ -88,36 +94,51 @@ gulp.task("produce", function() {
           keepSpecialComments: 0
         })]
     }))
-    .pipe(gulp.dest(paths.dist));
-  // Minify images if provided with --full argument.
+    .pipe(gulp.dest(paths.production));
+});
+
+// Move other assets to production folder.
+gulp.task("move", ["wipe"], function() {
+  gulp.src(productionFiles, {base: paths.development})
+    .pipe(gulp.dest(paths.production));
+});
+
+// Delete the previous build.
+gulp.task("wipe", function() {
+  return gulp.src(paths.production, {read: false})
+    .pipe(clean());
+});
+
+// Minify images if provided with --full argument.
+gulp.task("images", ["wipe"], function() {
   if (argv.full) {
-    gulp.src(paths.img)
+    return gulp.src(paths.glob_images)
       .pipe(plumber())
       .pipe(imagemin({
         progressive: true,
         svgoPlugins: [{removeViewBox: false}]
       }))
-      .pipe(gulp.dest(paths.dist_img));
+      .pipe(gulp.dest(paths.production + paths.images));
   };
 });
 
-// Wait for produce task and strip unused CSS afterwards if --uncss provided.
+// Wait for "produce" and strip unused CSS afterwards if --uncss provided.
 gulp.task("strip", ["produce"], function() {
   if (argv.uncss) {
-    return gulp.src(paths.dist_glob_css)
+    return gulp.src(paths.production + paths.glob_css)
       .pipe(plumber())
       .pipe(uncss({
         html: glob.sync(paths.pages)
       }))
-      .pipe(gulp.dest(paths.dist_css));
+      .pipe(gulp.dest(paths.production + paths.css));
   }
 });
 
-// Wait for compile before starting up server.
+// Wait for "compile" before starting up server.
 gulp.task("server", ["compile"], function() {
   bsync({
     server: {
-      baseDir: paths.dev
+      baseDir: paths.development
     },
     online: false,
     tunnel: false,
@@ -138,10 +159,10 @@ gulp.task("scan", function () {
     gulp.start("styles");  
   });
   watch(paths.glob_jade, function() {
-    gulp.start("render");
+    gulp.start("pages");
   });
   watch(paths.data, function() {
-    gulp.start("render");
+    gulp.start("pages");
   });
   watch(paths.js, function() {
     bsync.reload();
@@ -149,6 +170,7 @@ gulp.task("scan", function () {
   // watch(paths.kss, ["kss"]);
 });
 
-gulp.task("build", ["produce", "strip"]);
-gulp.task("compile", ["styles", "render"]);
+// Wipe first. Move, produce, images. Strip after produce.
+gulp.task("build", ["move", "images", "strip"]);
+gulp.task("compile", ["styles", "pages"]);
 gulp.task("default", ["compile", "server", "scan"]);
