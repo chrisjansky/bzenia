@@ -19,24 +19,6 @@
       "price": "240"
     },
     {
-      "name": "Sauvignon",
-      "category": "červené",
-      "type": "pozdní sběr",
-      "year": "&rsquo;12",
-      "description": "Výborný k lososovi.",
-      "info": [
-        "Polosuché",
-        "Alk. 13,5 %",
-        "0, 7 l"
-      ],
-      "extra": [
-        "Redukující cukry 6 g/l",
-        "Bezcukerný extrakt 23,4 g/l",
-        "Celkový obsah kyselin 5,6 g/l"
-      ],
-      "price": "180"
-    },
-    {
       "name": "Ryzlink rýnský",
       "category": "bílé",
       "type": "kabinet",
@@ -55,13 +37,13 @@
       "price": "215"
     },
     {
-      "name": "Tramín červený",
-      "category": "růžové",
-      "type": "výběr z hroznů",
-      "year": "&rsquo;09",
-      "description": "Kvalitní české víno.",
+      "name": "Sauvignon",
+      "category": "červené",
+      "type": "pozdní sběr",
+      "year": "&rsquo;12",
+      "description": "Výborný k lososovi.",
       "info": [
-        "Sladké",
+        "Polosuché",
         "Alk. 13,5 %",
         "0, 7 l"
       ],
@@ -70,7 +52,7 @@
         "Bezcukerný extrakt 23,4 g/l",
         "Celkový obsah kyselin 5,6 g/l"
       ],
-      "price": "190"
+      "price": "180"
     },
     {
       "name": "Frankovka",
@@ -91,6 +73,24 @@
       "price": "280"
     },
     {
+      "name": "Tramín červený",
+      "category": "růžové",
+      "type": "výběr z hroznů",
+      "year": "&rsquo;09",
+      "description": "Kvalitní české víno.",
+      "info": [
+        "Sladké",
+        "Alk. 13,5 %",
+        "0, 7 l"
+      ],
+      "extra": [
+        "Redukující cukry 6 g/l",
+        "Bezcukerný extrakt 23,4 g/l",
+        "Celkový obsah kyselin 5,6 g/l"
+      ],
+      "price": "190"
+    },
+    {
       "name": "Rulandské bílé",
       "category": "bílé",
       "type": "kabinet",
@@ -107,6 +107,60 @@
         "Celkový obsah kyselin 5,6 g/l"
       ],
       "price": "190"
+    },
+    {
+      "name": "Rulandské šedé",
+      "category": "růžové",
+      "type": "výběr z hroznů",
+      "year": "&rsquo;13",
+      "description": "Hodí se k jeseteru a tvrdším sýrům.",
+      "info": [
+        "Sladké",
+        "Alk. 13,5 %",
+        "0, 7 l"
+      ],
+      "extra": [
+        "Redukující cukry 6 g/l",
+        "Bezcukerný extrakt 23,4 g/l",
+        "Celkový obsah kyselin 5,6 g/l"
+      ],
+      "price": "240"
+    },
+    {
+      "name": "Ryzlink rýnský",
+      "category": "bílé",
+      "type": "kabinet",
+      "year": "&rsquo;06",
+      "description": "To pravé víno pro horké letní večery.",
+      "info": [
+        "Suché",
+        "Alk. 13,5 %",
+        "0, 7 l"
+      ],
+      "extra": [
+        "Redukující cukry 6 g/l",
+        "Bezcukerný extrakt 23,4 g/l",
+        "Celkový obsah kyselin 5,6 g/l"
+      ],
+      "price": "215"
+    },
+    {
+      "name": "Sauvignon",
+      "category": "červené",
+      "type": "pozdní sběr",
+      "year": "&rsquo;12",
+      "description": "Výborný k lososovi.",
+      "info": [
+        "Polosuché",
+        "Alk. 13,5 %",
+        "0, 7 l"
+      ],
+      "extra": [
+        "Redukující cukry 6 g/l",
+        "Bezcukerný extrakt 23,4 g/l",
+        "Celkový obsah kyselin 5,6 g/l"
+      ],
+      "price": "180"
     }
   ],
   "navItems": [
