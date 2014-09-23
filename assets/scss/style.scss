@@ -11,12 +11,13 @@
 @import "base/typography";
 @import "base/animations";
 
-@import "vendor/featherlight";
 @import "vendor/symbolset";
+@import "vendor/featherlight";
 
 @import "layout/layout";
 
 @import "objects/objects";
+@import "objects/o-logo";
 @import "objects/o-button";
 @import "objects/o-switch";
 @import "objects/o-product";

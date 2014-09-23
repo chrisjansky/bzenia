@@ -1,8 +1,8 @@
 // Switch.
 .o-switch {
   display: inline-block;
-  width: rem(32);
-  height: rem(32);
+  width: rem($circle--b);
+  height: rem($circle--b);
   line-height: em(36);
   border: $line--b solid;
   border-radius: 50%;
@@ -13,10 +13,10 @@
   font-weight: $sans--semibold;
   font-size: em($unit--xs);
   @include link-state {
-    color: rgba($c-grey6, .5);
+    color: $c-grey4;
   }
   @include active-state {
-    color: rgba($c-grey8, .75);
+    color: $c-grey6;
   }
   & + & {
     margin-left: em($ratio--s);

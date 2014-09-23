@@ -14,10 +14,10 @@
     padding: em($ratio--l);
   }
   @include media($desktop) {
-    padding: em($ratio--l) 7.5%;
+    padding: em($ratio--l) 6.5%;
   }
   @include media($desktop--wide) {
-    padding: em($ratio--l) 12.5%;
+    padding: em($ratio--l) 10%;
   }
 }
 .l-wrapper--small {
@@ -95,8 +95,9 @@
   display: table-row;
 }
 .l-inline__cell {
-  @include collapse-children;
   display: table-cell;
+  vertical-align: middle;
+  @include collapse-children;
   & + & {
     text-align: right;
   }

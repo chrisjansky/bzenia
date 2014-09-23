@@ -4,7 +4,7 @@
 }
 .m-products__item {
   margin-top: em($ratio--b);
-  margin-bottom: em($ratio--b);
+  margin-bottom: em($ratio--m);
   @include media($tablet--landscape) {
     @include span-columns(6);
     @include omega(2n);
@@ -20,7 +20,7 @@
   color: white;
 }
 .m-form__table {
-  color: shade($c-color1, 35%);
+  color: $c-color1--medium;
 }
 .m-form__row {
   &:last-child .m-form__cell:last-child {
@@ -41,6 +41,25 @@
  font-weight: $sans--regular;
 }
 // Gallery module.
+// .m-gallery {
+//   position: relative;
+//   &:before,
+//   &:after {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     width: 15%;
+//   }
+//   &:before {
+//     left: 0;
+//     @include linear-gradient(to right, white, transparent, $fallback: transparent);
+//   }
+//   &:after {
+//     right: 0;
+//     @include linear-gradient(to left, white, transparent, $fallback: transparent);
+//   }
+// }
 .m-gallery--start {
   .m-gallery__nav--prev {
     color: $c-grey2;

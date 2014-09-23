@@ -7,21 +7,12 @@
   right: 0;
 }
 .m-header--dark {
-  .o-logo__link {
-    @include link-state {
-      color: white;
-    }
-    @include active-state {
-      color: rgba(white, .5);
-    }
-  }
   .o-pages {
     color: rgba($c-grey2, .5);
   }
   .o-pages__item--selected {
     @include link-state {
       color: white;
-      border-color: rgba(white, .25);
     }
   }
   .o-switch {
@@ -30,6 +21,18 @@
     }
     @include active-state {
       color: rgba(white, .75);
+    }
+  }
+}
+.m-header--light {
+  .o-pages__item {
+    @include active-state {
+      color: $c-color4;
+    }
+  }
+  .o-pages__item--selected {
+    @include link-state {
+      color: $c-grey6;
     }
   }
 }

@@ -31,15 +31,17 @@ body {
 // }
 .t-h1 {
   font-family: $font--display;
-  line-height: 1.125;
+  line-height: 1.1;
   font-size: em($ratio--xl);
+  font-weight: $display--medium;
   margin: em($ratio--xs) 0;
   @include animation(showTitle $duration--b $duration--s backwards);
 }
 .t-h2 {
   font-family: $font--display;
+  font-weight: $display--medium;
   font-size: em($ratio--l);
-  line-height: 1.25;
+  line-height: 1.2;
   margin: em($ratio--s) 0;
 }
 .t-h3 {
@@ -57,7 +59,11 @@ body {
 // Interactive.
 a {
   @include link-state {color: $c-color1; }
-  @include active-state {color: $c-hover; }
+  @include active-state {color: $c-color2; }
+}
+.t-link--secondary {
+  @include link-state {color: $c-color3; }
+  @include active-state {color: $c-color4; }
 }
 .t-link--light {
   @include link-state {color: $c-grey3; }

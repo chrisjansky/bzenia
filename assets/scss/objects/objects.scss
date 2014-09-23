@@ -1,36 +1,3 @@
-// Logo
-.o-logo {
-  display: inline-block;
-  text-align: center;
-  .o-logo__title {
-    margin-top: em($ratio--b);
-  }
-}
-.o-logo__symbol {
-  display: inline-block;
-  width: em(32);
-  height: em(32);
-  border: $line--b solid black;
-  border-radius: 50%;
-  // vertical-align: middle;
-}
-.o-logo__link {
-  display: block;
-  text-decoration: none;
-  @include link-state {
-    color: black;
-  }
-  @include active-state {
-    color: rgba(black, .5);
-  }
-}
-.o-logo__title {
-  // vertical-align: middle;
-  border-bottom: 1px solid;
-  text-transform: uppercase;
-  letter-spacing: .125em;
-  @include transition(opacity $duration--b);
-}
 // List with a middot style.
 .o-middot {
   list-style: none;
@@ -71,10 +38,7 @@
   color: $c-grey4;
 }
 .o-pages__item--selected {
-  @include link-state {
-    color: rgba($c-grey8, .75);
-    border-bottom: $line--b solid rgba($c-grey6, .25);
-  }
+  border-bottom: $line--b solid rgba($c-grey4, .5);;
 }
 .o-nav__language {
   margin-left: em($ratio--m);
@@ -125,8 +89,8 @@
   @include pseudo-center--parent;
   }
 .o-circle--primary {color: $c-color1; }
-.o-circle--secondary {color: $c-color2; }
-.o-circle--tertiary {color: $c-color3; }
+.o-circle--secondary {color: $c-color3; }
+.o-circle--tertiary {color: $c-color4; }
 .o-circle__content {
   padding: em($ratio--s);
   line-height: 1.25;
@@ -137,13 +101,13 @@
 .o-textarea {
   border: none;
   outline: none;
-  border-bottom: $line--b solid $c-hover;
-  color: shade($c-color1, 80%);
+  border-bottom: $line--b solid $c-color1--light;
+  color: $c-color1--black;
   @include placeholder {
-    color: shade($c-color1, 40%);
+    color: $c-color1--medium;
   }
   @include hover-state {
-    border-bottom-color: lighten($c-hover, 20%);
+    border-bottom-color: $c-color2;
   }
   @include focus-state {
     border-bottom-color: white;
@@ -157,10 +121,10 @@
 }
 // Textarea.
 .o-textarea {
-  background-color: shade($c-color1, 5%);
+  background-color: $c-color1__bg;
   padding: em($ratio--b);
   @include focus-state {
-    background-color: shade($c-color1, 10%);
+    background-color: $c-color1__bg--dark;
   }
 }
 // Dropdown.
@@ -186,26 +150,26 @@
   }
 }
 .o-select--primary {
-  border-bottom-color: $c-hover;
+  border-bottom-color: $c-color1--light;
   @include hover-state {
-    border-bottom-color: lighten($c-hover, 20%);
+    border-bottom-color: $c-color2;
   }
 }
 .o-submit {
   outline: none;
-  border: $line--b solid shade($c-color1, 15%);
+  border: $line--b solid $c-color1__bg--dark;
   padding: em($ratio--s) em($ratio--b);
-  color: shade($c-color1, 60%);
+  color: $c-color1--dark;
   background-color: transparent;
   font-family: $font--sans;
   font-weight: $sans--semibold;
   @include hover-state {
-    color: shade($c-color1, 80%);
-    border-color: shade($c-color1, 25%);
+    color: $c-color1--black;
+    border-color: $c-color1--dim;
   }
   @include focus-state {
-    color: shade($c-color1, 90%);
-    border-color: lighten($c-hover, 20%);
+    color: white;
+    border-color: $c-color1--light;
   }
 }
 // Label.
@@ -214,7 +178,7 @@
   color: $c-grey4;
 }
 .o-label--primary {
-  color: shade($c-color1, 50%);
+  color: $c-color1--dark;
 }
 // Radio checkbox.
 .o-radio {
@@ -250,7 +214,7 @@
 }
 // Text object.
 .o-lead {
-  max-width: 40em;
+  max-width: 35em;
 }
 // Image and text.
 .o-media {
@@ -259,6 +223,9 @@
 .o-media__image {
   float: left;
   margin-right: em($ratio--l);
+}
+.o-media__content {
+  overflow: auto;
 }
 // Views.
 .o-whole {

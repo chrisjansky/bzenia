@@ -26,15 +26,11 @@
   padding-right: 0;
 }
 .o-button--white {
-  // @include transition(all $duration--b);
   background-color: white;
   @include link-state {
     border-color: $c-grey2;
   }
   @include active-state {
-    color: $c-hover;
-    // background-color: $c-grey2;
-    // border-color: shade($c-color1, 15%);
-    border-color: $c-hover;
+    color: $c-color2;
   }
 }

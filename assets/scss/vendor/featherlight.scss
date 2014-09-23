@@ -22,7 +22,7 @@
     border-radius: 50%;
     @include box-sizing(content-box);
     @include active-state {
-      color: $c-hover;
+      color: $c-color2;
     }
   }
   

@@ -1,10 +1,17 @@
-$font--display: "acta-display", serif;
-$font--serif: "leitura-news", serif;
+// Fonts
 $font--sans: "adelle-sans", sans-serif;
+$font--serif: "leitura-news", serif;
+$font--display: "acta-display", serif;
 
 $sans--regular: 400;
 $sans--semibold: 600;
+
+$serif--regular: 300;
 $serif--bold: 600;
+
+// $display--regular: 400;
+$display--medium: 500;
+// $display--bold: 700;
 
 // Units
 $unit--l:  20;
@@ -23,6 +30,8 @@ $icon--m: 32;
 $icon--b: 24;
 $icon--s: 16;
 
+$circle--b: 32;
+
 // Common element height
 $height--b: 40;
 
@@ -40,11 +49,28 @@ $ratio--xs:  round(golden-ratio($unit--b, -2));
 $ratio--xxs: round(golden-ratio($unit--b, -3));
 
 // Colors
-$c-color1: #97bf1d;
-$c-color2: #f23d6a;
-$c-color3: #ff99b3;
-$c-hover: #add92b;
+// Primary
+$c-color1: #89bf1d;
+$c-color2: #e5e622;
+$c-color3: #b32477;
+$c-color4: #ff8c96;
 
+// Modifications
+$c-color1--light: lighten($c-color1, 15%);
+$c-color1--dim: shade($c-color1, 20%);
+$c-color1--medium: shade($c-color1, 40%);
+$c-color1--dark: shade($c-color1, 65%);
+$c-color1--black: shade($c-color1, 85%);
+
+// $c-color1--light: rgba(white, .5);
+// $c-color1--medium: rgba(black, .25);
+// $c-color1--dark: rgba(black, .75);
+// $c-color1--black: black;
+
+$c-color1__bg: shade($c-color1, 5%);
+$c-color1__bg--dark: shade($c-color1, 10%);
+
+// Neutral
 $c-grey1: #f2f0ed;
 $c-grey2: #e6e2dc;
 $c-grey3: #ccc6c0;

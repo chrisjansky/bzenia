@@ -21,7 +21,7 @@
 .o-product__name {
   line-height: 1.25;
   overflow: auto;
-  // min-height: em($ratio--xl);
+  min-height: em($ratio--xl);
   .t-h3 {
     display: inline-block;
     margin: 0 em($ratio--xxs) 0 0;
@@ -47,10 +47,10 @@
     background-color: $c-color1;
   }
   .o-product--red & {
-    background-color: $c-color2;
+    background-color: $c-color3;
   }
   .o-product--rose & {
-    background-color: $c-color3;
+    background-color: $c-color4;
   }
 }
 .o-product__extra {
@@ -87,6 +87,7 @@
   }
 }
 .o-product__description {
+  margin-top: 0;
   a {
     @include link-state {
       color: $c-grey8;

@@ -1,0 +1,65 @@
+// Logo
+// .o-logo {
+//   display: inline-block;
+//   text-align: center;
+//   .o-logo__title {
+//     margin-top: em($ratio--b);
+//   }
+// }
+.o-logo__symbol {
+  display: inline-block;
+  // @include transition(fill $duration--s);
+  svg {
+    width: em($circle--b);
+    height: em($circle--b);
+  }
+}
+.o-logo__link {
+  display: block;
+  text-decoration: none;
+  @include link-state {
+    fill: black;
+    .o-logo__symbol {
+      fill: $c-color1;
+    }
+  }
+  @include active-state {
+    fill: rgba(black, .5);
+    .o-logo__symbol {
+      fill: $c-color2;
+    }
+  }
+}
+.o-logo__title {
+  // text-transform: uppercase;
+  // letter-spacing: .125em;
+  width: em(90);
+  height: em(34);
+  overflow: hidden;
+  @include pseudo-center--parent;
+  // @include transition(fill $duration--s);
+  svg {
+    width: em(90);
+    height: auto;
+    vertical-align: middle;
+  }
+}
+// .o-logo--dark {
+//   @include link-state {
+//     .o-logo__symbol {
+//       fill: $c-color1;
+//     }
+//   }
+//   @include active-state {
+//     .o-logo__symbol {
+//       fill: $c-color2;
+//     }
+//   }
+// }
+.o-logo--light {
+  @include active-state {
+    .o-logo__symbol {
+      fill: $c-color4;
+    }
+  }
+}

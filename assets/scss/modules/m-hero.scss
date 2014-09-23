@@ -1,17 +1,18 @@
 // Screen module.
-.m-hero {
+[class^="m-hero"],
+[class*=" m-hero"] {
   position: relative;
   overflow: hidden;
-  .o-lead {
-    color: rgba($c-grey8, .75);
-  }
 }
 .m-hero--full {
   height: 95%;
   max-height: em(800);
+  .o-lead {
+    margin-left: em(90);
+  }
 }
 .m-hero--half {
-  height: 60%;
+  height: 50%;
   max-height: em(500);
 }
 .m-hero__bg {
@@ -23,16 +24,24 @@
 .m-hero__content {
   position: relative; // z-index
 }
-.m-hero--light {
-  background-color: white;
-  .m-hero__bg {
-    opacity: .75;
-  }
-}
+// .m-hero--light {
+//   background-color: $c-grey2;
+//   .m-hero__bg {
+//     opacity: .75;
+//   }
+// }
 .m-hero--dark {
   color: white;
   background-color: $c-grey8;
   .m-hero__bg {
-    opacity: .5;
+    opacity: .75;
+  }
+  .o-lead {
+    color: rgba($c-grey2, .875);
+  }
+  &:after {
+    content: "";
+    @include stretch-overlay;
+    @include linear-gradient(to bottom, rgba($c-grey7, .625), transparent, $fallback: transparent);
   }
 }

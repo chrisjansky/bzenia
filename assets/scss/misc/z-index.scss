@@ -1,6 +1,9 @@
 .is-ready:after {
   z-index: -1;
 }
+.m-hero:after {
+  z-index: 5;
+}
 .o-waves {
   z-index: 10;
 }
