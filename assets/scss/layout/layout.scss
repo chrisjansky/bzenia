@@ -1,8 +1,11 @@
 // General wrapper.
-.l-wrapper {
+[class^="l-wrapper"],
+[class*=" l-wrapper"] {
   @include clearfix;
   @include collapse-children;
   margin: 0 auto;
+}
+.l-wrapper {
   padding: em($ratio--b);
   @include media($tablet--portrait) {
     padding: em($ratio--m);
@@ -17,16 +20,17 @@
     padding: em($ratio--l) 12.5%;
   }
 }
-.l-wrapper--only-vertical {
-  padding-left: 0;
-  padding-right: 0;
-}
-.l-wrapper--only-horizontal {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-.l-wrapper--no-bottom {
-  padding-bottom: 0;
+.l-wrapper--small {
+  padding-top: em($ratio--s);
+  padding-bottom: em($ratio--s);
+  @include media($tablet--portrait) {
+    padding-top: em($ratio--b);
+    padding-bottom: em($ratio--b);
+  }
+  @include media($tablet--landscape__up) {
+    padding-top: em($ratio--m);
+    padding-bottom: em($ratio--m);
+  }
 }
 .l-wrapper--big {
   padding-top: em($ratio--m);
@@ -40,7 +44,21 @@
     padding-bottom: em($ratio--xl);
   }
 }
-.l-wrapper--top {
+.l-wrapper--only-vertical {
+  padding-left: 0;
+  padding-right: 0;
+}
+.l-wrapper--only-horizontal {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.l-wrapper--no-top {
+  padding-top: 0;
+}
+.l-wrapper--no-bottom {
+  padding-bottom: 0;
+}
+.l-wrapper--lower {
   padding-top: em($ratio--xxl);
 }
 .l-wrapper--bleed {

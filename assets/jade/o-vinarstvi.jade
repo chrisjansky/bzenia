@@ -8,7 +8,7 @@ block template-body
     canvas.o-waves#js-waves(resize)
 
   section.m-hero.m-hero--half(class="m-hero--#{pageSettings.theme}")
-    .m-hero__content.l-wrapper.l-wrapper--top
+    .m-hero__content.l-wrapper.l-wrapper--lower
       h1.t-h1 O vinařství
     .m-hero__bg(style="background-image: url('assets/images/cellar1.jpg'); ")
 
@@ -23,8 +23,14 @@ block template-body
           p To znamená, že pracujeme jen s kvasinkami, které si naše hrozny přivezou z vinohradu; tento přístup je možný pouze při vynikající kvalitě hroznů. Po vyškolení a nalahvování vín jsou láhve převáženy do našeho archivního sklepa číslo 6.
 
   section.m-gallery.l-section--white.l-wrapper.l-wrapper--only-vertical
-    .l-wrapper--bleed.l-offset
-      h4.t-h4 Prohlédněte si naše vinice
+    .l-wrapper.l-wrapper--small.l-wrapper--no-top.l-offset
+      .l-inline
+        .l-inline__row
+          .l-inline__cell
+            h4.t-h4 Prohlédněte si naše vinice
+          .l-inline__cell
+            a(href="#", data-swiper--prev).o-icon.ss-rewind
+            a(href="#", data-swiper--next).o-icon.ss-fastforward
     .o-carousel.swiper-container.l-wrapper.l-wrapper--only-horizontal.l-offset--optical
       ul.o-carousel__list.swiper-wrapper
         each galleryItem, index in [1, 2, 3, 4, 5, 6, 7, 8, 9]
