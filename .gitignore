@@ -16,9 +16,10 @@ node_modules
 ## Bower
 bower_components
 
+ignore
+public
 source_files
 assets/css
-public
 /*.html
 
 ## Sass
