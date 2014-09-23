@@ -9,9 +9,19 @@
 .o-icon {
   font-size: em($icon--b);
 }
+.o-icon--small {
+  font-size: em($icon--s);
+}
 .o-icon--medium {
   font-size: em($icon--m);
 }
 .o-icon--big {
   font-size: em($icon--l);
+}
+
+// Buttons.
+.o-icon-button {
+  text-decoration: none;
+  padding: em($ratio--xxs);
+  @include transition(color $duration--b);
 }

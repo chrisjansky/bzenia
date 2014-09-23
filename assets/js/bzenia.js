@@ -36,10 +36,16 @@ $(document).on("ready pjax:success", function() {
   }
 
   // Initialize Swiper.
-  var gallerySwiper = new Swiper('.swiper-container', {
-    slideElement: "li",
-    slidesPerView: "auto",
-    calculateHeight: true,
+  var
+    $gallery = $(".m-gallery"),
+    galleryStartClass = "m-gallery--start",
+    galleryEndClass = "m-gallery--end",
+    gallerySwiper = new Swiper('.swiper-container', {
+      slideElement: "li",
+      slidesPerView: "auto",
+      calculateHeight: true,
+      keyboardControl: true,
+      visibilityFullFit: true,
     onTouchMove: function() {
       swiperActive = true;
     },
@@ -47,7 +53,26 @@ $(document).on("ready pjax:success", function() {
       setTimeout(function() {
         swiperActive = false;
       }, 250);
+    },
+    onFirstInit: function() {
+      $gallery.addClass(galleryStartClass);
+    },
+    onSlideChangeStart: function(swiper) {
+      var
+        firstIsActive = swiper.activeIndex === 0,
+        lastIsActive = (" " + swiper.getLastSlide().className + " ").indexOf(" swiper-slide-visible ") > -1;
+      $gallery
+        .toggleClass(galleryStartClass, firstIsActive)
+        .toggleClass(galleryEndClass, lastIsActive);
     }
+  });
+  $("[data-swiper--prev]").on("click", function(e) {
+    e.preventDefault();
+    gallerySwiper.swipePrev();
+  });
+  $("[data-swiper--next]").on("click", function(e) {
+    e.preventDefault();
+    gallerySwiper.swipeNext();
   });
 
   // Trigger Featherlight lightbox on click.

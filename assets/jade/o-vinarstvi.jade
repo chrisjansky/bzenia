@@ -29,8 +29,8 @@ block template-body
           .l-inline__cell
             h4.t-h4 Prohlédněte si naše vinice
           .l-inline__cell
-            a(href="#", data-swiper--prev).o-icon.ss-rewind
-            a(href="#", data-swiper--next).o-icon.ss-fastforward
+            a.m-gallery__nav--prev.t-link--dark(href="#", data-swiper--prev).o-icon-button.o-icon--medium.ss-rewind
+            a.m-gallery__nav--next.t-link--dark(href="#", data-swiper--next).o-icon-button.o-icon--medium.ss-fastforward
     .o-carousel.swiper-container.l-wrapper.l-wrapper--only-horizontal.l-offset--optical
       ul.o-carousel__list.swiper-wrapper
         each galleryItem, index in [1, 2, 3, 4, 5, 6, 7, 8, 9]
