@@ -7,10 +7,10 @@ block template-body
   if pageSettings.paperCanvas
     canvas.o-waves#js-waves(resize)
 
-  section.m-hero.m-hero--half(class="m-hero--#{pageSettings.theme}")
+  section.m-hero--half(class="m-hero--#{pageSettings.theme}")
     .m-hero__content.l-wrapper.l-wrapper--lower
       h1.t-h1 O vinařství
-    .m-hero__bg(style="background-image: url('assets/images/cellar1.jpg'); ")
+    .m-hero__bg(style="background-image: url('assets/images/vinery_big2.jpg'); background-position-y: 10%; ")
 
   section.l-wrapper.l-wrapper--big.l-offset
     h2.t-h2 Náš vinohrad a&nbsp;výrobní sklep
@@ -29,8 +29,8 @@ block template-body
           .l-inline__cell
             h4.t-h4 Prohlédněte si naše vinice
           .l-inline__cell
-            a.m-gallery__nav--prev.t-link--dark(href="#", data-swiper--prev).o-icon-button.o-icon--medium.ss-rewind
-            a.m-gallery__nav--next.t-link--dark(href="#", data-swiper--next).o-icon-button.o-icon--medium.ss-fastforward
+            a.m-gallery__nav--prev.t-link--dark(href="#", data-swiper--prev).o-icon-button.o-icon--medium.ss-left
+            a.m-gallery__nav--next.t-link--dark(href="#", data-swiper--next).o-icon-button.o-icon--medium.ss-right
     .o-carousel.swiper-container.l-wrapper.l-wrapper--only-horizontal.l-offset--optical
       ul.o-carousel__list.swiper-wrapper
         each galleryItem, index in [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -45,17 +45,18 @@ block template-body
       .o-media__image
         figure.o-photo.o-photo--big
           .o-photo__content
-            img(src="assets/images/cellar4.jpg", alt="Vchod do sklepu číslo 6")
+            img(src="assets/images/cellar_circle1.jpg", alt="Vchod do sklepu číslo 6")
       .o-media__content
         h2.t-h2 Sklep číslo 6
         p.t-big Ve sklepě číslo 6 naše vína dozrávají na láhvi po dlouhá léta, než jsou zařazena do prodeje. Jde o unikátní křížový sklep, jehož chodby měří přes 400 metrů a mají místy více než pětsetletou historii.
         p Nachází se v památkovém centru města Bzenec a patří k velkým lákadlům všech milovníků vína. Je to místo, kde se psala historie moravského vinařství&thinsp;&mdash;&thinsp;právě v těchto sklepech bylo založeno první vinařské družstvo v ČR. Sklep byl v minulosti využíván k archivaci vín místním vinařským podnikem.
 
-  section.m-hero.m-hero--dark
+  section.m-hero--dark.m-hero--half
     .m-hero__content.l-wrapper.l-wrapper--big.l-offset
       h2.t-h2 Bio přístup
-      p Všechny naše vinice byly zařazeny do ekologického zemědělství, v němž není povoleno využití chemických prostředků pro ochranu vinic ani při samotné výrobě vína. V roce 2011 naše vinařství získalo ochrannou známku BIO.
-    .m-hero__bg(style="background-image: url('assets/images/wine1.jpg')")
+      .o-lead
+        p Všechny naše vinice byly zařazeny do ekologického zemědělství, v němž není povoleno využití chemických prostředků pro ochranu vinic ani při samotné výrobě vína. V roce 2011 naše vinařství získalo ochrannou známku BIO.
+    .m-hero__bg(style="background-image: url('assets/images/bio_big1.jpg')")
 
   footer.o-action
     .l-wrapper.l-inline
@@ -63,4 +64,4 @@ block template-body
         .l-inline__cell
           h4.t-h4 Chcete ochutnat opravdové bio víno?
         .l-inline__cell
-          a.o-button(href="nabidka.html") Sortiment vín Bzenia
+          a.o-button(href="nabidka.html", data-pjax--whole) Sortiment vín Bzenia

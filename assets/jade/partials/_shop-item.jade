@@ -16,11 +16,11 @@ article.m-products__item.o-product(class="o-product--#{productCategory}")
         //- .o-photo__overlay
         //-   span.ss-zoomin.o-icon--big
         if (index % 3 == 0)
-          img(src="assets/images/thumbnail1.jpg", alt="Thumbnail")
+          img(src="assets/images/product_thumbnail1.jpg", alt="Thumbnail")
         else if (index % 2 == 0)
-          img(src="assets/images/thumbnail2.jpg", alt="Thumbnail")
+          img(src="assets/images/product_thumbnail2.jpg", alt="Thumbnail")
         else
-          img(src="assets/images/thumbnail3.jpg", alt="Thumbnail")
+          img(src="assets/images/product_thumbnail3.jpg", alt="Thumbnail")
     .o-product__category!= instance.year
     .o-product__price
       strong= instance.price

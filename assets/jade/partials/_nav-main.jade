@@ -2,8 +2,10 @@ header.m-header(class="m-header--#{pageSettings.theme}")
   .l-wrapper.l-inline
     .l-inline__row
       .l-inline__cell
-        a.o-logo__link(href="index.html", data-pjax--whole)
-          strong.o-logo__title Bzenia
+        a.o-logo__link(href="index.html", class="o-logo--#{pageSettings.theme}", data-pjax--whole)
+          .o-logo__title
+            include ../../svg/logo_wordmark.svg
+            strong Bzenia
       .l-inline__cell
         nav.o-nav
           ul.o-middot.o-middot--inline.o-pages

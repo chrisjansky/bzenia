@@ -1,6 +1,9 @@
 nav.m-offscreen(class="m-offscreen--#{pageSettings.theme}")
-  a(href="index.html", data-pjax).o-logo
+  a.o-logo__link(href="index.html", class="o-logo--#{pageSettings.theme}", data-pjax--whole)
     .o-logo__symbol
+      include ../../svg/logo_symbol--thick.svg
+    //- svg(viewBox="0 0 32 32")
+    //-   rect(width="16", height="16", fill="#ff0000")
   //-   //- strong.o-logo__title Bzenia
   //- ul.m-offscreen__menu
   //-   li: a(href="o-vinarstvi.html") O vinařství
