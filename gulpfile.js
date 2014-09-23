@@ -29,6 +29,7 @@ var paths = {
   glob_css: "assets/css/*.css",
   images: "assets/images",
   glob_images: "assets/images/*",
+  ignore_images: "!assets/images/ignore{,/**}",
   data: "assets/data/dummy.json",
   // kss: "assets/kss/*.html",
   // kss_css: "assets/scss/kss.scss",
@@ -112,7 +113,7 @@ gulp.task("wipe", function() {
 // Minify images if provided with --full argument.
 gulp.task("images", ["wipe"], function() {
   if (argv.full) {
-    return gulp.src(paths.glob_images)
+    return gulp.src([paths.glob_images, paths.ignore_images])
       .pipe(plumber())
       .pipe(imagemin({
         progressive: true,
