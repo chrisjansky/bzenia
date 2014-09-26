@@ -4,8 +4,8 @@ var mousePos = view.center / 2;
 var pathHeight = mousePos.y;
 
 var pathWave = new Path({
-  strokeColor: "white",
-  strokeWidth: 1
+  fillColor: "#252526",
+  opacity: 0.5
 });
 
 initializePath();

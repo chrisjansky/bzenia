@@ -39,7 +39,8 @@ var paths = {
 // Declare files to move to public/ during "build" task.
 var productionFiles = [
   "assets/fonts/*",
-  "assets/js/bzenia-paper.js"
+  "assets/js/bzenia-paper.js",
+  "assets/js/bzenia-paper-b.js"
 ]
 
 gulp.task("styles", function () {
@@ -106,8 +107,10 @@ gulp.task("move", ["wipe"], function() {
 
 // Delete the previous build.
 gulp.task("wipe", function() {
-  return gulp.src(paths.production, {read: false})
-    .pipe(clean());
+  if (argv.full) {
+    return gulp.src(paths.production, {read: false})
+      .pipe(clean());
+  } else return;
 });
 
 // Minify images if provided with --full argument.
@@ -157,7 +160,7 @@ gulp.task("scan", function () {
 
   // Using gulp.start, soon to be deprecated
   watch(paths.glob_scss, function() {
-    gulp.start("styles");  
+    gulp.start("styles");
   });
   watch(paths.glob_jade, function() {
     gulp.start("pages");
