@@ -1,9 +1,8 @@
 // Switch.
 .o-switch {
   display: inline-block;
-  width: rem($circle--b);
-  height: rem($circle--b);
-  line-height: em(36);
+  width: em($circle--b);
+  height: em($circle--b);
   border: $line--b solid;
   border-radius: 50%;
   vertical-align: middle;
@@ -11,7 +10,7 @@
   text-align: center;
   font-family: $font--sans;
   font-weight: $sans--semibold;
-  font-size: em($unit--xs);
+  @include pseudo-center--parent;
   @include link-state {
     color: $c-grey4;
   }
@@ -21,4 +20,15 @@
   & + & {
     margin-left: em($ratio--s);
   }
+}
+.o-switch--small {
+  width: em($circle--s);
+  height: em($circle--s); 
+  .o-switch__content {
+    font-size: em($unit--xs);
+  }
+}
+.o-switch__content {
+  display: inline-block;
+  vertical-align: middle;
 }

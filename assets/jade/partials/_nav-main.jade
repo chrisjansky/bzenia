@@ -14,4 +14,5 @@ header.m-header(class="m-header--#{pageSettings.theme}")
                 li: a.o-pages__item.o-pages__item--selected(href=instance.link, data-pjax--whole)!= instance.name
               else
                 li: a.o-pages__item(href=instance.link, data-pjax--whole)!= instance.name
-          a(href="#").o-nav__language.o-switch En
+          a(href="#").o-nav__language.o-switch.o-switch--small
+            span.o-switch__content En
