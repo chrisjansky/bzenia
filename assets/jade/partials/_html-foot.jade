@@ -1,4 +1,7 @@
 script(src="http://code.jquery.com/jquery-latest.min.js")
+<!-- build:remove -->
+script window.jQuery || document.write("<script src='bower_components/jquery/dist/jquery.js'><\/script>")
+<!-- endbuild -->
 
 <!-- build:js assets/js/bzenia-min.js -->
 script(src="bower_components/paper/dist/paper-full.js")
@@ -9,5 +12,5 @@ script(src="bower_components/jquery-pjax/jquery.pjax.js")
 script(src="assets/js/bzenia.js")
 <!-- endbuild -->
 
-if pageSettings.paperCanvas
-  script(type="text/paperscript", src="assets/js/bzenia-paper.js", data-paper-canvas="js-waves")
+//- if pageSettings.paperCanvas
+//-   script(type="text/paperscript", src="assets/js/bzenia-paper.js", data-paper-canvas="js-waves")
