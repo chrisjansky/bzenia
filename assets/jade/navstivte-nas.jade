@@ -42,16 +42,31 @@ block template-body
                         option Výhledově
                       span.ss-navigatedown
                   .l-inline__cell
+                    label.o-label.o-label--primary Velikost
+                    .o-select.o-select--primary
+                      select
+                        option Do 5 osob
+                        option 6&ndash;15 osob
+                        option Více než 15 osob
+                      span.ss-navigatedown
+                  .l-inline__cell
                     label.o-label.o-label--primary Lokace
-                    label.o-radio
-                      input(type="radio", name="location")
-                      | Náš vinohrad
-                    label.o-radio
-                      input(type="radio", name="location")
-                      | Naše pražská pobočka
-                    label.o-radio
-                      input(type="radio", name="location")
-                      | Dle vašeho výběru
+                    .o-select.o-select--primary
+                      select
+                        option Náš vinohrad
+                        option Naše pražská pobočka
+                        option Dle vašeho výběru
+                      span.ss-navigatedown
+                    //- label.o-label.o-label--primary Lokace
+                    //- label.o-radio
+                    //-   input(type="radio", name="location")
+                    //-   | Náš vinohrad
+                    //- label.o-radio
+                    //-   input(type="radio", name="location")
+                    //-   | Naše pražská pobočka
+                    //- label.o-radio
+                    //-   input(type="radio", name="location")
+                    //-   | Dle vašeho výběru
           tr.m-form__row
             td.m-form__cell(colspan="2")
               textarea.o-textarea(placeholder="Vaše poznámky")
@@ -88,5 +103,5 @@ block template-body
           .m-contacts__person
             ul.o-nolist
               li Zdeněk Maleňák
-              li &nbsp;
+              li mob. +420 602 584 714
               li: a(href="mailto:zdenek.malenak@arvina.cz") zdenek.malenak@arvina.cz

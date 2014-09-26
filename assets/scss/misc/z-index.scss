@@ -1,10 +1,11 @@
 .is-ready:after {
   z-index: -1;
 }
-.m-hero:after {
+.o-waves {
   z-index: 5;
 }
-.o-waves {
+[class^="m-hero"]:after,
+[class*=" m-hero"]:after {
   z-index: 10;
 }
 .l-layer--top {
