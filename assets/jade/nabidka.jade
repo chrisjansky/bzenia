@@ -19,11 +19,13 @@ block template-body
           .l-inline__row
             .l-inline__cell
               label.o-label Vyberte kategorii vín prosím
-              label.o-radio
+              label.o-radio--styled
                 input(type="radio", name="category", checked)
+                span.o-radio__mark
                 | Tradiční
-              label.o-radio
+              label.o-radio--styled
                 input(type="radio", name="category")
+                span.o-radio__mark
                 | Archivní
             .l-inline__cell
               label.o-label Řazení

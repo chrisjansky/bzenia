@@ -1,0 +1,33 @@
+// Radio checkbox.
+[class^="o-radio"],
+[class*=" o-radio"] {
+  cursor: pointer;
+  input {
+    margin-right: em($ratio--s);
+  }
+  & + & {
+    margin-left: em($ratio--b);
+  }
+}
+.o-radio--styled {
+  cursor: pointer;
+  position: relative;
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+  }
+}
+.o-radio__mark {
+  display: inline-block;
+  width: em($circle--xs);
+  height: em($circle--xs);
+  border: $line--b solid $c-grey2;
+  margin-right: em($ratio--s);
+  border-radius: 50%;
+  vertical-align: middle;
+  input:checked + & {
+    border-color: $c-color1;
+  }
+}
