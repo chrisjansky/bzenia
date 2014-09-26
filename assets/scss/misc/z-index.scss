@@ -8,8 +8,16 @@
 [class*=" m-hero"]:after {
   z-index: 10;
 }
+.o-pagination__content:hover {
+  z-index: 20;
+}
 .l-layer--top {
   z-index: 20;
+}
+.o-pagination__item--selected {
+  .o-pagination__content {
+    z-index: 30;
+  }
 }
 .m-hero__content {
   z-index: 50;

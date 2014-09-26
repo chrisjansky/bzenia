@@ -30,7 +30,9 @@ $icon--m: 32;
 $icon--b: 24;
 $icon--s: 16;
 
-$circle--b: 32;
+$circle--b: 52;
+$circle--s: 32;
+$circle--xs: 24;
 
 // Common element height
 $height--b: 40;
@@ -61,11 +63,6 @@ $c-color1--dim: shade($c-color1, 20%);
 $c-color1--medium: shade($c-color1, 40%);
 $c-color1--dark: shade($c-color1, 65%);
 $c-color1--black: shade($c-color1, 85%);
-
-// $c-color1--light: rgba(white, .5);
-// $c-color1--medium: rgba(black, .25);
-// $c-color1--dark: rgba(black, .75);
-// $c-color1--black: black;
 
 $c-color1__bg: shade($c-color1, 5%);
 $c-color1__bg--dark: shade($c-color1, 10%);

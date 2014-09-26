@@ -180,16 +180,6 @@
 .o-label--primary {
   color: $c-color1--dark;
 }
-// Radio checkbox.
-.o-radio {
-  cursor: pointer;
-  input {
-    margin-right: em($ratio--s);
-  }
-  & + & {
-    margin-left: em($ratio--b);
-  }
-}
 // Generic carousel.
 .o-carousel {
   @include box-sizing(content-box);
@@ -220,12 +210,17 @@
 .o-media {
   @include clearfix;
 }
+.o-media--big {
+  margin-top: em($ratio--xl);
+  margin-left: em(-$ratio--b);
+}
 .o-media__image {
   float: left;
   margin-right: em($ratio--l);
 }
 .o-media__content {
   overflow: auto;
+  @include collapse-children;
 }
 // Views.
 .o-whole {

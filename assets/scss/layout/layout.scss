@@ -97,8 +97,12 @@
 .l-inline__cell {
   display: table-cell;
   vertical-align: middle;
+  text-align: center;
   @include collapse-children;
-  & + & {
+  &:first-child {
+    text-align: left; 
+  }
+  &:last-child {
     text-align: right;
   }
 }

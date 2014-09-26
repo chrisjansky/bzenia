@@ -4,6 +4,10 @@
   text-decoration: none;
   font-family: $font--sans;
   font-weight: $sans--semibold;
+  &:before {
+    font-size: em($icon--b);
+    margin-right: em($ratio--xs);
+  }
   &:after {
     font-size: em($icon--b);
     margin-left: em($ratio--xs);
