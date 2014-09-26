@@ -1,0 +1,17 @@
+// SVG styles.
+.svg-icon {
+  & + & {
+    margin-left: em($ratio--s);
+  }
+  @include active-state {
+    opacity: .75;
+  }
+}
+.svg-app_store {
+  width: auto;
+  height: em(40);
+}
+.svg-google_play {
+  width: auto;
+  height: em(40);
+}
