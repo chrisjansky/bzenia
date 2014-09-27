@@ -23,6 +23,7 @@
     "chj-framework": "latest",
     "idangerous-swiper": "latest",
     "featherlight": "latest",
-    "jquery-pjax": "latest"
+    "jquery-pjax": "latest",
+    "jquery-easing-original": "latest"
   }
 }
