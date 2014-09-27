@@ -14,6 +14,9 @@
 @import "vendor/symbolset";
 @import "vendor/featherlight";
 
+@import "layout/l-wrapper";
+@import "layout/l-inline";
+@import "layout/l-columns";
 @import "layout/layout";
 
 @import "objects/objects";
@@ -24,12 +27,16 @@
 @import "objects/o-photo";
 @import "objects/o-icon";
 @import "objects/o-radio";
+@import "objects/o-canvas";
+@import "objects/o-title";
 @import "objects/o-pagination";
 
 @import "modules/modules";
 @import "modules/m-header";
 @import "modules/m-offscreen";
 @import "modules/m-hero";
+@import "modules/m-filter";
+@import "modules/m-accordion";
 @import "modules/m-contacts";
 
 @import "misc/z-index";

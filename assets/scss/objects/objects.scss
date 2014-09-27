@@ -52,16 +52,17 @@
     color: $c-grey5;
   }
 }
+.o-article--invert {
+  .t-big {
+    color: $c-grey2;
+  }
+  p {
+    color: $c-grey4;
+  }
+}
 .o-article__link {
     margin-top: em($ratio--b);
   }
-// Waves container.
-.o-waves {
-  position: fixed; // z-index
-  left: 0;
-  right: 0;
-  top: 0;
-}
 // Triplet.
 .o-triplet {
   @include list-reset;
@@ -204,7 +205,7 @@
 }
 // Text object.
 .o-lead {
-  max-width: 35em;
+  max-width: 40em;
 }
 // Image and text.
 .o-media {
@@ -228,6 +229,11 @@
 }
 .o-main {
   height: 100%
+}
+// Contrast bar.
+.o-ribbon {
+  background-color: $c-grey8;
+  color: $c-grey4;
 }
 // .o-aside {
 //   position: fixed;
