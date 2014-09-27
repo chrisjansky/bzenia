@@ -10,12 +10,12 @@
     top: 40%;
     height: $line--b;
     background-color: $c-grey2;
-    z-index: -1;
   }
 }
 .o-pagination__list {
   @include list-reset;
   @include clearfix;
+  position: relative;
   display: inline-block;
   background-color: $c-grey1;
 }
