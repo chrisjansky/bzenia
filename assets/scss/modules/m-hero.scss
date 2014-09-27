@@ -13,7 +13,7 @@
 }
 .m-hero--half {
   min-height: 50%;
-  max-height: em(500);
+  // max-height: em(500);
 }
 .m-hero__bg {
   @include stretch-overlay;
@@ -37,5 +37,17 @@
     content: "";
     @include stretch-overlay;
     @include linear-gradient(to bottom, rgba($c-grey8, .625), rgba($c-grey8, 0), $fallback: transparent);
+  }
+}
+.m-hero--black {
+  color: white;
+  background-color: $c-grey8;
+  .m-hero__bg {
+    opacity: .25;
+  }
+  &:after {
+    content: "";
+    @include stretch-overlay;
+    @include linear-gradient(to top, rgba($c-grey8, .75), rgba($c-grey8, 0), $fallback: transparent);
   }
 }
