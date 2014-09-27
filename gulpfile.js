@@ -38,9 +38,7 @@ var paths = {
 
 // Declare files to move to public/ during "build" task.
 var productionFiles = [
-  "assets/fonts/*",
-  "assets/js/bzenia-paper.js",
-  "assets/js/bzenia-paper-b.js"
+  "assets/fonts/*"
 ]
 
 gulp.task("styles", function () {
