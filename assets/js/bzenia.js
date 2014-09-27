@@ -1,3 +1,6 @@
+var durationBasic = 250;
+jQuery.easing.def = "easeInOutCubic";
+
 $(document).on("ready pjax:success", function() {
   var
     $body = $("body"),
@@ -85,5 +88,90 @@ $(document).on("ready pjax:success", function() {
       });
     }
   });
+
+  // $('[data-temp-waypoint]').waypoint(function(direction) {
+    // if (direction === 'down') {
+      // logoSlide($(this).attr('data-title1'), $(this).attr('data-title2'), true);
+      // $body.addClass("offscreen--is-active");
+    // }
+  // },
+  // {
+    // offset: '25%'
+  // });
+
+  // Accordion
+  var $accordList = $("[data-accordion]");
+  if ($accordList.length > 0) {
+    var
+      $accordItems = $("[data-accordion-item]");
+
+    $accordItems.not("[data-opened]").find("[data-accordion-more]").hide();
+    $accordItems.on("click", function() {
+      var $this = $(this);
+
+      $this.find("[data-accordion-more]").slideToggle(durationBasic);
+      $this.siblings().find("[data-accordion-more]").slideUp(durationBasic);
+    });
+  }
+
+  // Paperscript
+  var paperCanvas = document.getElementById("js-waves");
+
+  if (paperCanvas !== null) {
+    paper.install(window);
+    paper.setup(paperCanvas);
+    var width, height, center, tool;
+    var points = 4;
+    if (tool == undefined) {
+      tool = new Tool();
+    }
+    tool.activate();
+
+    var mousePos = view.center;
+    var pathHeight = mousePos.y;
+
+    var pathWave = new Path({
+      // fillColor: "#474a4d",
+      fillColor: "black",
+      opacity: 0.25
+    });
+
+    initializePath();
+
+    function initializePath() {
+      center = view.center;
+      width = view.size.width;
+      height = view.size.height * 0.5;
+
+      pathWave.segments = [];
+      pathWave.add(view.bounds.topLeft);
+      pathWave.add(0, view.size.height * 0.75);
+      for (var i = 1; i < points; i++) {
+        var point = new Point(width / points * i, center.y);
+        pathWave.add(point);
+      }
+      pathWave.add(width, view.size.height * 0.125);
+      pathWave.add(view.bounds.topRight);
+    }
+
+    tool.onMouseMove = function(event) {
+      mousePos = event.point;
+    }
+
+    view.onFrame = function(event) {
+      pathHeight += (center.y - mousePos.y - pathHeight) / 10;
+      for (var i = 2; i < points; i++) {
+        var sinSeed = event.count + (i + i % 10) * 150;
+        var sinHeight = Math.sin(sinSeed / 50) * pathHeight;
+        var yPos = Math.sin(sinSeed / 100) * sinHeight + height;
+        pathWave.segments[i].point.y = yPos;
+      }
+      pathWave.smooth();
+    }
+
+    tool.onResize = function(event) {
+      initializePath();
+    }
+  }
 
 });
