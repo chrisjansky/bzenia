@@ -20,11 +20,18 @@ body {
 .t-big {
   font-size: em($unit--l);
 }
-.t-spaced {
+.t-smallcaps {
   font-family: $font--sans;
   font-weight: $sans--semibold;
+  font-size: em($unit--s);
   letter-spacing: .125em;
+  text-transform: uppercase;
 }
+// .t-spaced {
+//   font-family: $font--sans;
+//   font-weight: $sans--semibold;
+//   letter-spacing: .125em;
+// }
 // .t-strong {
 //   font-family: $font--sans;
 //   font-weight: $sans--semibold;
