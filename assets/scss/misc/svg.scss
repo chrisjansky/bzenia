@@ -1,5 +1,5 @@
 // SVG styles.
-.svg-icon {
+.svg-button {
   & + & {
     margin-left: em($ratio--s);
   }
@@ -7,11 +7,48 @@
     opacity: .75;
   }
 }
-.svg-app_store {
+[class^="svg-icon"],
+[class*=" svg-icon"] {
+  width: em($svg--b);
+  height: auto;
+  vertical-align: middle;
+}
+[class^="svg-symbol"],
+[class*=" svg-symbol"] {
   width: auto;
   height: em(40);
 }
-.svg-google_play {
-  width: auto;
-  height: em(40);
+
+// .svg-outline {
+//   stroke: $c-grey4;
+// }
+// .svg-icon--grapes {
+//   fill: $c-color4;
+// }
+.svg-icon--barrel {
+  fill: $c-color1;
 }
+.svg-icon--diamond {
+  fill: $c-color4;
+}
+.svg-icon--tasting {
+  fill: $c-color2;
+}
+.svg-icon--bottle {
+  fill: $c-grey4;
+}
+.svg-icon--reality {
+  fill: $c-color1;
+}
+.svg-icon--bio {
+  fill: $c-color1;
+}
+// .svg-tasting__cheese {
+//   fill: $c-color2;
+// }
+// .svg-grapes__leaf {
+//   stroke: $c-color1;
+// }
+// .svg-grapes__grape {
+//   stroke: $c-color3;
+// }

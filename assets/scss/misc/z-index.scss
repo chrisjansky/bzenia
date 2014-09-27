@@ -1,8 +1,14 @@
 .is-ready:after {
   z-index: -1;
 }
-.o-waves {
+.o-canvas--fixed {
   z-index: 5;
+}
+.o-pagination__list {
+  z-index: 10;
+}
+.o-pagination__side-link {
+  z-index: 10;
 }
 [class^="m-hero"]:after,
 [class*=" m-hero"]:after {
