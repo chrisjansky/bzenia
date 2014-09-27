@@ -1,6 +1,6 @@
 // Radio checkbox.
-[class^="o-radio"],
-[class*=" o-radio"] {
+.o-radio,
+.o-radio--styled {
   cursor: pointer;
   input {
     margin-right: em($ratio--s);
@@ -20,14 +20,34 @@
   }
 }
 .o-radio__mark {
+  position: relative;
   display: inline-block;
-  width: em($circle--xs);
-  height: em($circle--xs);
-  border: $line--b solid $c-grey2;
+  width: em($circle--xxs);
+  height: em($circle--xxs);
+  border: $line--b solid $c-grey3;
   margin-right: em($ratio--s);
   border-radius: 50%;
   vertical-align: middle;
   input:checked + & {
-    border-color: $c-color1;
+    border-color: $c-grey4;
+    background-color: $c-grey3;
+  }
+}
+.o-radio__text {
+  color: $c-grey4;
+  input:checked + * + & {
+    color: $c-grey8;
+  }
+}
+.o-radio--primary {
+  input:checked + .o-radio__mark {
+    border-color: $c-color1--dim;
+    background-color: $c-color1;
+  }
+}
+.o-radio--secondary {
+  input:checked + .o-radio__mark {
+    border-color: $c-color4--dim;
+    background-color: $c-color4;
   }
 }
