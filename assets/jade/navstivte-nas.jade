@@ -4,8 +4,6 @@ block template-variables
   - var pageSettings = {title: "Navštivte nás", index: 2, paperCanvas: false, theme: "light"}
 
 block template-body
-  if pageSettings.paperCanvas
-    canvas.o-waves#js-waves(resize)
 
   section.l-section--white
     .l-wrapper.l-wrapper--lower
@@ -57,16 +55,6 @@ block template-body
                         option Naše pražská pobočka
                         option Dle vašeho výběru
                       span.ss-navigatedown
-                    //- label.o-label.o-label--primary Lokace
-                    //- label.o-radio
-                    //-   input(type="radio", name="location")
-                    //-   | Náš vinohrad
-                    //- label.o-radio
-                    //-   input(type="radio", name="location")
-                    //-   | Naše pražská pobočka
-                    //- label.o-radio
-                    //-   input(type="radio", name="location")
-                    //-   | Dle vašeho výběru
           tr.m-form__row
             td.m-form__cell(colspan="2")
               textarea.o-textarea(placeholder="Vaše poznámky")
@@ -78,7 +66,9 @@ block template-body
 
   section.m-contacts
     .l-wrapper.l-wrapper--big
-      h2.t-h2 Kontaktní údaje
+      .o-title--float.o-title--light
+        include ../svg/icon_mail.svg
+        h2.t-h2 Kontaktní údaje
       .l-columns
         .l-column--half
           .m-contacts__block

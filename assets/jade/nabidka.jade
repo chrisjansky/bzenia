@@ -5,28 +5,31 @@ block template-variables
 
 block template-body
   if pageSettings.paperCanvas
-    canvas.o-waves#js-waves(resize)
+    canvas.o-canvas.o-canvas--fixed.o-canvas--half#js-waves(resize)
 
   section.m-hero--half(class="m-hero--#{pageSettings.theme}")
     .m-hero__content.l-wrapper.l-wrapper--lower
       h1.t-h1 Naše nabídka
     .m-hero__bg(style="background-image: url('assets/images/cellar_big2.jpg')")
 
-  section
+  section.l-layer--top
     .l-wrapper.l-section--white
       .m-filter
         .l-inline
           .l-inline__row
             .l-inline__cell
-              label.o-label Vyberte kategorii vín prosím
-              label.o-radio--styled
+              .m-filter__icon
+                include ../svg/icon_grapes.svg
+              .m-filter__label
+                label.o-label.t-smallcaps Vyberte kategorii vín prosím
+              label.o-radio--styled.o-radio--primary
                 input(type="radio", name="category", checked)
                 span.o-radio__mark
-                | Tradiční
-              label.o-radio--styled
+                span.o-radio__text Tradiční
+              label.o-radio--styled.o-radio--primary
                 input(type="radio", name="category")
                 span.o-radio__mark
-                | Archivní
+                span.o-radio__text Archivní
             .l-inline__cell
               label.o-label Řazení
               .o-select
@@ -36,7 +39,7 @@ block template-body
                   option Dle ročníku
                   option Dle ceny
                 span.ss-navigatedown
-    .l-wrapper.l-wrapper--big
+    .l-wrapper.l-wrapper--big.l-section--light
       .m-products
         each instance, index in shopItems
           include partials/_shop-item
@@ -50,33 +53,68 @@ block template-body
               a.o-pagination__content(href="#")
                 = instance
 
-  section.l-wrapper.l-section--white
-      h2.t-h2 Mohlo by Vás zajímat
-      .o-triplet
-        .o-triplet__item
-          .o-circle.o-circle--primary
-            span.o-circle__content Adopce sudu na dálku
-          p Nabízíme Vám možnost stát se majitelem originálního vína z naší produkce, na jehož výrobě se můžete sami přímo podílet. Za dohledu našich odborníků máte možnost ovlivnit konečnou chuť vína dle svých chuťových požadavků. Také můžete vytvářet vlastní speciální kupáže. Zvolené víno, resp. kupáž, u nás necháme vyzrát na dubovém sudu. Délku zrání vína na sudu si určuje zákazník podle svých preferencí za našeho dohledu a poradenství. Váš sud s vínem bude po celou dobu až do nalahvování vína uskladněn v našem archivním sklepě číslo 6.
-        .o-triplet__item
-          .o-circle.o-circle--secondary
-            span.o-circle__content Investiční vína
-          p Naše vinařství vám přináší unikátní možnost investice do vín ze své produkce. Zájemci mohou vybírat z bohaté archivní nabídky, která ročníkově sahá až do 50. let 20. století. Pro milovníky vína a drahých kamenů je variantou investice do Cuvée Divine. Každá láhev tohoto mimořádného meziročníkového vína, jež je namíchané z nejlepších ryzlinků rýnských z našeho archívu, obsahuje broušený diamant o velikosti 0,25 karátu až 3 karáty. Rádi vám poskytneme bližší informace.
-        .o-triplet__item
-          .o-circle.o-circle--tertiary
-            span.o-circle__content Degustace a ochutnávky
-          p Na objednávku pořádáme řízené degustace našich vín včetně občerstvení dle výběru zákazníka. Degustace se konají buď v exkluzivních prostorách našeho sklepa číslo 6, nebo přímo ve vinici na stylové rozhledně postavené ze starých dubových sudů. Rozhledna se nachází uprostřed naší vinice Novosady a nabízí krásný výhled na panorama Buchlovských hor a Pálavských vrchů.
-          p Cenu degustací řešíme individuálně. Občerstvení pro nás připravují kuchaři Restaurace a penzionu Beta ve Bzenci, kde je i možnost ubytování.
-          p Řízené degustace pořádáme také na naší pražské pobočce. Rovněž můžeme uskutečnit ochutnávku přímo u vás doma nebo na firmě.
+  section.m-accordion
+    header.o-ribbon
+      .l-offset.l-wrapper.l-wrapper--small
+        strong.t-smallcaps Mohlo by Vás zajímat
+    ul.m-accordion__list(data-accordion)
+      li.m-accordion__item--first.m-hero--black(data-accordion-item, data-opened)
+        .m-hero__content.l-wrapper.l-offset
+          .o-title
+            include ../svg/icon_barrel.svg
+            h2.t-h2 Adopce sudu na dálku
+          article.m-accordion__more.o-article--invert(data-accordion-more)
+            p.t-big.o-lead Nabízíme Vám možnost stát se majitelem originálního vína z naší produkce, na jehož výrobě se můžete sami přímo podílet.
+            .l-columns
+              .l-column--half
+                p Za dohledu našich odborníků máte možnost ovlivnit konečnou chuť vína dle svých chuťových požadavků. Také můžete vytvářet vlastní speciální kupáže. Zvolené víno, resp. kupáž, u nás necháme vyzrát na dubovém sudu.
+              .l-column--half
+                p Délku zrání vína na sudu si určuje zákazník podle svých preferencí za našeho dohledu a poradenství. Váš sud s vínem bude po celou dobu až do nalahvování vína uskladněn v našem archivním sklepě číslo 6.
+            h4.t-h4 Co získáte?
+            .l-columns
+              .l-column--half
+                ul.o-middot.o-middot--stacked
+                  li 225 l vína z naší produkce
+                  li dubový sud o objemu 225 l
+                  li příslušná dokumentace k vínu
+                  li nalahvování
+                  li 300 lahví o objemu 0,75 l
+                  li 300 kvalitních celokorkových špuntů
+              .l-column--half
+                ul.o-middot.o-middot--stacked
+                  li speciální etiketa dle Vašeho přání
+                  li možnost uskladnění nalahvovaného vína v našem archivním sklepě číslo 6
+                  li poradenství a průběžná péče o své víno
+                  li originální víno, které nemá nikdo jiný
+            p Celé toto dobrodružství s vínem, které Vás vtáhne do tajů jeho výroby, můžete mít za cenu 105.000,- Kč včetně DPH.
+        .m-hero__bg(style="background-image: url('assets/images/barrel_big1.jpg')")
 
-//- Co získáte?
-//- 225 l vína z naší produkce
-//- dubový sud o objemu 225 l
-//- příslušná dokumentace k vínu
-//- nalahvování
-//- 300 lahví o objemu 0,75 l
-//- 300 kvalitních celokorkových špuntů
-//- speciální etiketa dle Vašeho přání
-//- možnost uskladnění nalahvovaného vína v našem archivním sklepě číslo 6
-//- poradenství a průběžná péče o své víno
-//- originální víno, které nemá nikdo jiný
-//- Celé toto dobrodružství s vínem, které Vás vtáhne do tajů jeho výroby, můžete mít za cenu 105.000,- Kč včetně DPH.
+      li.m-accordion__item--second.m-hero--black(data-accordion-item)
+        .m-hero__content.l-wrapper.l-offset
+          .o-title
+            include ../svg/icon_diamond.svg
+            h2.t-h2 Investiční vína
+          article.m-accordion__more.o-article--invert(data-accordion-more)
+            p.t-big.o-lead Naše vinařství vám přináší unikátní možnost investice do vín ze své produkce.
+            .l-columns
+              .l-column--half
+                p Zájemci mohou vybírat z bohaté archivní nabídky, která ročníkově sahá až do 50. let 20. století. Pro milovníky vína a drahých kamenů je variantou investice do Cuvée Divine. Každá láhev tohoto mimořádného meziročníkového vína, jež je namíchané z nejlepších ryzlinků rýnských z našeho archívu, obsahuje broušený diamant o velikosti 0,25 karátu až 3 karáty.
+              .l-column--half
+                p Rádi vám poskytneme bližší informace.
+        .m-hero__bg(style="background-image: url('assets/images/bottles_big1.jpg')")
+
+      li.m-accordion__item--third.m-hero--black(data-accordion-item)
+        .m-hero__content.l-wrapper.l-offset
+          .o-title
+            include ../svg/icon_tasting.svg
+            h2.t-h2 Degustace a ochutnávky
+          article.m-accordion__more.o-article--invert(data-accordion-more)
+            p.t-big.o-lead Na objednávku pořádáme řízené degustace našich vín včetně občerstvení dle výběru zákazníka.
+            .l-columns
+              .l-column--half
+                p Degustace se konají buď v exkluzivních prostorách našeho sklepa číslo 6, nebo přímo ve vinici na stylové rozhledně postavené ze starých dubových sudů. Rozhledna se nachází uprostřed naší vinice Novosady a nabízí krásný výhled na panorama Buchlovských hor a Pálavských vrchů.
+              .l-column--half
+                p Cenu degustací řešíme individuálně. Občerstvení pro nás připravují kuchaři Restaurace a penzionu Beta ve Bzenci, kde je i možnost ubytování.
+                p Řízené degustace pořádáme také na naší pražské pobočce. Rovněž můžeme uskutečnit ochutnávku přímo u vás doma nebo na firmě.
+            a.o-button--simple.ss-navigateright.right(href="navstivte-nas.html", data-pjax--whole) Objednat
+        .m-hero__bg(style="background-image: url('assets/images/tasting_big1.jpg')")

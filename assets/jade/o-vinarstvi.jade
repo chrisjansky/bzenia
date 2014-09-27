@@ -1,19 +1,21 @@
 extends templates/_basic
 
 block template-variables
-  - var pageSettings = {title: "O vinařství", index: 0, paperCanvas: false, theme: "dark"}
+  - var pageSettings = {title: "O vinařství", index: 0, paperCanvas: true, theme: "dark"}
 
 block template-body
   if pageSettings.paperCanvas
-    canvas.o-waves#js-waves(resize)
+    canvas.o-canvas--fixed.o-canvas--half#js-waves(resize)
 
   section.m-hero--half(class="m-hero--#{pageSettings.theme}")
     .m-hero__content.l-wrapper.l-wrapper--lower
       h1.t-h1 O vinařství
     .m-hero__bg(style="background-image: url('assets/images/vinery_big2.jpg'); background-position-y: 10%; ")
 
-  section.l-wrapper.l-wrapper--big.l-offset
-    h2.t-h2 Náš vinohrad a&nbsp;výrobní sklep
+  section.l-wrapper.l-wrapper--big.l-offset.l-section--light.l-layer--top
+    .o-title.o-title--secondary
+      include ../svg/icon_grapes.svg
+      h2.t-h2 Náš vinohrad a&nbsp;výrobní sklep
     article.o-article
       p.t-big Naše vinice se rozkládají na 10 hektarech půdy na dohled od kaple sv. Floriána na Starém hradě nad Bzencem.
       .l-columns
@@ -31,7 +33,7 @@ block template-body
         p.t-big Ve sklepě číslo 6 naše vína dozrávají na láhvi po dlouhá léta, než jsou zařazena do prodeje. Jde o unikátní křížový sklep, jehož chodby měří přes 400 metrů a mají místy více než pětsetletou historii.
         p Nachází se v památkovém centru města Bzenec a patří k velkým lákadlům všech milovníků vína. Je to místo, kde se psala historie moravského vinařství&thinsp;&mdash;&thinsp;právě v těchto sklepech bylo založeno první vinařské družstvo v ČR. Sklep byl v minulosti využíván k archivaci vín místním vinařským podnikem.
 
-  section.m-gallery.l-section--white.l-wrapper.l-wrapper--only-vertical
+  section.m-gallery.l-section--white.l-wrapper.l-wrapper--only-vertical.l-layer--top
     .l-wrapper.l-wrapper--small.l-wrapper--no-top.l-offset
       .l-inline
         .l-inline__row
@@ -51,7 +53,9 @@ block template-body
 
   section.m-hero--dark.m-hero--half
     .m-hero__content.l-wrapper.l-wrapper--big.l-offset
-      h2.t-h2 Bio přístup
+      .o-title
+        include ../svg/icon_bio.svg
+        h2.t-h2 Bio přístup
       .o-lead
         p Všechny naše vinice byly zařazeny do ekologického zemědělství, v němž není povoleno využití chemických prostředků pro ochranu vinic ani při samotné výrobě vína. V roce 2011 naše vinařství získalo ochrannou známku BIO.
     .m-hero__bg(style="background-image: url('assets/images/bio_big1.jpg')")

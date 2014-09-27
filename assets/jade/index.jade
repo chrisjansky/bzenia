@@ -5,7 +5,7 @@ block template-variables
 
 block template-body
   if pageSettings.paperCanvas
-    canvas.o-waves#js-waves(resize)
+    canvas.o-canvas--fixed#js-waves(resize)
 
   section.m-hero--full(class="m-hero--#{pageSettings.theme}")
     .m-hero__content.l-wrapper.l-wrapper--lower
@@ -15,7 +15,6 @@ block template-body
       .o-lead
         p
           | Bzenec v srdci Slovácka je s vinařstvím spojován odpradávna. Naše rodina zde pěstuje a vyrábí kvalitní přívlastková vína posledních 11 let. Nyní bychom Vám rádi předali něco z výsledků své práce: vína, které rozšiřuje realitu. 
-          a.temp-link--light(href="index-b.html") Varianta B
     .m-hero__bg(style="background-image: url('assets/images/vinery_big1.jpg'); background-position-y: top;")
 
   section.l-wrapper.l-wrapper--big.l-offset.l-section--light.l-layer--top
@@ -23,8 +22,10 @@ block template-body
       .l-inline
         .l-inline__row
           .l-inline__cell
-            h2.t-h2
-              | O vinařství
+            .o-title
+              include ../svg/icon_bottle.svg
+              h2.t-h2
+                | O vinařství
           .l-inline__cell
             a.o-article__link.o-button--simple.t-link--secondary.ss-navigateright.right(href="o-vinarstvi.html") Více o nás
       p.t-big Jsme moderní rodinné vinařství, které bylo založeno v roce 2003. Vlastníme vinice na nejkvalitnějších viničních tratích ve Bzenci&thinsp;&mdash;&thinsp;Novosadech a Prostřední hoře.
@@ -36,18 +37,16 @@ block template-body
 
   section.m-hero--dark.m-hero--half
     .m-hero__content.l-wrapper.l-wrapper--big.l-offset
-      h2.t-h2
-        | Víno rozšiřující 
-        span.line-break realitu
+      .o-title
+        include ../svg/icon_reality.svg
+        h2.t-h2
+          | Víno rozšiřující 
+          span.line-break realitu
       .o-lead
         p Ač v Bzenii věříme v tradiční vinařské postupy, pro komunikaci se svými zákazníky jsme vsadili na moderní technologie.
         p Do každé etikety láhve jsme ukryli multimediální obsah, který si můžete přehrát na svém chytrém telefonu pomocí mobilní aplikace Layar. Stáhněte si aplikaci do svého mobilu, naskenujte přední část láhve s logem a nahlédněte s osobním sommelierem za kulisy našeho vinařství.
-        a(href="#").svg-icon
-          include ../svg/icon_app-store.svg
-        a(href="#").svg-icon
-          include ../svg/icon_google-play.svg
+        a(href="#").svg-button
+          include ../svg/symbol_app-store.svg
+        a(href="#").svg-button
+          include ../svg/symbol_google-play.svg
     .m-hero__bg(style="background-image: url('assets/images/archive_medium1.jpg')")
-
-append template-foot
-  if pageSettings.paperCanvas
-    script(type="text/paperscript", src="assets/js/bzenia-paper.js", data-paper-canvas="js-waves")
