@@ -1,0 +1,25 @@
+.o-title {
+  position: relative;
+  [class^="svg-icon"] {
+    position: absolute;
+    top: em(-$ratio--xxs);
+    right: 100%;
+    margin-right: em($ratio--b);
+  }
+}
+.o-title--float {
+  [class^="svg-icon"] {
+    float: left;
+    margin-top: em(-$ratio--xxs);
+    margin-right: em($ratio--b);
+  }
+}
+.o-title--white {
+  fill: white;
+}
+.o-title--light {
+  fill: $c-grey4;
+}
+.o-title--secondary {
+  fill: $c-color3;
+}

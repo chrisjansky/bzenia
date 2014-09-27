@@ -1,0 +1,14 @@
+.m-accordion__list {
+  @include list-reset;
+}
+[class^="m-accordion__item"] {
+  cursor: pointer;
+  &:hover {
+    &:after {
+      opacity: 0;
+    }
+  }
+}
+.m-accordion__more {
+  @include collapse-children;
+}

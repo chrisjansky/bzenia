@@ -1,0 +1,25 @@
+// Side by side.
+.l-inline {
+  display: table;
+  width: 100%;
+}
+// .l-inline--top {
+//   .l-inline__cell {
+//     vertical-align: top;
+//   }
+// }
+.l-inline__row {
+  display: table-row;
+}
+.l-inline__cell {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  @include collapse-children;
+  &:first-child {
+    text-align: left; 
+  }
+  &:last-child {
+    text-align: right;
+  }
+}
