@@ -14,6 +14,13 @@
     margin-right: em($ratio--b);
   }
 }
+.o-title--small {
+  [class^="svg-icon"] {
+    width: em($svg--s);
+    top: em(-$ratio--xs);
+    margin-right: em($ratio--m);
+  }
+}
 .o-title--white {
   fill: white;
 }
