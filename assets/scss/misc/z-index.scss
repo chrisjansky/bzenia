@@ -4,19 +4,14 @@
 .o-canvas--fixed {
   z-index: 5;
 }
-.o-pagination__list {
-  z-index: 10;
-}
-.o-pagination__side-link {
-  z-index: 10;
-}
+.o-pagination__list,
+.o-pagination__side-link,
 [class^="m-hero"]:after,
-[class*=" m-hero"]:after {
+[class*=" m-hero"]:after,
+.m-detail__image:after {
   z-index: 10;
 }
-.o-pagination__content:hover {
-  z-index: 20;
-}
+.o-pagination__content:hover,
 .l-layer--top {
   z-index: 20;
 }
@@ -25,9 +20,9 @@
     z-index: 30;
   }
 }
-.m-hero__content {
-  z-index: 50;
-}
+.m-detail__contextual,
+.m-detail__overlay,
+.m-hero__content,
 .o-photo__overlay {
   z-index: 50;
 }
