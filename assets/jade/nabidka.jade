@@ -44,7 +44,7 @@ block template-body
         each instance, index in shopItems
           include partials/_shop-item
       .o-pagination
-        a.o-pagination__side-link.ss-cart.o-button--simple.t-link--secondary(href="#") Nákupní košík
+        a.o-pagination__side-link.ss-cart.o-button--simple.t-link--secondary(href="nakupni-kosik.html", data-pjax--whole) Nákupní košík
         ul.o-pagination__list
           li.o-pagination__item.o-pagination__item--selected
             div.o-pagination__content 1
