@@ -10,24 +10,25 @@ case instance.category
     - productCategory = "default"
 
 article.m-products__item.o-product(class="o-product--#{productCategory}")
-  .o-product__thumbnail
-    figure.o-photo
-      a(href="#").o-photo__link.o-photo__content
-        //- .o-photo__overlay
-        //-   span.ss-zoomin.o-icon--big
-        if (index % 3 == 0)
-          img(src="assets/images/product_thumbnail1.jpg", alt="Thumbnail")
-        else if (index % 2 == 0)
-          img(src="assets/images/product_thumbnail2.jpg", alt="Thumbnail")
-        else
-          img(src="assets/images/product_thumbnail3.jpg", alt="Thumbnail")
-    .o-product__category!= instance.year
-    .o-product__price
-      strong= instance.price
-      |  Kč
-  .o-product__name
-    h3.t-h3= instance.name
-    em.o-product__type= instance.type
+  a.o-product__link(href="detail-produktu.html", data-pjax--whole)
+    .o-product__thumbnail
+      figure.o-photo
+        .o-photo__link.o-photo__content
+          //- .o-photo__overlay
+          //-   span.ss-zoomin.o-icon--big
+          if (index % 3 == 0)
+            img(src="assets/images/product_thumbnail1.jpg", alt="Thumbnail")
+          else if (index % 2 == 0)
+            img(src="assets/images/product_thumbnail2.jpg", alt="Thumbnail")
+          else
+            img(src="assets/images/product_thumbnail3.jpg", alt="Thumbnail")
+      .o-product__category!= instance.year
+      .o-product__price
+        strong= instance.price
+        |  Kč
+    .o-product__name
+      h3.t-h3= instance.name
+      em.o-product__type= instance.type
   p.o-product__description
     = instance.description
     if (index % 2 == 0)
