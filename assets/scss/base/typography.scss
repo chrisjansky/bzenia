@@ -72,9 +72,17 @@ a {
   @include link-state {color: $c-color3; }
   @include active-state {color: $c-color4; }
 }
+.t-link--contrast {
+  @include link-state {color: $c-color2; }
+  @include active-state {color: $c-color1; }
+}
 .t-link--light {
-  @include link-state {color: $c-grey3; }
-  @include active-state {color: $c-grey4; }
+  @include link-state {
+    color: $c-grey2;
+  }
+  @include active-state {
+    color: rgba($c-grey2, .5);
+  }
 }
 .t-link--dark {
   @include link-state {color: $c-grey4; }
