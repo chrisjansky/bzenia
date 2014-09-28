@@ -2,16 +2,65 @@ extends templates/_basic
 
 block template-variables
   - var pageSettings = {title: "Detail produktu", index: null, paperCanvas: false, theme: "light"}
+  - var instance = shopItems[1]
 
 block template-body
   section.m-detail
-    .l-wrapper.l-wrapper--lower
-      figure.o-photo.o-photo--huge
-        .o-photo__content
-          img(src="assets/images/thumbnail3.jpg", alt="Thumbnail")
-      h1.t-h1 Sauvignon
-      p Popis vína.
-      p Ahoj.
-
-block template-aside
-  p Fluff.
+    .m-detail__header.l-wrapper.l-wrapper--lower.l-wrapper--bleed.l-section--white
+      .m-detail__image
+        .m-detail__contextual.l-wrapper
+          a.o-button--simple.t-link--light.ss-navigateleft(href="nabidka.html", data-pjax--whole) Zpět do nabídky
+        img(src="assets/images/detail_big1.jpg", alt="Detail produktu")
+        .m-detail__overlay.l-wrapper
+          h1.t-h1= instance.name
+          em.m-detail__type= instance.type
+    .l-wrapper.l-wrapper--big.l-offset
+      .o-title.o-title--small.o-title--light
+        include ../svg/icon_grapes.svg
+        strong.t-smallcaps Popis vína
+      .m-detail__description
+        p
+          = instance.description
+          |  Then Oz painted it on the inside with a coat of thin glue, to make it airtight.
+      ul.m-detail__info.o-middot.o-middot--inline
+        each productInfo in instance.info
+          li= productInfo
+      .o-title.o-title--small.o-title--light
+        include ../svg/icon_bottle.svg
+        strong.t-smallcaps Podrobnosti
+      ul.o-triplet
+        each productExtra, index in instance.extra
+          - var tripletClass
+          case index
+            when 0
+              - tripletClass = "primary"
+            when 1
+              - tripletClass = "secondary"
+            default
+              - tripletClass = "tertiary"
+          li.o-triplet__item
+            .o-circle(class="o-circle--#{tripletClass}")
+              .o-circle__content
+                = productExtra.value
+                span.o-circle__note g/l
+            strong.o-triplet__title(class="o-triplet__title--#{tripletClass}")
+              if (index == 0)
+                | Redukující cukry
+              else if (index == 1)
+                | Bezcukerný extrakt
+              else
+                | Celkový obsah kyselin
+      .l-inline
+        .l-inline__row
+          .l-inline__cell
+            span.o-label Cena
+            span.m-detail__price
+              strong= instance.price
+              |  Kč
+          .l-inline__cell
+            .m-detail__checkout
+              .m-detail__quantity
+                label.o-label Počet
+                input.o-input.o-input--number(type="number", name="quantity", min="1", value="1")
+              .m-detail__button
+                input.o-submit(type="submit", value="Vložit do košíku")
