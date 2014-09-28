@@ -2,7 +2,7 @@
   "shopItems": [
     {
       "name": "Rulandské šedé",
-      "category": "růžové",
+      "category": "rose",
       "type": "výběr z hroznů",
       "year": "&rsquo;13",
       "description": "Hodí se k jeseteru a tvrdším sýrům.",
@@ -29,7 +29,7 @@
     },
     {
       "name": "Ryzlink rýnský",
-      "category": "bílé",
+      "category": "white",
       "type": "pozdní sběr",
       "year": "&rsquo;06",
       "description": "To pravé víno pro horké letní večery.",
@@ -56,7 +56,7 @@
     },
     {
       "name": "Sauvignon",
-      "category": "červené",
+      "category": "red",
       "type": "pozdní sběr",
       "year": "&rsquo;12",
       "description": "Výborný k lososovi.",
@@ -83,7 +83,7 @@
     },
     {
       "name": "Frankovka",
-      "category": "červené",
+      "category": "red",
       "type": "jakostní",
       "year": "&rsquo;08",
       "description": "Naše jedinečné červené víno.",
@@ -110,7 +110,7 @@
     },
     {
       "name": "Tramín červený",
-      "category": "růžové",
+      "category": "rose",
       "type": "výběr z hroznů",
       "year": "&rsquo;09",
       "description": "Kvalitní české víno.",
@@ -137,7 +137,7 @@
     },
     {
       "name": "Rulandské bílé",
-      "category": "bílé",
+      "category": "white",
       "type": "kabinet",
       "year": "&rsquo;06",
       "description": "To pravé víno pro horké letní večery.",
@@ -164,7 +164,7 @@
     },
     {
       "name": "Rulandské šedé",
-      "category": "růžové",
+      "category": "rose",
       "type": "výběr z hroznů",
       "year": "&rsquo;13",
       "description": "Hodí se k jeseteru a tvrdším sýrům.",
@@ -191,7 +191,7 @@
     },
     {
       "name": "Ryzlink rýnský",
-      "category": "bílé",
+      "category": "white",
       "type": "kabinet",
       "year": "&rsquo;06",
       "description": "To pravé víno pro horké letní večery.",
@@ -218,7 +218,7 @@
     },
     {
       "name": "Sauvignon",
-      "category": "červené",
+      "category": "red",
       "type": "pozdní sběr",
       "year": "&rsquo;12",
       "description": "Výborný k lososovi.",
