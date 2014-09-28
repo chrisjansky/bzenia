@@ -133,6 +133,7 @@ gulp.task("strip", ["produce"], function() {
         html: glob.sync(paths.pages),
         ignore: [/::?-[\w\d]+/]
       }))
+      .pipe(minify())
       .pipe(gulp.dest(paths.production + paths.css));
   }
 });
