@@ -1,0 +1,17 @@
+// Price.
+[class^="o-price"],
+[class*=" o-price"] {
+  color: $c-grey4;
+  strong {
+    font-size: em($ratio--m);
+    color: $c-grey6;
+    vertical-align: middle;
+  }
+}
+.o-price--big {
+  strong {
+    font-size: em($ratio--l);
+    color: $c-grey8;
+    margin-right: em($ratio--xs, $ratio--l);
+  }
+}
