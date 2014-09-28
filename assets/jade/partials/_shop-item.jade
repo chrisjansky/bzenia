@@ -1,16 +1,5 @@
-- var productCategory
-case instance.category
-  when "bílé"
-    - productCategory = "white"
-  when "červené"
-    - productCategory = "red"
-  when "růžové"
-    - productCategory = "rose"
-  default
-    - productCategory = "default"
-
-article.m-products__item.o-product(class="o-product--#{productCategory}")
-  a.o-product__link(href="detail-produktu.html", data-pjax--whole)
+article.m-products__item.o-product
+  a.o-wine.o-product__link(href="detail-produktu.html", data-pjax--whole)
     .o-product__thumbnail
       figure.o-photo
         .o-photo__link.o-photo__content
@@ -22,13 +11,13 @@ article.m-products__item.o-product(class="o-product--#{productCategory}")
             img(src="assets/images/product_thumbnail2.jpg", alt="Thumbnail")
           else
             img(src="assets/images/product_thumbnail3.jpg", alt="Thumbnail")
-      .o-product__category!= instance.year
-      .o-product__price
+      .o-product__category(class="o-badge--#{instance.category}")!= instance.year
+      .o-product__price.o-price
         strong= instance.price
         |  Kč
     .o-product__name
-      h3.t-h3= instance.name
-      em.o-product__type= instance.type
+      h3.o-wine__name.t-h3= instance.name
+      em.o-wine__type.o-product__type= instance.type
   p.o-product__description
     = instance.description
     if (index % 2 == 0)
