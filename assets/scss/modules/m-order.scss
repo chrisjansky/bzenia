@@ -1,0 +1,57 @@
+.m-order__table {
+  display: table;
+  width: 100%;
+}
+.m-order__item {
+  display: table-row;
+}
+.m-order__cell {
+  display: table-cell;
+  vertical-align: middle;
+  padding: em($ratio--s) 0;
+}
+.m-order__content {
+  border-bottom: $line--b solid $c-grey1;
+  .m-order__item:last-child & {
+    border-bottom: none;
+  }
+}
+.m-order__photo {
+  position: relative;
+  width: em($ratio--xxl);
+}
+.m-order__category {
+  position: absolute;
+  bottom: em($ratio--b);
+  right: em($ratio--m);
+}
+.m-order__price {
+  margin: 0 em($ratio--m);
+}
+.m-order__link {
+  display: block;
+  strong {
+    display: block;
+    font-size: em($ratio--m);
+  }
+}
+.m-order__summary {
+  position: relative;
+  margin-top: em($ratio--b);
+  text-align: center;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40%;
+    height: $line--b;
+    background-color: $c-grey2;
+  }
+}
+.m-order__total {
+  position: relative;
+  display: inline-block;
+  background-color: white;
+  padding: 0 em($ratio--b);
+}
