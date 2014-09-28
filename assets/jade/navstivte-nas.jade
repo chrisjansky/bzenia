@@ -10,7 +10,6 @@ block template-body
       h1.t-h1
         | Přijeďte ochutnat to pravé 
         span.line-break moravské víno
-      p Adresa, jak se k nám dostat.
     .l-wrapper.l-wrapper--only-horizontal.l-wrapper--bleed
       iframe(src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2618.9730401074858!2d17.270420200000004!3d48.9730376!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47133cba9fc7643f%3A0x1c8a1127a4c2b93!2sKarla+%C4%8Capka+1542%2C+696+81+Bzenec!5e0!3m2!1sen!2scz!4v1410621816581", width="100%", height="400", frameborder="0")
 
@@ -21,12 +20,12 @@ block template-body
         table.m-form__table
           tr.m-form__row
             td.m-form__cell(colspan="2")
-              input.o-input(type="text", placeholder="Vaše jméno")
+              input.o-input.o-input--primary(type="text", placeholder="Vaše jméno")
           tr.m-form__row
             td.m-form__cell
-              input.o-input(type="text", placeholder="Telefon")
+              input.o-input.o-input--primary(type="text", placeholder="Telefon")
             td.m-form__cell
-              input.o-input(type="text", placeholder="E-mail")
+              input.o-input.o-input--primary(type="text", placeholder="E-mail")
           tr.m-form__row.m-form__options
             td.m-form__cell(colspan="2")
               .l-inline
@@ -57,12 +56,12 @@ block template-body
                       span.ss-navigatedown
           tr.m-form__row
             td.m-form__cell(colspan="2")
-              textarea.o-textarea(placeholder="Vaše poznámky")
+              textarea.o-textarea.o-textarea--primary(placeholder="Vaše poznámky")
           tr.m-form__row
             td.m-form__cell
               p S upřesněním možné degustace Vás budeme obratem kontaktovat.
             td.m-form__cell
-              input.o-submit(type="submit", value="Odeslat")
+              input.o-submit.o-submit--primary(type="submit", value="Odeslat")
 
   section.m-contacts
     .l-wrapper.l-wrapper--big
