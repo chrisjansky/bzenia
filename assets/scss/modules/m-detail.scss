@@ -1,0 +1,58 @@
+.m-detail__header {
+  padding-bottom: 0;
+}
+.m-detail__image {
+  position: relative;
+  background-color: $c-grey6;
+  img {
+    width: 100%;
+    height: auto;
+    opacity: .75;
+  }
+  &:after {
+    content: "";
+    @include stretch-overlay;
+    @include linear-gradient(to top, rgba($c-grey8, .5), rgba($c-grey8, 0), $fallback: transparent);
+  }
+}
+.m-detail__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+}
+.m-detail__contextual {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.m-detail__price {
+  color: $c-grey4;
+  strong {
+    font-size: em($ratio--l);
+    margin-right: em($ratio--xxs);
+    vertical-align: middle;
+    color: $c-grey8;
+  }
+}
+.m-detail__type {
+  font-size: em($ratio--m);
+  color: rgba($c-grey2, .5);
+}
+.m-detail__description {
+  font-size: em($ratio--m);
+  color: $c-grey6;
+}
+.m-detail__info {
+  margin-bottom: em($ratio--l);
+  color: $c-grey4;
+}
+.m-detail__quantity {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-right: em($ratio--b);
+}
+.m-detail__button {
+  display: inline-block;
+  vertical-align: bottom;
+}

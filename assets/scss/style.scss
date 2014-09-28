@@ -30,6 +30,9 @@
 @import "objects/o-canvas";
 @import "objects/o-title";
 @import "objects/o-pagination";
+@import "objects/o-inputs";
+@import "objects/o-triplet";
+@import "objects/o-circle";
 
 @import "modules/modules";
 @import "modules/m-header";
@@ -37,9 +40,10 @@
 @import "modules/m-hero";
 @import "modules/m-filter";
 @import "modules/m-accordion";
+@import "modules/m-detail";
 @import "modules/m-contacts";
 
 @import "misc/z-index";
 @import "misc/svg";
 @import "misc/states";
-@import "misc/shame";
+@import "misc/temporary";

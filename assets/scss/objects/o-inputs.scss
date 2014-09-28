@@ -1,0 +1,135 @@
+// Inputs.
+// .o-input,
+// .o-textarea {
+//   border: none;
+//   outline: none;
+//   border-bottom: $line--b solid $c-color1--light;
+//   color: $c-color1--black;
+//   @include placeholder {
+//     color: $c-color1--medium;
+//   }
+//   @include hover-state {
+//     border-bottom-color: $c-color2;
+//   }
+//   @include focus-state {
+//     border-bottom-color: white;
+//   }
+// }
+.o-input {
+  font-size: em($unit--l);
+  font-weight: $serif--bold;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-bottom: $line--b solid;
+  // border-top: $line--b solid transparent;
+  padding: em($ratio--s, $unit--l) 0;
+}
+// Textarea.
+.o-textarea {
+  border: none;
+  outline: none;
+  background-color: $c-color1__bg;
+  border-bottom: $line--b solid;
+  padding: em($ratio--b);
+  @include focus-state {
+    background-color: $c-color1__bg--dark;
+  }
+}
+.o-input,
+.o-textarea {
+  color: $c-grey6;
+  border-bottom-color: $c-grey3;
+  @include placeholder {
+    color: $c-grey3;
+  }
+  @include hover-state {
+    border-bottom-color: $c-grey4;
+  }
+  @include focus-state {
+    color: $c-color1;
+    border-bottom-color: $c-color1;
+  }
+}
+.o-input--primary,
+.o-textarea--primary {
+  color: $c-color1--black;
+  border-bottom-color: $c-color1--light;
+  @include placeholder {
+    color: $c-color1--medium;
+  }
+  @include hover-state {
+    border-bottom-color: $c-color2;
+  }
+  @include focus-state {
+    border-bottom-color: white;
+  }
+}
+.o-input--number {
+  width: em($ratio--xl);
+}
+// Dropdown.
+.o-select {
+  display: inline-block;
+  border-bottom: $line--b solid $c-grey3;
+  select {
+    @include appearance(none);
+    padding: em($ratio--xs) em($ratio--m) em($ratio--xs) 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    // Extremely stupid fix for Firefox styling.
+    // https://bugzilla.mozilla.org/show_bug.cgi?id=649849
+    text-indent: .1px;
+    text-overflow: "";
+    @include focus-state {
+      outline: 0;
+    }
+  }
+  @include hover-state {
+    border-bottom-color: $c-grey2;
+  }
+}
+.o-select--primary {
+  border-bottom-color: $c-color1--light;
+  @include hover-state {
+    border-bottom-color: $c-color2;
+  }
+}
+.o-submit {
+  outline: none;
+  border: $line--b solid $c-grey3;
+  color: $c-grey6;
+  padding: em($ratio--s) em($ratio--b);
+  background-color: transparent;
+  font-family: $font--sans;
+  font-weight: $sans--semibold;
+  @include hover-state {
+    color: $c-grey8;
+    border-color: $c-grey4;
+  }
+  @include focus-state {
+    color: $c-color1;
+    border-color: $c-color1;
+  }
+}
+.o-submit--primary {
+  color: $c-color1--dark;
+  border-color: $c-color1__bg--dark;
+  @include hover-state {
+    color: $c-color1--black;
+    border-color: $c-color1--dim;
+  }
+  @include focus-state {
+    color: white;
+    border-color: $c-color1--light;
+  }
+}
+// Label.
+.o-label {
+  margin-right: em($ratio--m);
+  color: $c-grey4;
+}
+.o-label--primary {
+  color: $c-color1--dark;
+}

@@ -1,0 +1,32 @@
+// Circle icon.
+.o-circle {
+  display: block;
+  width: em($ratio--xl);
+  height: em($ratio--xl);
+  margin-left: auto;
+  margin-right: auto;
+  border: $line--b solid;
+  border-radius: 50%;
+  text-align: center;
+  color: $c-grey6;
+  font-family: $font--sans;
+  font-weight: $sans--semibold;
+  @include pseudo-center--parent;
+  }
+.o-circle--primary {color: $c-color1; }
+.o-circle--secondary {color: $c-color3; }
+.o-circle--tertiary {color: $c-color4; }
+.o-circle__content {
+  position: relative;
+  width: 90%;
+  padding: em($ratio--s);
+  margin-left: em(-$ratio--xxs);
+  line-height: 1.25;
+  @include pseudo-center--child;
+}
+.o-circle__note {
+  position: absolute;
+  left: 100%;
+  margin-left: em($ratio--m);
+  // color: $c-grey3;
+}
