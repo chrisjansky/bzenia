@@ -1,0 +1,22 @@
+// Small circular icon containing year of manufacture and background color according to wine type.
+[class^="o-badge"],
+[class*=" o-badge"] {
+  display: inline-block;
+  width: em($ratio--l);
+  line-height: em($ratio--l);
+  font-size: em($unit--s);
+  font-family: $font--sans;
+  color: white;
+  text-align: center;
+  background-color: $c-grey6;
+  border-radius: 50%;
+}
+.o-badge--white & {
+  background-color: $c-color1;
+}
+.o-badge--red & {
+  background-color: $c-color3;
+}
+.o-badge--rose & {
+  background-color: $c-color4;
+}
