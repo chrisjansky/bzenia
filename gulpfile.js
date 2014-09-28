@@ -130,7 +130,8 @@ gulp.task("strip", ["produce"], function() {
     return gulp.src(paths.production + paths.glob_css)
       .pipe(plumber())
       .pipe(uncss({
-        html: glob.sync(paths.pages)
+        html: glob.sync(paths.pages),
+        ignore: [/::?-[\w\d]+/]
       }))
       .pipe(gulp.dest(paths.production + paths.css));
   }
