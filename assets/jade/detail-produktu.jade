@@ -53,14 +53,16 @@ block template-body
       .l-inline
         .l-inline__row
           .l-inline__cell
-            span.o-label Cena
-            span.m-detail__price
+            span.o-price--big
+              span.o-label Cena
               strong= instance.price
               |  Kč
           .l-inline__cell
             .m-detail__checkout
               .m-detail__quantity
                 label.o-label Počet
-                input.o-input.o-input--number(type="number", name="quantity", min="1", value="1")
+                span.o-holder
+                  input.o-input.o-input--number(type="number", name="quantity", min="1", value="1")
+                  span.o-holder__icon.ss-write
               .m-detail__button
                 input.o-submit(type="submit", value="Vložit do košíku")
