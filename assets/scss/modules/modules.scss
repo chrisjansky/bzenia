@@ -14,32 +14,6 @@
     @include omega(3n);
   }
 }
-// Form.
-.m-form {
-  background-color: $c-color1;
-  color: white;
-}
-.m-form__table {
-  color: $c-color1--medium;
-}
-.m-form__row {
-  &:last-child .m-form__cell:last-child {
-    text-align: right;
-  }
-}
-.m-form__cell {
-  padding-bottom: em($unit--l);
-  .m-form__row:last-child & {
-    padding-bottom: 0;
-  }
-  & + & {
-    padding-left: em($ratio--m);
-  }
-}
-.m-form__options {
- font-family: $font--sans;
- font-weight: $sans--regular;
-}
 // Gallery module.
 // Side gradients not used right now.
 // .m-gallery {
