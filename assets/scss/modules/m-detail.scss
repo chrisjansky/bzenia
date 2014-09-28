@@ -26,15 +26,6 @@
   top: 0;
   left: 0;
 }
-.m-detail__price {
-  color: $c-grey4;
-  strong {
-    font-size: em($ratio--l);
-    margin-right: em($ratio--xxs);
-    vertical-align: middle;
-    color: $c-grey8;
-  }
-}
 .m-detail__type {
   font-size: em($ratio--m);
   color: rgba($c-grey2, .5);

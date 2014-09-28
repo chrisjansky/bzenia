@@ -1,20 +1,4 @@
 // Inputs.
-// .o-input,
-// .o-textarea {
-//   border: none;
-//   outline: none;
-//   border-bottom: $line--b solid $c-color1--light;
-//   color: $c-color1--black;
-//   @include placeholder {
-//     color: $c-color1--medium;
-//   }
-//   @include hover-state {
-//     border-bottom-color: $c-color2;
-//   }
-//   @include focus-state {
-//     border-bottom-color: white;
-//   }
-// }
 .o-input {
   font-size: em($unit--l);
   font-weight: $serif--bold;
@@ -22,16 +6,21 @@
   outline: none;
   background-color: transparent;
   border-bottom: $line--b solid;
-  // border-top: $line--b solid transparent;
   padding: em($ratio--s, $unit--l) 0;
 }
 // Textarea.
 .o-textarea {
   border: none;
   outline: none;
-  background-color: $c-color1__bg;
+  background-color: $c-grey2;
   border-bottom: $line--b solid;
   padding: em($ratio--b);
+  @include focus-state {
+    background-color: white;
+  }
+}
+.o-textarea--primary {
+  background-color: $c-color1__bg;
   @include focus-state {
     background-color: $c-color1__bg--dark;
   }
@@ -41,7 +30,7 @@
   color: $c-grey6;
   border-bottom-color: $c-grey3;
   @include placeholder {
-    color: $c-grey3;
+    color: $c-grey4;
   }
   @include hover-state {
     border-bottom-color: $c-grey4;
@@ -66,7 +55,7 @@
   }
 }
 .o-input--number {
-  width: em($ratio--xl);
+  width: em($ratio--l);
 }
 // Dropdown.
 .o-select {
@@ -84,6 +73,7 @@
     text-overflow: "";
     @include focus-state {
       outline: 0;
+      color: $c-color1;
     }
   }
   @include hover-state {
@@ -94,6 +84,11 @@
   border-bottom-color: $c-color1--light;
   @include hover-state {
     border-bottom-color: $c-color2;
+  }
+  select {
+    @include focus-state {
+      color: white;
+    }
   }
 }
 .o-submit {
@@ -127,7 +122,7 @@
 }
 // Label.
 .o-label {
-  margin-right: em($ratio--m);
+  margin-right: em($ratio--b);
   color: $c-grey4;
 }
 .o-label--primary {

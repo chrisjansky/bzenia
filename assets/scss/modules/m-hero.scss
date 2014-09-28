@@ -31,12 +31,12 @@
     opacity: .75;
   }
   .o-lead {
-    color: rgba($c-grey2, .875);
+    color: $c-color2;
   }
   &:after {
     content: "";
     @include stretch-overlay;
-    @include linear-gradient(to bottom, rgba($c-grey8, .625), rgba($c-grey8, 0), $fallback: transparent);
+    @include linear-gradient(to bottom, rgba($c-grey8, .375), rgba($c-grey8, 0), $fallback: transparent);
   }
 }
 .m-hero--black {

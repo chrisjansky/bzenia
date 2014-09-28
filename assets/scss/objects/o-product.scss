@@ -10,15 +10,7 @@
 }
 .o-product__link {
   display: block;
-  text-decoration: none;
-  @include link-state {
-    color: $c-grey6;
-  }
   @include active-state {
-    color: black;
-    .o-product__type {
-      color: $c-grey4;
-    }
     .o-photo__link:after {
       background-color: transparent;
     }
@@ -35,40 +27,16 @@
 }
 .o-product__type {
   font-size: em($ratio--m);
-  color: $c-grey3;
 }
 .o-product__category {
   position: absolute;
   top: 0;
   left: 0;
-  width: em($ratio--l);
-  line-height: em($ratio--l);
-  font-size: em($unit--s);
-  font-family: $font--sans;
-  color: white;
-  text-align: center;
-  background-color: $c-grey6;
-  border-radius: 50%;
-  .o-product--white & {
-    background-color: $c-color1;
-  }
-  .o-product--red & {
-    background-color: $c-color3;
-  }
-  .o-product--rose & {
-    background-color: $c-color4;
-  }
 }
 .o-product__price {
   position: absolute;
   top: .125em;
   right: em(-$ratio--m);
-  color: $c-grey4;
-  strong {
-    font-size: em($ratio--m);
-    color: $c-grey6;
-    vertical-align: middle;
-  }
 }
 .o-product__description {
   margin-top: 0;
