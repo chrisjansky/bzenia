@@ -21,6 +21,7 @@
 
 @import "objects/objects";
 @import "objects/o-logo";
+@import "objects/o-badge";
 @import "objects/o-button";
 @import "objects/o-switch";
 @import "objects/o-product";
@@ -33,6 +34,8 @@
 @import "objects/o-inputs";
 @import "objects/o-triplet";
 @import "objects/o-circle";
+@import "objects/o-wine";
+@import "objects/o-price";
 
 @import "modules/modules";
 @import "modules/m-header";
@@ -41,6 +44,8 @@
 @import "modules/m-filter";
 @import "modules/m-accordion";
 @import "modules/m-detail";
+@import "modules/m-form";
+@import "modules/m-order";
 @import "modules/m-contacts";
 
 @import "misc/z-index";
