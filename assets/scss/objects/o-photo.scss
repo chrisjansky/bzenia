@@ -11,6 +11,9 @@
     height: auto;
   }
 }
+.o-photo--small img {
+  width: em($ratio--xl);
+}
 .o-photo--big img {
   width: em($ratio--xh);
 }
