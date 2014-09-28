@@ -56,6 +56,11 @@
 }
 .o-input--number {
   width: em($ratio--l);
+  @include focus-state {
+    & + .o-holder__icon {
+      display: none;
+    }
+  }
 }
 // Dropdown.
 .o-select {

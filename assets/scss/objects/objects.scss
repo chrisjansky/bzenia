@@ -121,7 +121,7 @@
 .o-holder {
   display: inline-block;
   position: relative;
-  @include active-state {
+  @include hover-state {
     .o-holder__icon {
       display: none;
     }
