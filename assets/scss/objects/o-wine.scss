@@ -1,0 +1,21 @@
+// Wine label link.
+.o-wine {
+  text-decoration: none;
+  @include transition(color $duration--b);
+  @include link-state {
+    .o-wine__name {
+      color: $c-grey6;
+    }
+    .o-wine__type {
+      color: $c-grey3;
+    }
+  }
+  @include active-state {
+    .o-wine__name {
+      color: black;
+    }
+    .o-wine__type {
+      color: $c-grey4;
+    }
+  }
+}
