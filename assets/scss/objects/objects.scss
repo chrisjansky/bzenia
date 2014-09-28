@@ -117,6 +117,22 @@
   background-color: $c-grey8;
   color: $c-grey4;
 }
+// Input container with icon.
+.o-holder {
+  display: inline-block;
+  position: relative;
+  @include active-state {
+    .o-holder__icon {
+      display: none;
+    }
+  }
+}
+.o-holder__icon {
+  position: absolute;
+  right: 0;
+  color: $c-grey4;
+  line-height: em($height--b);
+}
 // .o-aside {
 //   position: fixed;
 //   top: 0;
