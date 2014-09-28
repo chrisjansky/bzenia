@@ -1,9 +1,0 @@
-// Suboptimal, rushed code.
-.temp-link--light {
-  @include link-state {
-    color: rgba($c-grey2, .875);
-  }
-  @include active-state {
-    color: white;
-  }
-}
