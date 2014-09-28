@@ -11,15 +11,6 @@
     height: auto;
   }
 }
-.o-photo__overlay {
-  color: white;
-  opacity: 0;
-  @include stretch-overlay;
-  @include pseudo-center--parent;
-  @include transition(opacity $duration--b);
-  // [class^="o-icon"],
-  // [class*=" o-icon"] {}
-}
 .o-photo--big img {
   width: em($ratio--xh);
 }
@@ -39,9 +30,6 @@
     @include transition(background $duration--b);
   }
   @include active-state {
-    .o-photo__overlay {
-      opacity: 1;
-    }
     &:after {
       background-color: transparent;
     }
