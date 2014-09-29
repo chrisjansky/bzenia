@@ -7,7 +7,7 @@ block template-body
   if pageSettings.paperCanvas
     canvas.o-canvas--fixed.o-canvas--half#js-waves(resize)
 
-  section.m-hero--half(class="m-hero--#{pageSettings.theme}")
+  section.m-hero.m-hero--half(class="m-hero--#{pageSettings.theme}")
     .m-hero__content.l-wrapper.l-wrapper--lower
       h1.t-h1 O vinařství
     .m-hero__bg(style="background-image: url('assets/images/vinery_big2.jpg'); background-position-y: 10%; ")
@@ -51,7 +51,7 @@ block template-body
                 img(src="http://lorempixel.com/200/200/nature/#{index}", alt="lorempixel")
               figcaption.o-photo__caption Popis fotky.
 
-  section.m-hero--dark.m-hero--half
+  section.m-hero.m-hero--dark.m-hero--half
     .m-hero__content.l-wrapper.l-wrapper--big.l-offset
       .o-title
         include ../svg/icon_bio.svg

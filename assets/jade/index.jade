@@ -7,7 +7,7 @@ block template-body
   if pageSettings.paperCanvas
     canvas.o-canvas--fixed#js-waves(resize)
 
-  section.m-hero--full(class="m-hero--#{pageSettings.theme}")
+  section.m-hero.m-hero--full(class="m-hero--#{pageSettings.theme}")
     .m-hero__content.l-wrapper.l-wrapper--lower
       h1.t-h1
         | Moderní rodinné 
@@ -35,7 +35,7 @@ block template-body
         .l-column--half
           p Oba majitelé, Aleš a Zdeněk Maleňákovi, jsou ve sklepech každý den, a jsou tak přímo účastni dění ve vinařství.
 
-  section.m-hero--dark.m-hero--half
+  section.m-hero.m-hero--dark.m-hero--half
     .m-hero__content.l-wrapper.l-wrapper--big.l-offset
       .o-title
         include ../svg/icon_reality.svg

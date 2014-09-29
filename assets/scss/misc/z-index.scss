@@ -6,8 +6,7 @@
 }
 .o-pagination__list,
 .o-pagination__side-link,
-[class^="m-hero"]:after,
-[class*=" m-hero"]:after,
+.m-hero:after,
 .m-detail__image:after {
   z-index: 10;
 }

@@ -7,7 +7,7 @@ block template-body
   if pageSettings.paperCanvas
     canvas.o-canvas.o-canvas--fixed.o-canvas--half#js-waves(resize)
 
-  section.m-hero--half(class="m-hero--#{pageSettings.theme}")
+  section.m-hero.m-hero--half(class="m-hero--#{pageSettings.theme}")
     .m-hero__content.l-wrapper.l-wrapper--lower
       h1.t-h1 Naše nabídka
     .m-hero__bg(style="background-image: url('assets/images/cellar_big2.jpg')")
@@ -58,7 +58,7 @@ block template-body
       .l-offset.l-wrapper.l-wrapper--small
         strong.t-smallcaps Mohlo by Vás zajímat
     ul.m-accordion__list(data-accordion)
-      li.m-accordion__item--first.m-hero--black(data-accordion-item, data-opened)
+      li.m-accordion__item--first.m-hero.m-hero--black(data-accordion-item, data-opened)
         .m-hero__content.l-wrapper.l-offset
           .o-title
             include ../svg/icon_barrel.svg
@@ -89,7 +89,7 @@ block template-body
             p Celé toto dobrodružství s vínem, které Vás vtáhne do tajů jeho výroby, můžete mít za cenu 105.000,- Kč včetně DPH.
         .m-hero__bg(style="background-image: url('assets/images/barrel_big1.jpg')")
 
-      li.m-accordion__item--second.m-hero--black(data-accordion-item)
+      li.m-accordion__item--second.m-hero.m-hero--black(data-accordion-item)
         .m-hero__content.l-wrapper.l-offset
           .o-title
             include ../svg/icon_diamond.svg
@@ -103,7 +103,7 @@ block template-body
                 p Rádi vám poskytneme bližší informace.
         .m-hero__bg(style="background-image: url('assets/images/bottles_big1.jpg')")
 
-      li.m-accordion__item--third.m-hero--black(data-accordion-item)
+      li.m-accordion__item--third.m-hero.m-hero--black(data-accordion-item)
         .m-hero__content.l-wrapper.l-offset
           .o-title
             include ../svg/icon_tasting.svg
