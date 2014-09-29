@@ -1,12 +1,9 @@
 // General wrapper.
-[class^="l-wrapper"],
-[class*=" l-wrapper"] {
+.l-wrapper {
+  margin: 0 auto;
+  padding: em($ratio--b);
   @include clearfix;
   @include collapse-children;
-  margin: 0 auto;
-}
-.l-wrapper {
-  padding: em($ratio--b);
   @include media($tablet--portrait) {
     padding: em($ratio--m);
   }
