@@ -1,10 +1,15 @@
-var durationBasic = 250;
+var
+  durationBasic = 250,
+  durationLong = 500;
+
 jQuery.easing.def = "easeInOutCubic";
 
 $(document).on("ready pjax:success", function() {
   var
     $body = $("body"),
     $pjaxWhole = $("#js-pjax--whole"),
+    $headerNav = $("[data-header]"),
+    $logoMain = $("[data-logo]"),
     // Prevent opening Featherlight lightbox when touching Swiper.
     swiperActive = false;
 
@@ -28,10 +33,10 @@ $(document).on("ready pjax:success", function() {
     });
 
     $pjaxWhole.on({
-      'pjax:send': function() {
+      "pjax:send": function() {
         $body.addClass("is-loading");
       },
-      'pjax:complete': function() {
+      "pjax:complete": function() {
         $body.removeClass("is-loading");
       }
     });
@@ -43,7 +48,7 @@ $(document).on("ready pjax:success", function() {
     $gallery = $(".m-gallery"),
     galleryStartClass = "m-gallery--start",
     galleryEndClass = "m-gallery--end",
-    gallerySwiper = new Swiper('.swiper-container', {
+    gallerySwiper = new Swiper(".swiper-container", {
       slideElement: "li",
       slidesPerView: "auto",
       calculateHeight: true,
@@ -89,17 +94,20 @@ $(document).on("ready pjax:success", function() {
     }
   });
 
-  // $('[data-temp-waypoint]').waypoint(function(direction) {
-    // if (direction === 'down') {
-      // logoSlide($(this).attr('data-title1'), $(this).attr('data-title2'), true);
-      // $body.addClass("offscreen--is-active");
-    // }
-  // },
-  // {
-    // offset: '25%'
-  // });
+  // Header waypoint.
+  $body
+  .waypoint(function(direction) {
+      $headerNav
+        .toggleClass("header--is-passive", direction === "down")
+        .toggleClass("header--is-top", direction !== "down");
+    },
+    {
+      offset: function() {
+        return -Math.round(($(window).height() * 0.05));
+      }
+    });
 
-  // Accordion
+  // Accordion.
   var $accordList = $("[data-accordion]");
   if ($accordList.length > 0) {
     var
@@ -114,7 +122,7 @@ $(document).on("ready pjax:success", function() {
     });
   }
 
-  // Paperscript
+  // Paperscript.
   var paperCanvas = document.getElementById("js-waves");
 
   if (paperCanvas !== null) {
@@ -133,7 +141,7 @@ $(document).on("ready pjax:success", function() {
     var pathWave = new Path({
       // fillColor: "#474a4d",
       fillColor: "black",
-      opacity: 0.25
+      opacity: 0.375
     });
 
     initializePath();
