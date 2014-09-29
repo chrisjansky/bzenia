@@ -43,6 +43,15 @@
 .svg-icon--bio {
   fill: $c-color1;
 }
+.svg-logo_symbol {
+  width: em($circle--s);
+  height: em($circle--s);
+}
+.svg-logo_wordmark {
+  width: em(90);
+  height: auto;
+  vertical-align: middle;
+}
 // .svg-tasting__cheese {
 //   fill: $c-color2;
 // }
