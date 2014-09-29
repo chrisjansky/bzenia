@@ -1,8 +1,10 @@
-header.m-header(class="m-header--#{pageSettings.theme}")
-  .l-wrapper.l-inline
+header.m-header.header--is-top(class="m-header--#{pageSettings.theme}", data-header)
+  .m-header__wrapper.l-wrapper.l-inline
     .l-inline__row
       .l-inline__cell
-        a.o-logo__link(href="index.html", class="o-logo--#{pageSettings.theme}", data-pjax--whole)
+        a.o-logo(href="index.html", class="o-logo--#{pageSettings.theme}", data-pjax--whole, data-logo)
+          .o-logo__symbol
+            include ../../svg/logo_symbol--thick.svg
           .o-logo__title
             include ../../svg/logo_wordmark.svg
             strong Bzenia
@@ -16,3 +18,6 @@ header.m-header(class="m-header--#{pageSettings.theme}")
                 li: a.o-pages__item(href=instance.link, data-pjax--whole)!= instance.name
           a(href="#").o-nav__language.o-switch.o-switch--small
             span.o-switch__content En
+          a(href="nakupni-kosik.html", data-pjax--whole).o-switch.o-switch--small
+            span.o-switch__content
+              span.ss-cart.o-icon
