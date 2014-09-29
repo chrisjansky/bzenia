@@ -1,25 +1,51 @@
-.offscreen--not-active {
-  .m-offscreen {
-    // .o-logo__title {opacity: 0; }
+// Header states.
+.header--is-top {  
+  .o-logo--light {
+    @include link-state {
+      fill: $c-grey6;
+    }
+    @include active-state {
+      fill: black;
+      .o-logo__symbol {
+        fill: $c-color4;
+      }
+    }
   }
-  .m-offscreen__menu {
-    // display: none;
+  &.m-header--light {
+    .o-pages__item {
+      @include active-state {
+        color: $c-color4;
+      }
+    }
+    .o-pages__item--selected {
+      @include link-state {
+        color: $c-grey6;
+      }
+    }
   }
 }
-.offscreen--is-active {
-  .m-offscreen {
-    width: em($ratio--h);
+.header--is-passive {
+  .m-header__wrapper {
+    padding-top: em($ratio--b);
+    padding-bottom: em($ratio--b);
+    @include media($tablet--landscape__up) {
+      padding-top: em($ratio--m);
+      padding-bottom: em($ratio--m);
+    }
+  }
+  .o-nav,
+  .o-logo__title {
+    opacity: 0;
+    @include transform(translateY(em(-$ratio--xxl)));
+  }
+  &:hover {
+    &:before {
+      height: 100%;
+    }
   }
 }
-// section {
-//   @include transition(all $duration--b);
-// }
-// .content--is-offset {
-//   section {
-//     @include transform(translate3d(10em, 0, 0));
-//   }
-// }
 
+// Pjax styles.
 .is-ready:after {
   content: "";
   position: fixed;
