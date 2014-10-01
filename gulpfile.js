@@ -144,9 +144,9 @@ gulp.task("server", ["compile"], function() {
     server: {
       baseDir: paths.development
     },
-    online: false,
+    online: true,
     tunnel: false,
-    xip: false,
+    xip: true,
     minify: true,
     notify: false
   });
