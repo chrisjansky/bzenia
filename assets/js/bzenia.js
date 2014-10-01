@@ -95,17 +95,19 @@ $(document).on("ready pjax:success", function() {
   });
 
   // Header waypoint.
-  $body
-  .waypoint(function(direction) {
-      $headerNav
-        .toggleClass("header--is-passive", direction === "down")
-        .toggleClass("header--is-top", direction !== "down");
-    },
-    {
-      offset: function() {
-        return -Math.round(($(window).height() * 0.05));
-      }
-    });
+  if (!Modernizr.touch) {
+    $body
+      .waypoint(function(direction) {
+        $headerNav
+          .toggleClass("header--is-passive", direction === "down")
+          .toggleClass("header--is-top", direction !== "down");
+      },
+      {
+        offset: function() {
+          return -Math.round(($(window).height() * 0.05));
+        }
+      });
+  }
 
   // Accordion.
   var $accordList = $("[data-accordion]");
@@ -162,8 +164,10 @@ $(document).on("ready pjax:success", function() {
       pathWave.add(view.bounds.topRight);
     }
 
-    tool.onMouseMove = function(event) {
-      mousePos = event.point;
+    if (!Modernizr.touch) {
+      tool.onMouseMove = function(event) {
+        mousePos = event.point;
+      }
     }
 
     view.onFrame = function(event) {
