@@ -25,16 +25,9 @@
   }
 }
 .header--is-passive {
-  // .m-header__logo {
-  //   text-align: left;
-  // }
   .m-header__wrapper {
     padding-top: em($ratio--m);
     padding-bottom: em($ratio--m);
-    // @include media($tablet--landscape__up) {
-    //   padding-top: em($ratio--m);
-    //   padding-bottom: em($ratio--m);
-    // }
   }
   .o-nav,
   .o-logo__title {
@@ -62,6 +55,3 @@
 .is-loading:after {
   background-color: rgba($c-grey8, .75);
 }
-
-// Responsive.
-// @include media($phone)
