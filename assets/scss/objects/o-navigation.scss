@@ -10,7 +10,8 @@
   color: $c-grey4;
 }
 .o-pages__item--selected {
-  border-bottom: $line--b solid rgba($c-grey4, .5);
+  border-bottom: $line--b solid;
+  @include rgba(border-color, $c-grey4, .5);
   @include transition(color $duration--b);
   @include link-state {
     color: white;

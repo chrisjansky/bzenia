@@ -70,7 +70,7 @@ a {
     color: $c-grey2;
   }
   @include active-state {
-    color: rgba($c-grey2, .5);
+    @include rgba(color, $c-grey2, .5);
   }
 }
 .t-link--dark {
