@@ -8,7 +8,6 @@
 .m-order__cell {
   display: table-cell;
   vertical-align: middle;
-  // padding: em($ratio--s) 0;
   padding-top: em($ratio--b);
   padding-bottom: em($ratio--b);
 }
@@ -37,7 +36,6 @@
 }
 .m-order__summary {
   position: relative;
-  // margin-top: em($ratio--b);
   text-align: center;
   &:after {
     content: "";

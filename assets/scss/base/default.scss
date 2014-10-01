@@ -34,10 +34,6 @@ input[type="password"],
 textarea {
   width: 100%;
 }
-// iOS height fix.
-// .touch svg {
-//   max-height: 100%;
-// }
 // Custom styles.
 .line-break {
   @include media($tablet--landscape__up) {

@@ -6,7 +6,6 @@
   @include clearfix;
 }
 .o-triplet__item {
-  // @include span-columns(4);
   color: $c-grey5;
   text-align: center;
   padding: em($ratio--m) 0;

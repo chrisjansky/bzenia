@@ -1,6 +1,5 @@
 // Inputs.
 .o-input {
-  // font-size: em($unit--l);
   font-family: $font--sans;
   font-weight: $sans--regular;
   border: none;
@@ -77,8 +76,6 @@
 // Dropdown.
 .o-dropdown {
   display: inline-block;
-  // min-width: em($width--b);
-  // display: block;
   font-family: $font--sans;
   font-weight: $sans--regular;
   border-bottom: $line--b solid $c-grey3;

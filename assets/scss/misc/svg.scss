@@ -10,16 +10,10 @@
 }
 [class^="svg-icon"],
 [class*=" svg-icon"] {
-  // display: block;
   width: em($svg--b);
   height: em($svg--b);
   vertical-align: middle;
 }
-// [class^="svg-symbol"],
-// [class*=" svg-symbol"] {
-//   width: auto;
-//   height: em(40);
-// }
 
 // iOS doesn't fare well with width: auto;
 .svg-symbol--app_store {
@@ -30,13 +24,16 @@
   width: em(116);
   height: em(40);
 }
+.svg-logo_symbol {
+  width: em($circle--s);
+  height: em($circle--s);
+}
+.svg-logo_wordmark {
+  width: em(90);
+  height: em(20);
+  vertical-align: middle;
+}
 
-// .svg-outline {
-//   stroke: $c-grey4;
-// }
-// .svg-icon--grapes {
-//   fill: $c-color4;
-// }
 .svg-icon--barrel {
   fill: $c-color1;
 }
@@ -55,21 +52,3 @@
 .svg-icon--bio {
   fill: $c-color1;
 }
-.svg-logo_symbol {
-  width: em($circle--s);
-  height: em($circle--s);
-}
-.svg-logo_wordmark {
-  width: em(90);
-  height: em(20);
-  vertical-align: middle;
-}
-// .svg-tasting__cheese {
-//   fill: $c-color2;
-// }
-// .svg-grapes__leaf {
-//   stroke: $c-color1;
-// }
-// .svg-grapes__grape {
-//   stroke: $c-color3;
-// }

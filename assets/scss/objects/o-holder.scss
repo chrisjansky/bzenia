@@ -24,13 +24,11 @@
   right: 0;
   top: 0;
   line-height: em($height--b);
-  // color: $c-grey4;
 }
 @include media($phone) {
   .o-holder--float {
     display: block;
     @include clearfix;
-    // padding-bottom: em($ratio--s);
     .o-dropdown {
       display: block;
       overflow: auto;
@@ -46,7 +44,7 @@
 @include media($tablet--portrait) {
   .o-holder--float {
     .o-dropdown {
-      // Force to one line in m-form.
+      // Shameless force to one line in m-form.
       width: 8em;
     }
   }

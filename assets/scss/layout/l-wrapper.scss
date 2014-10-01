@@ -10,9 +10,6 @@
   @include media($tablet) {
     padding: em($ratio--l);
   }
-  // @include media($tablet--landscape) {
-  //   padding-left: em($ratio--xl);
-  // }
   @include media($desktop) {
     padding: em($ratio--l) 6.5%;
   }

@@ -25,15 +25,6 @@ body {
   text-transform: uppercase;
   vertical-align: middle;
 }
-// .t-spaced {
-//   font-family: $font--sans;
-//   font-weight: $sans--semibold;
-//   letter-spacing: .125em;
-// }
-// .t-strong {
-//   font-family: $font--sans;
-//   font-weight: $sans--semibold;
-// }
 .t-h1 {
   font-family: $font--display;
   line-height: 1.1;
@@ -103,11 +94,3 @@ a {
     text-align: center;
   }
 }
-// @include media($tablet__up) {
-//   .t-h1 {
-//     font-size: em($ratio--xl);
-//   }
-//   .t-h2 {
-//     font-style: em($ratio--l);
-//   }
-// }

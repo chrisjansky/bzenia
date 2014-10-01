@@ -38,7 +38,6 @@
   right: em(-$ratio--m);
 }
 .o-product__description {
-  // margin-top: 0;
   a {
     @include link-state {
       color: $c-grey8;

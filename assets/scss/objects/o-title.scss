@@ -1,21 +1,3 @@
-// .o-title {
-  // text-align: center;
-  // position: relative;
-  // [class^="svg-icon"] {
-  //   position: absolute;
-  //   top: em(-$ratio--xxs);
-  //   right: 100%;
-  //   margin-right: em($ratio--b);
-  // }
-// }
-// .o-title--float {
-  // text-align: center;
-  // [class^="svg-icon"] {
-  //   float: left;
-  //   margin-top: em(-$ratio--xxs);
-  //   margin-right: em($ratio--b);
-  // }
-// }
 .o-title--small {
   [class^="svg-icon"] {
     width: em($svg--s);
@@ -38,9 +20,6 @@
 @include media($phone) {
   .o-title {
     text-align: center;
-    // & > * {
-    //   margin-top: 0;
-    // }
   }
   .o-title--small {
     text-align: left;
