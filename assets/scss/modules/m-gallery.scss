@@ -1,0 +1,18 @@
+// Gallery module.
+.m-gallery--start {
+  .m-gallery__nav--prev {
+    color: $c-grey2;
+    cursor: default;
+  }
+}
+.m-gallery--end {
+  .m-gallery__nav--next {
+    color: $c-grey2;
+    cursor: default;
+  }
+}
+[class^="m-gallery__nav"] {
+  // &:before {
+  //   vertical-align: -35%;
+  // }
+}
