@@ -1,22 +1,25 @@
-.o-title {
-  position: relative;
-  [class^="svg-icon"] {
-    position: absolute;
-    top: em(-$ratio--xxs);
-    right: 100%;
-    margin-right: em($ratio--b);
-  }
-}
-.o-title--float {
-  [class^="svg-icon"] {
-    float: left;
-    margin-top: em(-$ratio--xxs);
-    margin-right: em($ratio--b);
-  }
-}
+// .o-title {
+  // text-align: center;
+  // position: relative;
+  // [class^="svg-icon"] {
+  //   position: absolute;
+  //   top: em(-$ratio--xxs);
+  //   right: 100%;
+  //   margin-right: em($ratio--b);
+  // }
+// }
+// .o-title--float {
+  // text-align: center;
+  // [class^="svg-icon"] {
+  //   float: left;
+  //   margin-top: em(-$ratio--xxs);
+  //   margin-right: em($ratio--b);
+  // }
+// }
 .o-title--small {
   [class^="svg-icon"] {
     width: em($svg--s);
+    height: em($svg--s);
     top: em(-$ratio--xs);
     margin-right: em($ratio--m);
   }
@@ -29,4 +32,54 @@
 }
 .o-title--secondary {
   fill: $c-color3;
+}
+
+// Responsive.
+@include media($phone) {
+  .o-title {
+    text-align: center;
+    // & > * {
+    //   margin-top: 0;
+    // }
+  }
+  .o-title--small {
+    text-align: left;
+  }
+}
+@include media($tablet__up) {
+  .o-title {
+    & > * {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  .o-title--absolute {
+    position: relative;
+    [class^="svg-icon"] {
+      position: absolute;
+      top: em(-$ratio--xxs);
+      right: 100%;
+    }
+  }
+  .o-title--float {
+    @include clearfix;
+    [class^="svg-icon"] {
+      float: left;
+      margin-top: em(-$ratio--xxs);
+    }
+  }
+}
+@include media($tablet--portrait) {
+  .o-title {
+    [class^="svg-icon"] {
+      margin-right: em($ratio--s);
+    }
+  }
+}
+@include media($tablet--landscape__up) {
+  .o-title {
+    [class^="svg-icon"] {
+      margin-right: em($ratio--b);
+    }
+  }
 }

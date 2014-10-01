@@ -1,12 +1,19 @@
 // Inputs.
 .o-input {
-  font-size: em($unit--l);
-  font-weight: $serif--bold;
+  // font-size: em($unit--l);
+  font-family: $font--sans;
+  font-weight: $sans--regular;
   border: none;
   outline: none;
   background-color: transparent;
   border-bottom: $line--b solid;
   padding: em($ratio--s, $unit--l) 0;
+  // iOS fix.
+  border-radius: 0;
+  @include media($tablet__up) {
+    font-size: em($unit--l);
+    font-weight: $sans--semibold;
+  }
 }
 // Textarea.
 .o-textarea {
@@ -15,6 +22,8 @@
   background-color: $c-grey2;
   border-bottom: $line--b solid;
   padding: em($ratio--b);
+  // iOS fix.
+  border-radius: 0;
   @include focus-state {
     background-color: white;
   }
@@ -61,36 +70,44 @@
       display: none;
     }
   }
+  @include media($phone) {
+    width: em($ratio--m);
+  }
 }
 // Dropdown.
-.o-select {
+.o-dropdown {
   display: inline-block;
+  // min-width: em($width--b);
+  // display: block;
+  font-family: $font--sans;
+  font-weight: $sans--regular;
   border-bottom: $line--b solid $c-grey3;
-  select {
-    @include appearance(none);
-    padding: em($ratio--xs) em($ratio--m) em($ratio--xs) 0;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    // Extremely stupid fix for Firefox styling.
-    // https://bugzilla.mozilla.org/show_bug.cgi?id=649849
-    text-indent: .1px;
-    text-overflow: "";
-    @include focus-state {
-      outline: 0;
-      color: $c-color1;
-    }
-  }
   @include hover-state {
     border-bottom-color: $c-grey2;
   }
 }
-.o-select--primary {
+.o-dropdown__select {
+  width: 100%;
+  padding: em($ratio--xs) em($ratio--m) em($ratio--xs) 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  // Extremely stupid fix for Firefox styling.
+  // https://bugzilla.mozilla.org/show_bug.cgi?id=649849
+  text-indent: .1px;
+  text-overflow: "";
+  @include appearance(none);
+  @include focus-state {
+    outline: 0;
+    color: $c-color1;
+  }
+}
+.o-dropdown--primary {
   border-bottom-color: $c-color1--light;
   @include hover-state {
     border-bottom-color: $c-color2;
   }
-  select {
+  .o-dropdown__select {
     @include focus-state {
       color: white;
     }
@@ -104,6 +121,8 @@
   background-color: transparent;
   font-family: $font--sans;
   font-weight: $sans--semibold;
+  // iOS fix.
+  border-radius: 0;
   @include hover-state {
     color: $c-grey8;
     border-color: $c-grey4;
@@ -129,6 +148,9 @@
 .o-label {
   margin-right: em($ratio--b);
   color: $c-grey4;
+  @include media($phone) {
+    margin-right: em($ratio--s);
+  }
 }
 .o-label--primary {
   color: $c-color1--dark;

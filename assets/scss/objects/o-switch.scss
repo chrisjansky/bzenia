@@ -18,7 +18,7 @@
     color: $c-grey3;
   }
   & + & {
-    margin-left: em($ratio--s);
+    margin-left: em($ratio--b);
   }
 }
 .o-switch__content {

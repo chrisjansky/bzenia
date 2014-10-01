@@ -7,7 +7,7 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: 40%;
+    top: em($height--b / 2);
     height: $line--b;
     background-color: $c-grey2;
   }
@@ -20,10 +20,8 @@
   background-color: $c-grey1;
 }
 .o-pagination__side-link {
-  position: absolute;
+  display: block;
   background-color: $c-grey1;
-  right: 0;
-  padding-left: em($ratio--b);
   line-height: em($height--b);
 }
 .o-pagination__item {
@@ -56,4 +54,19 @@
   border: $line--b solid;
   width: em($height--b);
   line-height: em($height--b - 4);
+}
+
+// Responsive.
+@include media($phone) {
+  .o-pagination__side-link {
+    margin-top: em($ratio--s);
+  }
+}
+@include media($tablet__up) {
+  .o-pagination__side-link {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-left: em($ratio--b);
+  }
 }

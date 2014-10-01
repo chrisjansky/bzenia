@@ -2,11 +2,11 @@
 .o-triplet {
   list-style: none;
   padding-left: 0;
-  @include clearfix;
   margin: em($ratio--m) 0;
+  @include clearfix;
 }
 .o-triplet__item {
-  @include span-columns(4);
+  // @include span-columns(4);
   color: $c-grey5;
   text-align: center;
   padding: em($ratio--m) 0;
@@ -26,4 +26,33 @@
 }
 .o-triplet__title--tertiary {
   color: $c-color4;
+}
+
+// Responsive.
+@include media($phone--portrait) {
+  .o-triplet__item {
+    & + & {
+      border-top: none;
+    }
+  }
+}
+@include media($phone--landscape) {
+  .o-triplet__item {
+    @include span-columns(1 of 3);
+  }
+  .o-triplet__title--primary {
+    // Stupid way of forcing line-break.
+    padding-left: em($ratio--b);
+    padding-right: em($ratio--b);
+  }
+}
+@include media($tablet--portrait) {
+  .o-triplet__item {
+    @include span-columns(2);
+  }
+}
+@include media($tablet--landscape__up) {
+  .o-triplet__item {
+    @include span-columns(4);
+  }
 }

@@ -28,5 +28,12 @@
   position: absolute;
   left: 100%;
   margin-left: em($ratio--m);
-  // color: $c-grey3;
 }
+
+// Responsive.
+// @include media($tablet__up) {
+//   .o-circle {
+//     width: em($ratio--xl);
+//     height: em($ratio--xl);
+//   }
+// }

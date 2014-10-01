@@ -1,10 +1,13 @@
 // Waves container.
 .o-canvas--fixed {
-  position: fixed; // z-index
+  position: absolute; // z-index
   left: 0;
   right: 0;
   top: 0;
   height: 100%;
+  .no-touch & {
+    position: fixed;
+  }
 }
 .o-canvas--half {
   height: 50%;

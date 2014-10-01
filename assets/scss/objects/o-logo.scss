@@ -16,15 +16,28 @@
     }
   }
 }
-.o-logo__symbol {
-  position: absolute;
-  right: 100%;
-  margin-right: em($ratio--b);
-}
 .o-logo__title {
+  display: inline-block;
   width: em(90);
   height: em(34);
   overflow: hidden;
+  vertical-align: middle;
   @include pseudo-center--parent;
   @include transition(transform $duration--b, opacity $duration--b);
+}
+
+// Responsive.
+@include media($portable) {
+  .o-logo__symbol {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: em($ratio--s);
+  }
+}
+@include media($desktop) {
+  .o-logo__symbol {
+    position: absolute;
+    right: 100%;
+    margin-right: em($ratio--b);
+  }
 }

@@ -3,7 +3,7 @@
   @include transition(all $duration--b);
 }
 .o-pages {
-  display: inline-block;
+  // display: inline-block;
   margin: 0;
   font-family: $font--sans;
   font-weight: $sans--regular;
@@ -16,6 +16,17 @@
     color: white;
   }
 }
-.o-nav__language {
-  margin-left: em($ratio--m);
+
+@include media($phone) {
+  .o-pages {
+    margin: em($ratio--s) 0 em($ratio--b);
+  }
+}
+@include media($tablet__up) {
+  .o-pages {
+    display: inline-block;
+  }
+  .o-nav__language {
+    margin-left: em($ratio--m);
+  }
 }

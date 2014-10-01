@@ -19,7 +19,6 @@
 .o-product__name {
   line-height: 1.25;
   overflow: auto;
-  min-height: em($ratio--xl);
   .t-h3 {
     display: inline-block;
     margin: 0 em($ratio--xxs) 0 0;
@@ -39,7 +38,7 @@
   right: em(-$ratio--m);
 }
 .o-product__description {
-  margin-top: 0;
+  // margin-top: 0;
   a {
     @include link-state {
       color: $c-grey8;
@@ -47,5 +46,11 @@
     @include active-state {
       color: $c-grey6;
     }
+  }
+}
+
+@include media($tablet--landscape__up) {
+  .o-product__name {
+    min-height: em($ratio--xl);
   }
 }

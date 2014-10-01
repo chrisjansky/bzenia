@@ -1,25 +1,27 @@
 // Circular photo item.
 .o-photo {
   display: inline-block;
+  // display: block;
+  width: em($ratio--xxl);
   margin: 0;
 }
 .o-photo__content {
   border-radius: 50%;
   overflow: hidden;
   img {
-    width: em($ratio--h);
+    width: 100%;
     height: auto;
   }
 }
-.o-photo--small img {
+.o-photo--small {
   width: em($ratio--xl);
 }
-.o-photo--big img {
-  width: em($ratio--xh);
+.o-photo--big {
+  width: em($ratio--h);
 }
-.o-photo--huge img {
-  width: em($ratio--xxh);
-}
+// .o-photo--huge {
+//   width: em($ratio--xh);
+// }
 .o-photo__link {
   position: relative;
   display: block;
@@ -39,5 +41,17 @@
   }
 }
 .o-photo__caption {
+  // display: block;
+  // width: 100%;
   color: $c-grey4;
+}
+
+// Responsive.
+@include media($desktop) {
+  .o-photo--big {
+    width: em($ratio--xh);
+  }
+  // .o-photo--huge {
+  //   width: em($ratio--xxh);
+  // }
 }
