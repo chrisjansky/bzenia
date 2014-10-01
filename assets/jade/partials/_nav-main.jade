@@ -1,14 +1,14 @@
 header.m-header.header--is-top(class="m-header--#{pageSettings.theme}", data-header)
   .m-header__wrapper.l-wrapper.l-inline
-    .l-inline__row
-      .l-inline__cell
+    .m-header__row.l-inline__row
+      .m-header__logo.l-inline__cell
         a.o-logo(href="index.html", class="o-logo--#{pageSettings.theme}", data-pjax--whole, data-logo)
           .o-logo__symbol
             include ../../svg/logo_symbol--thick.svg
           .o-logo__title
             include ../../svg/logo_wordmark.svg
             strong Bzenia
-      .l-inline__cell
+      .m-header__nav.l-inline__cell
         nav.o-nav
           ul.o-middot.o-middot--inline.o-pages
             each instance, index in navItems
@@ -16,8 +16,9 @@ header.m-header.header--is-top(class="m-header--#{pageSettings.theme}", data-hea
                 li: a.o-pages__item.o-pages__item--selected(href=instance.link, data-pjax--whole)!= instance.name
               else
                 li: a.o-pages__item(href=instance.link, data-pjax--whole)!= instance.name
-          a(href="#").o-nav__language.o-switch.o-switch--small
-            span.o-switch__content En
-          a(href="nakupni-kosik.html", data-pjax--whole).o-switch.o-switch--small
-            span.o-switch__content
-              span.ss-cart.o-icon
+          .m-header__other
+            a(href="#").o-nav__language.o-switch.o-switch--small
+              span.o-switch__content En
+            a(href="nakupni-kosik.html", data-pjax--whole).o-switch.o-switch--small
+              span.o-switch__content
+                span.ss-cart.o-icon
