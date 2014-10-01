@@ -1,5 +1,6 @@
 // SVG styles.
 .svg-button {
+  display: inline-block;
   & + & {
     margin-left: em($ratio--s);
   }
@@ -9,13 +10,24 @@
 }
 [class^="svg-icon"],
 [class*=" svg-icon"] {
+  // display: block;
   width: em($svg--b);
-  height: auto;
+  height: em($svg--b);
   vertical-align: middle;
 }
-[class^="svg-symbol"],
-[class*=" svg-symbol"] {
-  width: auto;
+// [class^="svg-symbol"],
+// [class*=" svg-symbol"] {
+//   width: auto;
+//   height: em(40);
+// }
+
+// iOS doesn't fare well with width: auto;
+.svg-symbol--app_store {
+  width: em(135);
+  height: em(40);
+}
+.svg-symbol--google_play {
+  width: em(116);
   height: em(40);
 }
 
@@ -49,7 +61,7 @@
 }
 .svg-logo_wordmark {
   width: em(90);
-  height: auto;
+  height: em(20);
   vertical-align: middle;
 }
 // .svg-tasting__cheese {
