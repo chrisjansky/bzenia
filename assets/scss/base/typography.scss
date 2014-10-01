@@ -2,11 +2,8 @@ body {
   font-family: $font--serif;
   font-weight: 300;
   line-height: 1.5;
-  @include media($phone) {
-    font-size: em(14);
-  }
   @include media($desktop--wide) {
-    font-size: em(18);
+    font-size: em($unit--m);
   }
 }
 ::selection {
@@ -26,6 +23,7 @@ body {
   font-size: em($unit--s);
   letter-spacing: .125em;
   text-transform: uppercase;
+  vertical-align: middle;
 }
 // .t-spaced {
 //   font-family: $font--sans;
@@ -54,13 +52,13 @@ body {
 .t-h3 {
   font-size: em($ratio--m);
   font-weight: $serif--bold;
-  margin: em($ratio--xs) 0;
+  margin: em($ratio--s) 0;
 }
 .t-h4 {
   font-size: em($unit--l);
   font-family: $font--sans;
-  font-weight: $sans--regular;
-  margin: em($ratio--b) 0;
+  font-weight: $sans--semibold;
+  margin: em($ratio--s) 0;
 }
 
 // Interactive.
@@ -93,3 +91,23 @@ a {
   color: $c-grey4;
   @include active-state {color: $c-grey4; }
 }
+
+// Responsive.
+@include media($phone) {
+  .t-h1 {
+    font-size: em($unit--xl);
+    text-align: center;
+  }
+  .t-h2 {
+    font-size: em($ratio--m);
+    text-align: center;
+  }
+}
+// @include media($tablet__up) {
+//   .t-h1 {
+//     font-size: em($ratio--xl);
+//   }
+//   .t-h2 {
+//     font-style: em($ratio--l);
+//   }
+// }
