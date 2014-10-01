@@ -1,0 +1,40 @@
+// Image and text.
+.o-media {
+  @include clearfix;
+}
+.o-media__image {
+  text-align: center;
+}
+.o-media--big {
+  margin-top: em($ratio--b);
+}
+
+// Responsive.
+@include media($phone) {
+  .o-media__content {
+    .t-h3 {
+      text-align: center;
+    }
+  }
+}
+@include media($tablet__up) {
+  .o-media__image {
+    float: left;
+    margin-right: em($ratio--l);
+  }
+}
+@include media($tablet--portrait) {
+  .o-media--big {
+    margin-top: em($ratio--m);
+  }
+}
+@include media($tablet--landscape__up) {
+  .o-media--big {
+    margin-top: em($ratio--l);
+    margin-left: em(-$ratio--b);
+  }
+  .o-media__content {
+    overflow: auto;
+    @include collapse-children;
+  }
+}
