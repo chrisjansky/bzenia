@@ -31,14 +31,14 @@ block template-body
                         em.o-wine__type= instance.type
                     .l-inline__cell.m-order__options
                       label.o-label Počet
-                      span.o-holder
+                      span.o-holder--inline.o-holder--number
                         input.o-input.o-input--number(type="number", name="quantity", min="1", value="1")
                         span.o-holder__icon.ss-write
                       span.m-order__price.o-price
                         span.o-label Cena
                         strong= instance.price
                         |  Kč
-                      a.o-button--simple.ss-delete.t-link--secondary(href="#") Odebrat
+                      a.m-order__remove.o-button--simple.ss-delete.t-link--secondary(href="#") Odebrat
         .m-order__summary
           .m-order__total.o-price--big
             span.o-label Celkem
@@ -51,12 +51,12 @@ block template-body
       form
         table.m-form__table
           tr.m-form__row
-            td.m-form__cell(colspan="2")
+            td.m-form__cell
               input.o-input(type="text", placeholder="Vaše jméno")
             td.m-form__cell
               input.o-input(type="text", placeholder="Příjmení")
           tr.m-form__row
-            td.m-form__cell(colspan="2")
+            td.m-form__cell
               input.o-input(type="text", placeholder="Telefon")
             td.m-form__cell
               input.o-input(type="text", placeholder="E-mail")
@@ -65,37 +65,37 @@ block template-body
               input.o-input(type="text", placeholder="Ulice")
             td.m-form__cell
               input.o-input(type="text", placeholder="Město")
+          tr.m-form__row
             td.m-form__cell
               input.o-input(type="text", placeholder="PSČ")
+            td.m-form__cell
+              input.o-input(type="text", placeholder="Stát")
           tr.m-form__row.m-form__options
-            td.m-form__cell
-              label.o-label Stát
-              .o-select
-                select
-                  option Česká republika
-                  option Slovensko
-                span.ss-navigatedown
-            td.m-form__cell
-              label.o-label Způsob platby
-              .o-select
-                select
-                  option Kartou
-                  option Bankovním převodem
-                  option Dobírkou
-                span.ss-navigatedown
-            td.m-form__cell
-              label.o-label Doprava
-              .o-select
-                select
-                  option Česká pošta
-                  option PPL
-                  option DHL
-                span.ss-navigatedown
-          tr.m-form__row
-            td.m-form__cell(colspan="3")
-              textarea.o-textarea(placeholder="Vaše poznámky")
+            td.m-form__cell(colspan="2")
+              .l-inline
+                .l-inline__row
+                  .l-inline__cell
+                    .o-holder--float
+                      label.o-label.o-holder__label--float Způsob platby
+                      .o-dropdown
+                        select.o-dropdown__select
+                          option Dobírkou
+                          option Hotově
+                      span.o-holder__icon.ss-navigatedown
+                  .l-inline__cell
+                    .o-holder--float
+                      label.o-label.o-holder__label--float Doprava
+                      .o-dropdown
+                        select.o-dropdown__select
+                          option Česká pošta
+                          option PPL
+                          option Osobní vyzvednutí
+                      span.o-holder__icon.ss-navigatedown
           tr.m-form__row
             td.m-form__cell(colspan="2")
+              textarea.o-textarea(placeholder="Vaše poznámky")
+          tr.m-form__row
+            td.m-form__cell.m-form__note
               p S upřesněním objednávky Vás budeme obratem kontaktovat.
             td.m-form__cell
               input.o-submit(type="submit", value="Odeslat")

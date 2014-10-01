@@ -15,7 +15,7 @@ block template-body
           h1.t-h1= instance.name
           em.m-detail__type= instance.type
     .l-wrapper.l-wrapper--big.l-offset
-      .o-title.o-title--small.o-title--light
+      .o-title.o-title--absolute.o-title--small.o-title--light
         include ../svg/icon_grapes.svg
         strong.t-smallcaps Popis vína
       .m-detail__description
@@ -25,7 +25,7 @@ block template-body
       ul.m-detail__info.o-middot.o-middot--inline
         each productInfo in instance.info
           li= productInfo
-      .o-title.o-title--small.o-title--light
+      .o-title.o-title--absolute.o-title--small.o-title--light
         include ../svg/icon_bottle.svg
         strong.t-smallcaps Podrobnosti
       ul.o-triplet
@@ -60,8 +60,8 @@ block template-body
           .l-inline__cell
             .m-detail__checkout
               .m-detail__quantity
-                label.o-label Počet
-                span.o-holder
+                .o-holder--number
+                  label.o-label Počet
                   input.o-input.o-input--number(type="number", name="quantity", min="1", value="1")
                   span.o-holder__icon.ss-write
               .m-detail__button

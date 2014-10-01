@@ -13,7 +13,7 @@ block template-body
     .m-hero__bg(style="background-image: url('assets/images/vinery_big2.jpg'); background-position-y: 10%; ")
 
   section.l-wrapper.l-wrapper--big.l-offset.l-section--light.l-layer--top
-    .o-title.o-title--secondary
+    .o-title.o-title--secondary.o-title--absolute
       include ../svg/icon_grapes.svg
       h2.t-h2 Náš vinohrad a&nbsp;výrobní sklep
     article.o-article
@@ -49,11 +49,17 @@ block template-body
             figure.o-photo
               a.o-photo__link.o-photo__content(href="http://lorempixel.com/1280/720/nature/#{index}", data-js-featherlight)
                 img(src="http://lorempixel.com/200/200/nature/#{index}", alt="lorempixel")
-              figcaption.o-photo__caption Popis fotky.
+              figcaption.o-photo__caption
+                if (index % 3 == 0)
+                  | Popis fotky.
+                else if (index % 2 == 0)
+                  | Delší popis fotky.
+                else
+                  | Ještě delší a mnohem delší popis fotky.
 
   section.m-hero.m-hero--dark.m-hero--half
     .m-hero__content.l-wrapper.l-wrapper--big.l-offset
-      .o-title
+      .o-title.o-title--absolute
         include ../svg/icon_bio.svg
         h2.t-h2 Bio přístup
       .o-lead

@@ -21,7 +21,7 @@ block template-body
               .m-filter__icon
                 include ../svg/icon_grapes.svg
               .m-filter__label
-                label.o-label.t-smallcaps Vyberte kategorii vín prosím
+                label.t-smallcaps Vyberte kategorii vín prosím
               label.o-radio--styled.o-radio--primary
                 input(type="radio", name="category", checked)
                 span.o-radio__mark
@@ -30,21 +30,21 @@ block template-body
                 input(type="radio", name="category")
                 span.o-radio__mark
                 span.o-radio__text Archivní
-            .l-inline__cell
-              label.o-label Řazení
-              .o-select
-                select
-                  option Dle názvu
-                  option Dle typu
-                  option Dle ročníku
-                  option Dle ceny
-                span.ss-navigatedown
+            .m-filter__sort.l-inline__cell
+              .o-holder--inline
+                label.o-label Řazení
+                .o-dropdown
+                  select.o-dropdown__select
+                    option Dle názvu
+                    option Dle typu
+                    option Dle ročníku
+                    option Dle ceny
+                  span.o-holder__icon.ss-navigatedown
     .l-wrapper.l-wrapper--big.l-section--light
       .m-products
         each instance, index in shopItems
           include partials/_shop-item
       .o-pagination
-        a.o-pagination__side-link.ss-cart.o-button--simple.t-link--secondary(href="nakupni-kosik.html", data-pjax--whole) Nákupní košík
         ul.o-pagination__list
           li.o-pagination__item.o-pagination__item--selected
             div.o-pagination__content 1
@@ -52,15 +52,16 @@ block template-body
             li.o-pagination__item
               a.o-pagination__content(href="#")
                 = instance
+        a.o-pagination__side-link.ss-cart.o-button--simple.t-link--secondary(href="nakupni-kosik.html", data-pjax--whole) Nákupní košík
 
   section.m-accordion
-    header.o-ribbon
+    header.o-action
       .l-offset.l-wrapper.l-wrapper--small
         strong.t-smallcaps Mohlo by Vás zajímat
     ul.m-accordion__list(data-accordion)
       li.m-accordion__item--first.m-hero.m-hero--black(data-accordion-item, data-opened)
         .m-hero__content.l-wrapper.l-offset
-          .o-title
+          .o-title.o-title--absolute
             include ../svg/icon_barrel.svg
             h2.t-h2 Adopce sudu na dálku
           article.m-accordion__more.o-article--invert(data-accordion-more)
@@ -91,21 +92,22 @@ block template-body
 
       li.m-accordion__item--second.m-hero.m-hero--black(data-accordion-item)
         .m-hero__content.l-wrapper.l-offset
-          .o-title
+          .o-title.o-title--absolute
             include ../svg/icon_diamond.svg
             h2.t-h2 Investiční vína
           article.m-accordion__more.o-article--invert(data-accordion-more)
             p.t-big.o-lead Naše vinařství vám přináší unikátní možnost investice do vín ze své produkce.
             .l-columns
               .l-column--half
-                p Zájemci mohou vybírat z bohaté archivní nabídky, která ročníkově sahá až do 50. let 20. století. Pro milovníky vína a drahých kamenů je variantou investice do Cuvée Divine. Každá láhev tohoto mimořádného meziročníkového vína, jež je namíchané z nejlepších ryzlinků rýnských z našeho archívu, obsahuje broušený diamant o velikosti 0,25 karátu až 3 karáty.
+                p Zájemci mohou vybírat z bohaté archivní nabídky, která ročníkově sahá až do 50. let 20. století.
+                p Pro milovníky vína a drahých kamenů je variantou investice do Cuvée Divine.
               .l-column--half
-                p Rádi vám poskytneme bližší informace.
+                p Každá láhev tohoto mimořádného meziročníkového vína, jež je namíchané z nejlepších ryzlinků rýnských z našeho archívu, obsahuje broušený diamant o velikosti 0,25 karátu až 3 karáty. Rádi vám poskytneme bližší informace.
         .m-hero__bg(style="background-image: url('assets/images/bottles_big1.jpg')")
 
       li.m-accordion__item--third.m-hero.m-hero--black(data-accordion-item)
         .m-hero__content.l-wrapper.l-offset
-          .o-title
+          .o-title.o-title--absolute
             include ../svg/icon_tasting.svg
             h2.t-h2 Degustace a ochutnávky
           article.m-accordion__more.o-article--invert(data-accordion-more)

@@ -31,44 +31,47 @@ block template-body
               .l-inline
                 .l-inline__row
                   .l-inline__cell
-                    label.o-label.o-label--primary Termín
-                    .o-select.o-select--primary
-                      select
-                        option Co nejdříve
-                        option Tento měsíc
-                        option Výhledově
-                      span.ss-navigatedown
+                    .o-holder--float
+                      label.o-holder__label--float.o-label.o-label--primary Termín
+                      .o-dropdown.o-dropdown--primary
+                        select.o-dropdown__select
+                          option Co nejdříve
+                          option Tento měsíc
+                          option Výhledově
+                        span.o-holder__icon.ss-navigatedown
                   .l-inline__cell
-                    label.o-label.o-label--primary Velikost
-                    .o-select.o-select--primary
-                      select
-                        option Do 5 osob
-                        option 6&ndash;15 osob
-                        option Více než 15 osob
-                      span.ss-navigatedown
+                    .o-holder--float
+                      label.o-holder__label--float.o-label.o-label--primary Velikost
+                      .o-dropdown.o-dropdown--primary
+                        select.o-dropdown__select
+                          option Do 5 osob
+                          option 6&ndash;15 osob
+                          option Více než 15 osob
+                        span.o-holder__icon.ss-navigatedown
                   .l-inline__cell
-                    label.o-label.o-label--primary Lokace
-                    .o-select.o-select--primary
-                      select
-                        option Náš vinohrad
-                        option Naše pražská pobočka
-                        option Dle vašeho výběru
-                      span.ss-navigatedown
+                    .o-holder--float
+                      label.o-holder__label--float.o-label.o-label--primary Lokace
+                      .o-dropdown.o-dropdown--primary
+                        select.o-dropdown__select
+                          option Náš vinohrad
+                          option Naše pražská pobočka
+                          option Dle vašeho výběru
+                        span.o-holder__icon.ss-navigatedown
           tr.m-form__row
             td.m-form__cell(colspan="2")
               textarea.o-textarea.o-textarea--primary(placeholder="Vaše poznámky")
           tr.m-form__row
-            td.m-form__cell
+            td.m-form__cell.m-form__note
               p S upřesněním možné degustace Vás budeme obratem kontaktovat.
             td.m-form__cell
               input.o-submit.o-submit--primary(type="submit", value="Odeslat")
 
   section.m-contacts
     .l-wrapper.l-wrapper--big
-      .o-title--float.o-title--light
+      .o-title.o-title--float.o-title--light
         include ../svg/icon_mail.svg
         h2.t-h2 Kontaktní údaje
-      .l-columns
+      .m-contacts__content.l-columns
         .l-column--half
           .m-contacts__block
             h4.t-h4 Adresa sídla
