@@ -1,29 +1,3 @@
-// List with a middot style.
-.o-middot {
-  list-style: none;
-  padding-left: 0;
-  li {padding-left: em($ratio--s); }
-  li:before {content: '\b7\a0'; }
-}
-.o-middot--inline {
-  li {
-    display: inline-block;
-    &:before {margin-right: em($ratio--s); }
-  }
-  li:first-child {
-    padding-left: 0;
-    &:before {display: none; }
-  }
-}
-.o-middot--stacked {
-  li {
-    position: relative;
-    &:before {
-      position: absolute;
-      left: 0;
-    }
-  }
-}
 // List with no styling.
 .o-nolist {
   list-style: none;
@@ -68,28 +42,16 @@
 }
 // Call to action.
 .o-action {
+  position: relative;
   background-color: $c-grey8;
   color: white;
+  @include media($phone) {
+    text-align: center;
+  }
 }
 // Text object.
 .o-lead {
   max-width: 40em;
-}
-// Image and text.
-.o-media {
-  @include clearfix;
-}
-.o-media--big {
-  margin-top: em($ratio--xl);
-  margin-left: em(-$ratio--b);
-}
-.o-media__image {
-  float: left;
-  margin-right: em($ratio--l);
-}
-.o-media__content {
-  overflow: auto;
-  @include collapse-children;
 }
 // Views.
 .o-whole {
@@ -97,25 +59,4 @@
 }
 .o-main {
   height: 100%
-}
-// Contrast bar.
-.o-ribbon {
-  background-color: $c-grey8;
-  color: $c-grey4;
-}
-// Input container with icon.
-.o-holder {
-  display: inline-block;
-  position: relative;
-  @include hover-state {
-    .o-holder__icon {
-      display: none;
-    }
-  }
-}
-.o-holder__icon {
-  position: absolute;
-  right: 0;
-  color: $c-grey4;
-  line-height: em($height--b);
 }
