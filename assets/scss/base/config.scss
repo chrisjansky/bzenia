@@ -14,7 +14,9 @@ $display--medium: 500;
 // $display--bold: 700;
 
 // Units
+$unit--xl: 36;
 $unit--l:  20;
+$unit--m:  18;
 $unit--b:  16;
 $unit--s:  14;
 $unit--xs: 12;
@@ -40,6 +42,9 @@ $circle--xxs: 16;
 
 // Common element height
 $height--b: 40;
+
+// Common input width
+$width--b: 200;
 
 // Golden ratio
 $ratio--xxh: round(golden-ratio($unit--b,  7));
@@ -90,3 +95,10 @@ $duration--s: .125s;
 
 // Bourbon settings
 $em-base: $unit--b;
+
+// Neat settings
+$grid-columns: 12;
+$portrait-columns: 6;
+$phone-columns: 4;
+$column: em($ratio--l);
+$gutter: em($ratio--b);
