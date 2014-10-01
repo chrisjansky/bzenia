@@ -1,7 +1,19 @@
-.m-filter__icon {
-  float: left;
-  margin-right: em($ratio--m);
+.m-filter__sort {
+  margin-top: em($ratio--s);
 }
-.m-filter__label {
-  margin-bottom: em($ratio--xs);
+
+// Responsive.
+@include media($phone) {
+  .m-filter__label {
+    margin: em($ratio--s) 0;
+  }
+}
+@include media($tablet__up) {
+  .m-filter__label {
+    margin-bottom: em($ratio--xs);
+  }
+  .m-filter__icon {
+    float: left;
+    margin-right: em($ratio--m);
+  }
 }

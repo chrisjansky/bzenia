@@ -5,50 +5,27 @@
 .m-products__item {
   margin-top: em($ratio--b);
   margin-bottom: em($ratio--m);
-  @include media($tablet--landscape) {
-    @include span-columns(6);
+  @include media($phone) {
+    padding-bottom: em($ratio--xs);
+    border-bottom: $line--b solid white;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  @include media($tablet--portrait) {
+    @include span-columns(3);
     @include omega(2n);
   }
-  @include media($desktop) {
+  @include media($tablet--landscape) {
     @include span-columns(4);
     @include omega(3n);
   }
-}
-// Gallery module.
-// Side gradients not used right now.
-// .m-gallery {
-//   position: relative;
-//   &:before,
-//   &:after {
-//     content: "";
-//     position: absolute;
-//     top: 0;
-//     bottom: 0;
-//     width: 15%;
-//   }
-//   &:before {
-//     left: 0;
-//     @include linear-gradient(to right, white, transparent, $fallback: transparent);
-//   }
-//   &:after {
-//     right: 0;
-//     @include linear-gradient(to left, white, transparent, $fallback: transparent);
-//   }
-// }
-.m-gallery--start {
-  .m-gallery__nav--prev {
-    color: $c-grey2;
-    cursor: default;
+  @include media($desktop--narrow) {
+    @include span-columns(4);
+    @include omega(3n);
   }
-}
-.m-gallery--end {
-  .m-gallery__nav--next {
-    color: $c-grey2;
-    cursor: default;
-  }
-}
-[class^="m-gallery__nav"] {
-  &:before {
-    vertical-align: -35%;
+  @include media($desktop--wide) {
+    @include span-columns(3);
+    @include omega(4n);
   }
 }

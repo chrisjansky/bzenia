@@ -31,11 +31,11 @@
   color: rgba($c-grey2, .5);
 }
 .m-detail__description {
-  font-size: em($ratio--m);
+  font-size: em($unit--l);
   color: $c-grey6;
 }
 .m-detail__info {
-  margin-bottom: em($ratio--l);
+  margin-bottom: em($ratio--m);
   color: $c-grey4;
 }
 .m-detail__quantity {
@@ -46,4 +46,14 @@
 .m-detail__button {
   display: inline-block;
   vertical-align: bottom;
+}
+
+// Responsive.
+@include media($tablet__up) {
+  .m-detail__description {
+    font-size: em($ratio--m);
+  }
+  .m-detail__info {
+    margin-bottom: em($ratio--l);
+  }
 }

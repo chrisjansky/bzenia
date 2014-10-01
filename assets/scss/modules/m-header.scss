@@ -1,7 +1,7 @@
 // Header.
 .m-header {
   @include clearfix;
-  position: fixed; // z-index
+  position: absolute; // z-index
   top: 0;
   left: 0;
   right: 0;
@@ -16,7 +16,10 @@
     @include transition(height $duration--b);
     @include linear-gradient(to bottom, $c-grey8, rgba($c-grey8, .875), $fallback: transparent);
   }
-  &:hover {
+  .no-touch & {
+    position: fixed;
+  }
+  .no-touch &:hover {
     .o-nav,
     .o-logo__title {
       opacity: 1;
@@ -26,4 +29,24 @@
 }
 .m-header__wrapper {
   @include transition(padding $duration--b);
+}
+
+// Responsive.
+@include media($phone) {
+  .m-header__logo {
+    text-align: left;
+  }
+  .m-header__row {
+    position: relative;
+  }
+  .m-header__other {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+@include media($tablet__up) {
+  .m-header__other {
+    display: inline-block;
+  }
 }

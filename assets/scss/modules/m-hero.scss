@@ -6,12 +6,9 @@
 .m-hero--full {
   min-height: 95%;
   max-height: em(800);
-  .o-lead {
-    margin-left: em(90);
-  }
 }
 .m-hero--half {
-  min-height: 50%;
+  min-height: 40%;
   // max-height: em(500);
 }
 .m-hero__bg {
@@ -48,5 +45,17 @@
     content: "";
     @include stretch-overlay;
     @include linear-gradient(to top, rgba($c-grey8, .75), rgba($c-grey8, 0), $fallback: transparent);
+  }
+}
+
+// Responsive.
+@include media($tablet--landscape__up) {
+  .m-hero--half {
+    min-height: 50%;
+  }
+  .m-hero--full {
+    .o-lead {
+      margin-left: em(90);
+    }
   }
 }
