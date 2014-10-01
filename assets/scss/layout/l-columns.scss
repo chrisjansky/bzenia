@@ -4,14 +4,20 @@
 }
 [class^="l-column--"],
 [class*=" l-column--"] {
-  @include collapse-children;
+  @include clearfix;
 }
-.l-column--one {
-  @include span-columns(4);
-}
-.l-column--two {
-  @include span-columns(8);
-}
-.l-column--half {
-  @include span-columns(6);
+@include media($tablet__up) {
+  [class^="l-column--"],
+  [class*=" l-column--"] {
+    @include collapse-children;
+  }
+  .l-column--one {
+    @include span-columns(4);
+  }
+  .l-column--two {
+    @include span-columns(8);
+  }
+  .l-column--half {
+    @include span-columns(6);
+  }
 }

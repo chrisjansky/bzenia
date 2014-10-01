@@ -1,15 +1,18 @@
 // General wrapper.
 .l-wrapper {
   margin: 0 auto;
-  padding: em($ratio--b);
+  padding: em($ratio--m) em($ratio--b);
   @include clearfix;
   @include collapse-children;
-  @include media($tablet--portrait) {
+  @include media($phone--landscape) {
     padding: em($ratio--m);
   }
-  @include media($tablet--landscape) {
+  @include media($tablet) {
     padding: em($ratio--l);
   }
+  // @include media($tablet--landscape) {
+  //   padding-left: em($ratio--xl);
+  // }
   @include media($desktop) {
     padding: em($ratio--l) 6.5%;
   }
@@ -60,4 +63,11 @@
 }
 .l-wrapper--bleed {
   padding-right: 0;
+}
+
+// Responsive.
+@include media($phone) {
+  .l-wrapper--lower {
+    padding-top: em($ratio--xxl + $ratio--m);
+  }
 }
