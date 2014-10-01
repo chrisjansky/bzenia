@@ -10,6 +10,7 @@ $(document).on("ready pjax:success", function() {
     $pjaxWhole = $("#js-pjax--whole"),
     $headerNav = $("[data-header]"),
     $logoMain = $("[data-logo]"),
+    mapIframe = document.getElementById("js-google_maps"),
     // Prevent opening Featherlight lightbox when touching Swiper.
     swiperActive = false;
 
@@ -93,6 +94,30 @@ $(document).on("ready pjax:success", function() {
       });
     }
   });
+
+  // Google Maps.
+  if (mapIframe !== null) {
+    function initMaps() {
+      var mapOptions = {
+        center: {lat: 48.9730376, lng: 17.2704202},
+        zoom: 16,
+        scrollwheel: false
+      };
+      var 
+        map = new google.maps.Map(mapIframe, mapOptions),
+        infoWindow = new google.maps.InfoWindow(),
+        mapMarker = new google.maps.Marker({
+          position: mapOptions.center,
+          map: map,
+          title: "Bzenia"
+        })
+      google.maps.event.addListener(mapMarker, "click", function() {
+        infoWindow.setContent("Sklep č. 6, ul. Karla Čapka 1542, 696 81 Bzenec");
+        infoWindow.open(map, mapMarker);
+      });
+    }
+    initMaps();
+  }
 
   // Header waypoint.
   if (!Modernizr.touch) {

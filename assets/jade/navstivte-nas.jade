@@ -11,7 +11,7 @@ block template-body
         | Přijeďte ochutnat to pravé 
         span.line-break moravské víno
     .l-wrapper.l-wrapper--only-horizontal.l-wrapper--bleed
-      iframe(src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2618.9730401074858!2d17.270420200000004!3d48.9730376!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47133cba9fc7643f%3A0x1c8a1127a4c2b93!2sKarla+%C4%8Capka+1542%2C+696+81+Bzenec!5e0!3m2!1sen!2scz!4v1410621816581", width="100%", height="400", frameborder="0")
+      .o-map#js-google_maps
 
   section.m-form--primary
     .l-wrapper.l-wrapper--big
@@ -97,3 +97,6 @@ block template-body
               li Zdeněk Maleňák
               li mob. +420 602 584 714
               li: a(href="mailto:zdenek.malenak@arvina.cz") zdenek.malenak@arvina.cz
+
+append template-foot
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYIdR688TiWL5Pc5nkiiI8c3ahWndxSFo")
