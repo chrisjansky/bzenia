@@ -1,0 +1,53 @@
+// Input container with icon.
+[class^="o-holder--"],
+[class*=" o-holder--"] {
+  position: relative;
+  display: inline-block;
+}
+.o-holder--inline {
+  .o-dropdown {
+    display: inline-block;
+  }
+}
+.o-holder--number {
+  @include hover-state {
+    .o-holder__icon {
+      display: none;
+    }
+  }
+}
+.o-holder__label--float {
+  display: inline-block;
+}
+.o-holder__icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  line-height: em($height--b);
+  // color: $c-grey4;
+}
+@include media($phone) {
+  .o-holder--float {
+    display: block;
+    @include clearfix;
+    // padding-bottom: em($ratio--s);
+    .o-dropdown {
+      display: block;
+      overflow: auto;
+    }
+  }
+  .o-holder__label--float {
+    min-width: em($ratio--xxl);
+    line-height: em($height--b);
+    float: left;
+    text-align: left;
+  }
+}
+@include media($tablet--portrait) {
+  .o-holder--float {
+    .o-dropdown {
+      // Force to one line in m-form.
+      width: 8em;
+    }
+  }
+}
