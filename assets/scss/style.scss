@@ -1,12 +1,17 @@
+// Bourbon
 @import "bourbon";
+
+// Config
+@import "base/config";
+
+// Neat
 @import "neat";
 
 // chj
 @import "chj-framework/scss/mixins";
 @import "chj-framework/scss/neat";
 
-// Config
-@import "base/config";
+// Base
 @import "base/default";
 @import "base/typography";
 @import "base/animations";
@@ -22,8 +27,11 @@
 @import "objects/objects";
 @import "objects/o-logo";
 @import "objects/o-navigation";
+@import "objects/o-middot";
 @import "objects/o-badge";
+@import "objects/o-media";
 @import "objects/o-button";
+@import "objects/o-holder";
 @import "objects/o-switch";
 @import "objects/o-product";
 @import "objects/o-photo";
@@ -42,6 +50,7 @@
 @import "modules/m-header";
 @import "modules/m-hero";
 @import "modules/m-filter";
+@import "modules/m-gallery";
 @import "modules/m-accordion";
 @import "modules/m-detail";
 @import "modules/m-form";
