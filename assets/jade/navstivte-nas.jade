@@ -69,7 +69,9 @@ block template-body
   section.m-contacts
     .l-wrapper.l-wrapper--big
       .o-title.o-title--float.o-title--light
-        include ../svg/icon_mail.svg
+        .svg-icon--mail
+          svg.svg__content(data-fallback="assets/images/fallbacks/icon_mail.png")
+            use(xlink:href="#icon_mail")
         h2.t-h2 Kontaktní údaje
       .m-contacts__content.l-columns
         .l-column--half

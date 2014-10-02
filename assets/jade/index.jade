@@ -23,7 +23,9 @@ block template-body
         .l-inline__row
           .l-inline__cell
             .o-title.o-title--absolute
-              include ../svg/icon_bottle.svg
+              .svg-icon--bottle
+                svg.svg__content(data-fallback="assets/images/fallbacks/icon_bottle.png")
+                  use(xlink:href="#icon_bottle")
               h2.t-h2
                 | O vinařství
           .l-inline__cell
@@ -38,15 +40,19 @@ block template-body
   section.m-hero.m-hero--dark.m-hero--half
     .m-hero__content.l-wrapper.l-wrapper--big.l-offset
       .o-title.o-title--absolute
-        include ../svg/icon_reality.svg
+        .svg-icon--reality
+          svg.svg__content(data-fallback="assets/images/fallbacks/icon_reality.png")
+            use(xlink:href="#icon_reality")
         h2.t-h2
           | Víno rozšiřující 
           span.line-break realitu
       .o-lead
         p Ač v Bzenii věříme v tradiční vinařské postupy, pro komunikaci se svými zákazníky jsme vsadili na moderní technologie.
         p Do každé etikety láhve jsme ukryli multimediální obsah, který si můžete přehrát na svém chytrém telefonu pomocí mobilní aplikace Layar. Stáhněte si aplikaci do svého mobilu, naskenujte přední část láhve s logem a nahlédněte s osobním sommelierem za kulisy našeho vinařství.
-        a(href="#").svg-button
-          include ../svg/symbol_app-store.svg
-        a(href="#").svg-button
-          include ../svg/symbol_google-play.svg
+        a(href="#").svg-button--app_store
+          svg.svg__content(data-fallback="assets/images/fallbacks/symbol_app-store.png")
+            use(xlink:href="#symbol_app-store")
+        a(href="#").svg-button--google_play
+          svg.svg__content(data-fallback="assets/images/fallbacks/symbol_google-play.png")
+            use(xlink:href="#symbol_google-play")
     .m-hero__bg(style="background-image: url('assets/images/archive_medium1.jpg')")

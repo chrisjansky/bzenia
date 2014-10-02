@@ -14,7 +14,9 @@ block template-body
 
   section.l-wrapper.l-wrapper--big.l-offset.l-section--light.l-layer--top
     .o-title.o-title--secondary.o-title--absolute
-      include ../svg/icon_grapes.svg
+      .svg-icon--grapes
+        svg.svg__content(data-fallback="assets/images/fallbacks/icon_grapes.png")
+          use(xlink:href="#icon_grapes")
       h2.t-h2 Náš vinohrad a&nbsp;výrobní sklep
     article.o-article
       p.t-big Naše vinice se rozkládají na 10 hektarech půdy na dohled od kaple sv. Floriána na Starém hradě nad Bzencem.
@@ -60,7 +62,9 @@ block template-body
   section.m-hero.m-hero--dark.m-hero--half
     .m-hero__content.l-wrapper.l-wrapper--big.l-offset
       .o-title.o-title--absolute
-        include ../svg/icon_bio.svg
+        .svg-icon--bio
+          svg.svg__content(data-fallback="assets/images/fallbacks/icon_bio.png")
+            use(xlink:href="#icon_bio")
         h2.t-h2 Bio přístup
       .o-lead
         p Všechny naše vinice byly zařazeny do ekologického zemědělství, v němž není povoleno využití chemických prostředků pro ochranu vinic ani při samotné výrobě vína. V roce 2011 naše vinařství získalo ochrannou známku BIO.

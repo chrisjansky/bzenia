@@ -16,7 +16,9 @@ block template-body
           em.m-detail__type= instance.type
     .l-wrapper.l-wrapper--big.l-offset
       .o-title.o-title--absolute.o-title--small.o-title--light
-        include ../svg/icon_grapes.svg
+        .svg-icon--grapes
+          svg.svg__content(data-fallback="assets/images/fallbacks/icon_grapes.png")
+            use(xlink:href="#icon_grapes")
         strong.t-smallcaps Popis vína
       .m-detail__description
         p
@@ -26,7 +28,9 @@ block template-body
         each productInfo in instance.info
           li= productInfo
       .o-title.o-title--absolute.o-title--small.o-title--light
-        include ../svg/icon_bottle.svg
+        .svg-icon--bottle
+          svg.svg__content(data-fallback="assets/images/fallbacks/icon_bottle.png")
+            use(xlink:href="#icon_bottle")
         strong.t-smallcaps Podrobnosti
       ul.o-triplet
         each productExtra, index in instance.extra

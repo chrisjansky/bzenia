@@ -19,7 +19,9 @@ block template-body
           .l-inline__row
             .l-inline__cell
               .m-filter__icon
-                include ../svg/icon_grapes.svg
+                .svg-icon--grapes
+                  svg.svg__content(data-fallback="assets/images/fallbacks/icon_grapes.png")
+                    use(xlink:href="#icon_grapes")
               .m-filter__label
                 label.t-smallcaps Vyberte kategorii vín prosím
               label.o-radio--styled.o-radio--primary
@@ -62,7 +64,9 @@ block template-body
       li.m-accordion__item--first.m-hero.m-hero--black(data-accordion-item, data-opened)
         .m-hero__content.l-wrapper.l-offset
           .o-title.o-title--absolute
-            include ../svg/icon_barrel.svg
+            .svg-icon--barrel
+              svg.svg__content(data-fallback="assets/images/fallbacks/icon_barrel.png")
+                use(xlink:href="#icon_barrel")
             h2.t-h2 Adopce sudu na dálku
           article.m-accordion__more.o-article--invert(data-accordion-more)
             p.t-big.o-lead Nabízíme Vám možnost stát se majitelem originálního vína z naší produkce, na jehož výrobě se můžete sami přímo podílet.
@@ -93,7 +97,9 @@ block template-body
       li.m-accordion__item--second.m-hero.m-hero--black(data-accordion-item)
         .m-hero__content.l-wrapper.l-offset
           .o-title.o-title--absolute
-            include ../svg/icon_diamond.svg
+            .svg-icon--diamond
+              svg.svg__content(data-fallback="assets/images/fallbacks/icon_diamond.png")
+                use(xlink:href="#icon_diamond")
             h2.t-h2 Investiční vína
           article.m-accordion__more.o-article--invert(data-accordion-more)
             p.t-big.o-lead Naše vinařství vám přináší unikátní možnost investice do vín ze své produkce.
@@ -108,7 +114,9 @@ block template-body
       li.m-accordion__item--third.m-hero.m-hero--black(data-accordion-item)
         .m-hero__content.l-wrapper.l-offset
           .o-title.o-title--absolute
-            include ../svg/icon_tasting.svg
+            .svg-icon--tasting
+              svg.svg__content(data-fallback="assets/images/fallbacks/icon_tasting.png")
+                use(xlink:href="#icon_tasting")
             h2.t-h2 Degustace a ochutnávky
           article.m-accordion__more.o-article--invert(data-accordion-more)
             p.t-big.o-lead Na objednávku pořádáme řízené degustace našich vín včetně občerstvení dle výběru zákazníka.
