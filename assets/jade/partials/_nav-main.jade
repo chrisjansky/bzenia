@@ -4,13 +4,11 @@ header.m-header.header--is-top(class="m-header--#{pageSettings.theme}", data-hea
       .m-header__logo.l-inline__cell
         a.o-logo(href="index.html", class="o-logo--#{pageSettings.theme}", data-pjax--whole, data-logo)
           .o-logo__symbol
-            .svg-logo__symbol
-              svg.svg__content(data-fallback="assets/images/fallbacks/logo_symbol--thick.png")
-                use(xlink:href="#logo_symbol--thick")
+            .svg-logo__symbol(data-fallback="assets/images/fallbacks/logo_symbol--thick.png")
+              include ../../svg/source/logo_symbol--thick.svg
           .o-logo__title
-            .svg-logo__wordmark
-              svg.svg__content(data-fallback="assets/images/fallbacks/logo_wordmark.png")
-                use(xlink:href="#logo_wordmark")
+            .svg-logo__wordmark(data-fallback="assets/images/fallbacks/logo_wordmark.png")
+              include ../../svg/source/logo_wordmark.svg
             strong Bzenia
       .m-header__nav.l-inline__cell
         nav.o-nav
