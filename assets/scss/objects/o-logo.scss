@@ -25,6 +25,12 @@
   white-space: nowrap;
   @include transition(transform $duration--b, opacity $duration--b);
   @include pseudo-center--parent;
+  img {
+    // Stupid fix for PNG fallback.
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: em($ratio--b);
+  }
 }
 
 // Responsive.
