@@ -95,6 +95,17 @@ $(document).on("ready pjax:success", function() {
     }
   });
 
+  // SVG fallbacks.
+  if (!Modernizr.svg) {
+    $("[data-fallback]").each(function() {
+      var
+        $this = $(this),
+        targetFile = $this.data("fallback");
+      $this.after("<img src='" + targetFile + "' alt='PNG Fallback' />");
+      $this.hide();
+    });
+  }
+
   // Google Maps.
   if (mapIframe !== null) {
     function initMaps() {
