@@ -15,6 +15,9 @@ var
   rename = require("gulp-rename"),
   plumber = require("gulp-plumber"),
   clean = require("gulp-clean"),
+  size = require("gulp-size"),
+  svgsprite = require("gulp-svg-sprites"),
+  svgpng = require("gulp-svg2png"),
   bsync = require("browser-sync");
 
 var paths = {
@@ -28,7 +31,10 @@ var paths = {
   glob_scss: "assets/scss/**/*.scss",
   glob_css: "assets/css/*.css",
   images: "assets/images",
-  glob_images: "assets/images/*",
+  fallbacks: "assets/images/fallbacks",
+  svg: "assets/svg",
+  glob_images: "assets/images/**/*",
+  glob_svg: "assets/svg/source/*",
   ignore_images: "!assets/images/ignore{,/**}",
   data: "assets/data/dummy.json",
   // kss: "assets/kss/*.html",
@@ -49,7 +55,7 @@ gulp.task("styles", function () {
       includePaths: require("node-neat").with("bower_components/")
     }))
     .pipe(gulp.dest(paths.css))
-    .pipe(bsync.reload({stream:true}));
+    .pipe(bsync.reload({stream: true}));
 });
 
 gulp.task("pages", ["templates"], function() {
@@ -82,6 +88,36 @@ gulp.task("templates", function() {
 //     .pipe(rename("kss-min.css"))
 //     .pipe(gulp.dest(paths.production + paths.css));
 // });
+
+gulp.task("assemble-svg", ["purge-fallbacks"], function() {
+  return gulp.src(paths.glob_svg)
+    .pipe(svgsprite({
+      mode: "symbols",
+      // svgId: "svg-%f",
+      // preview: false,
+      svg: {
+        symbols: "complete.svg"
+      },
+      preview: {
+        symbols: "index.html"
+      }
+    }))
+    .pipe(size({
+      showFiles: true
+    }))
+    .pipe(gulp.dest(paths.svg));
+})
+
+gulp.task("purge-fallbacks", function() {
+  return gulp.src(paths.fallbacks, {read: false})
+    .pipe(clean());
+})
+
+gulp.task("svg", ["assemble-svg"], function() {
+  return gulp.src(paths.glob_svg)
+    .pipe(svgpng())
+    .pipe(gulp.dest(paths.fallbacks));
+});
 
 // Minify CSS and JS.
 gulp.task("produce", ["wipe"], function() {
@@ -134,6 +170,9 @@ gulp.task("strip", ["produce"], function() {
         ignore: [/::?-[\w\d]+/]
       }))
       .pipe(minify())
+      .pipe(size({
+        showFiles: true
+      }))
       .pipe(gulp.dest(paths.production + paths.css));
   }
 });
