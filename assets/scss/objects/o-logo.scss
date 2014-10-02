@@ -22,8 +22,9 @@
   height: em(34);
   overflow: hidden;
   vertical-align: middle;
-  @include pseudo-center--parent;
+  white-space: nowrap;
   @include transition(transform $duration--b, opacity $duration--b);
+  @include pseudo-center--parent;
 }
 
 // Responsive.
