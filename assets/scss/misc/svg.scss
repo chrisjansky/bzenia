@@ -1,5 +1,22 @@
 // SVG styles.
-.svg-button {
+.svg__content {
+  width: 100%;
+  height: 100%;
+}
+// Logo
+.svg-logo__symbol {
+  width: em($circle--s);
+  height: em($circle--s);
+}
+.svg-logo__wordmark {
+  display: inline-block;
+  width: em(90);
+  height: em(20);
+  vertical-align: middle;
+}
+// Buttons
+[class^="svg-button"],
+[class*=" svg-button"] {
   display: inline-block;
   & + & {
     margin-left: em($ratio--s);
@@ -8,32 +25,23 @@
     opacity: .75;
   }
 }
+.svg-button--app_store {
+  // iOS doesn't fare well with width: auto;
+  width: em(135);
+  height: em(40);
+}
+.svg-button--google_play {
+  width: em(116);
+  height: em(40);
+}
+// Icons
 [class^="svg-icon"],
 [class*=" svg-icon"] {
+  display: inline-block;
   width: em($svg--b);
   height: em($svg--b);
   vertical-align: middle;
 }
-
-// iOS doesn't fare well with width: auto;
-.svg-symbol--app_store {
-  width: em(135);
-  height: em(40);
-}
-.svg-symbol--google_play {
-  width: em(116);
-  height: em(40);
-}
-.svg-logo_symbol {
-  width: em($circle--s);
-  height: em($circle--s);
-}
-.svg-logo_wordmark {
-  width: em(90);
-  height: em(20);
-  vertical-align: middle;
-}
-
 .svg-icon--barrel {
   fill: $c-color1;
 }
