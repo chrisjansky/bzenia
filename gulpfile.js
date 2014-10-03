@@ -3,21 +3,21 @@ var
   argv = require("yargs").argv,
   glob = require("glob"),
   gulp = require("gulp"),
-  watch = require("gulp-watch"),
   sass = require("gulp-sass"),
   jade = require("gulp-jade"),
-  // gulpkss = require("gulp-kss"),
+  clean = require("gulp-clean"),
+  rename = require("gulp-rename"),
+  plumber = require("gulp-plumber"),
+  size = require("gulp-size"),
+  watch = require("gulp-watch"),
   usemin = require("gulp-usemin"),
   imagemin = require("gulp-imagemin"),
   minify = require("gulp-minify-css"),
   uglify = require("gulp-uglify"),
   uncss = require("gulp-uncss"),
-  rename = require("gulp-rename"),
-  plumber = require("gulp-plumber"),
-  clean = require("gulp-clean"),
-  size = require("gulp-size"),
   svgsprite = require("gulp-svg-sprites"),
   svgpng = require("gulp-svg2png"),
+  // gulpkss = require("gulp-kss"),
   bsync = require("browser-sync");
 
 var paths = {
@@ -89,7 +89,8 @@ gulp.task("templates", function() {
 //     .pipe(gulp.dest(paths.production + paths.css));
 // });
 
-gulp.task("assemble-svg", ["purge-fallbacks"], function() {
+// Combine all SVG assets into one.
+gulp.task("combine-svg", ["wipe-fallbacks"], function() {
   return gulp.src(paths.glob_svg)
     .pipe(svgsprite({
       mode: "symbols",
@@ -108,12 +109,14 @@ gulp.task("assemble-svg", ["purge-fallbacks"], function() {
     .pipe(gulp.dest(paths.svg));
 })
 
-gulp.task("purge-fallbacks", function() {
+// Delete the assets/fallbacks/ folder.
+gulp.task("wipe-fallbacks", function() {
   return gulp.src(paths.fallbacks, {read: false})
     .pipe(clean());
 })
 
-gulp.task("svg", ["assemble-svg"], function() {
+// SVG automation task.
+gulp.task("svg", ["combine-svg"], function() {
   return gulp.src(paths.glob_svg)
     .pipe(svgpng())
     .pipe(gulp.dest(paths.fallbacks));
