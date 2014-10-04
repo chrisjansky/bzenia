@@ -6,7 +6,7 @@
   outline: none;
   background-color: transparent;
   border-bottom: $line--b solid;
-  padding: em($ratio--s, $unit--l) 0;
+  padding: em($ratio--xs) 0;
   // iOS fix.
   border-radius: 0;
   @include media($tablet__up) {
@@ -114,7 +114,8 @@
   outline: none;
   border: $line--b solid $c-grey3;
   color: $c-grey6;
-  padding: em($ratio--s) em($ratio--b);
+  line-height: em($height--b);
+  padding: 0 em($ratio--b);
   background-color: transparent;
   font-family: $font--sans;
   font-weight: $sans--semibold;
