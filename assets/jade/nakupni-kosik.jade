@@ -16,11 +16,11 @@ block template-body
                 .o-photo.o-photo--small
                   .o-photo__content
                     if (index % 3 == 0)
-                      img(src="assets/images/product_thumbnail1.jpg", alt="Thumbnail")
+                      img(src="assets/images/product_thumbnail1.png", alt="Thumbnail")
                     else if (index % 2 == 0)
-                      img(src="assets/images/product_thumbnail2.jpg", alt="Thumbnail")
+                      img(src="assets/images/product_thumbnail2.png", alt="Thumbnail")
                     else
-                      img(src="assets/images/product_thumbnail3.jpg", alt="Thumbnail")
+                      img(src="assets/images/product_thumbnail3.png", alt="Thumbnail")
                 .m-order__category(class="o-badge--#{instance.category}")!= instance.year
               .m-order__cell.m-order__content
                 .l-inline
