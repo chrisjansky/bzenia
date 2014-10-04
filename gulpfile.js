@@ -44,7 +44,8 @@ var paths = {
 
 // Declare files to move to public/ during "build" task.
 var productionFiles = [
-  "assets/fonts/*"
+  "assets/fonts/*",
+  "favicon.ico"
 ]
 
 gulp.task("styles", function () {
