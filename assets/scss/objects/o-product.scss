@@ -7,6 +7,9 @@
   position: relative;
   padding-left: em($ratio--l);
   padding-right: em($ratio--l);
+  .o-photo__content {
+    background-color: white;
+  }
 }
 .o-product__link {
   display: block;
