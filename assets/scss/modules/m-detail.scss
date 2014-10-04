@@ -1,41 +1,23 @@
-.m-detail__header {
-  padding-bottom: 0;
-}
-.m-detail__image {
+.m-detail__thumbnail {
   position: relative;
-  background-color: $c-grey6;
-  img {
-    width: 100%;
-    height: auto;
-    opacity: .75;
-  }
-  &:after {
-    content: "";
-    @include stretch-overlay;
-    @include linear-gradient(to top, rgba($c-grey8, .5), rgba($c-grey8, 0), $fallback: transparent);
-  }
 }
-.m-detail__overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  color: white;
-}
-.m-detail__contextual {
+.m-detail__category {
   position: absolute;
   top: 0;
   left: 0;
 }
+.m-detail__name {
+  margin-bottom: em($ratio--xxs);
+}
 .m-detail__type {
   font-size: em($ratio--m);
-  @include rgba(color, $c-grey2, .5);
+  color: $c-grey4;
 }
 .m-detail__description {
   font-size: em($unit--l);
   color: $c-grey6;
 }
 .m-detail__info {
-  margin-bottom: em($ratio--m);
   color: $c-grey4;
 }
 .m-detail__quantity {
@@ -49,11 +31,24 @@
 }
 
 // Responsive.
-@include media($tablet__up) {
+@include media($phone) {
+  .m-detail__type {
+    display: block;
+    text-align: center;
+  }
+  .m-detail__overview {
+    text-align: center;
+  }
+  .m-detail__content {
+    text-align: left;
+  }
+  .m-detail__thumbnail {
+    display: inline-block;
+    padding: 0 em($ratio--m);
+  }
+}
+@include media($tablet--landscape__up) {
   .m-detail__description {
     font-size: em($ratio--m);
-  }
-  .m-detail__info {
-    margin-bottom: em($ratio--l);
   }
 }
