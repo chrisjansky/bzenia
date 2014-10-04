@@ -23,7 +23,13 @@
   position: absolute;
   right: 0;
   top: 0;
-  line-height: em($height--b);
+  bottom: 0;
+  &:after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
 }
 @include media($phone) {
   .o-holder--float {
