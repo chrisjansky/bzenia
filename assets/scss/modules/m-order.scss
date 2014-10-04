@@ -20,6 +20,9 @@
 .m-order__photo {
   position: relative;
   width: em($ratio--xl);
+  .o-photo__content {
+    background-color: $c-grey1;
+  }
 }
 .m-order__category {
   position: absolute;
