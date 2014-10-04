@@ -4,20 +4,27 @@
   .featherlight-content {
     padding: 0;
     border-bottom: 0;
+    min-width: initial;
     background-color: transparent;
     overflow: visible;
   }
 
+  .featherlight-image {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
   .featherlight-close-icon {
-    position: relative;
-    float: right;
     width: em($ratio--l);
     height: em($ratio--l);
     line-height: em($ratio--l + 2);
-    margin-bottom: em($ratio--b);
-    margin-right: em(-$ratio--xxs);
+    top: em($ratio--b);
+    right: em($ratio--b);
     background-color: transparent;
-    color: $c-color1;
+    @include rgba(color, $c-grey2, .75);
     border: $line--b solid;
     border-radius: 50%;
     @include box-sizing(content-box);
