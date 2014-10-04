@@ -6,27 +6,31 @@ block template-variables
 
 block template-body
   section.m-detail
-    .m-detail__header.l-wrapper.l-wrapper--lower.l-wrapper--bleed.l-section--white
-      .m-detail__image
-        .m-detail__contextual.l-wrapper
-          a.o-button--simple.t-link--light.ss-navigateleft(href="nabidka.html", data-pjax--whole) Zpět do nabídky
-        img(src="assets/images/detail_big1.jpg", alt="Detail produktu")
-        .m-detail__overlay.l-wrapper
-          h1.t-h1= instance.name
+    .l-wrapper.l-wrapper--lower.l-section--white
+      .m-detail__overview.o-media
+        .m-detail__thumbnail.o-media__image
+          figure.o-photo.o-photo--big
+            a.o-photo__link.o-photo__content(href="assets/images/detail_big1.jpg", data-js-featherlight)
+              .o-photo__overlay
+                span.ss-zoomin.o-icon--big
+              img(src="assets/images/detail_circle1.jpg", alt="Detail produktu")
+          .m-detail__category(class="o-badge--#{instance.category}")!= instance.year
+        .m-detail__content.o-media__content
+          h1.m-detail__name.t-h1= instance.name
           em.m-detail__type= instance.type
-    .l-wrapper.l-wrapper--big.l-offset
-      .o-title.o-title--absolute.o-title--small.o-title--light
-        .svg-icon--grapes
-          svg.svg__content(data-fallback="assets/images/fallbacks/icon_grapes.png")
-            use(xlink:href="#icon_grapes")
-        strong.t-smallcaps Popis vína
-      .m-detail__description
-        p
-          = instance.description
-          |  Then Oz painted it on the inside with a coat of thin glue, to make it airtight.
-      ul.m-detail__info.o-middot.o-middot--inline
-        each productInfo in instance.info
-          li= productInfo
+          .m-detail__description
+            p
+              = instance.description
+              |  Then Oz painted it on the inside with a coat of thin glue, to make it airtight.
+          .o-title.o-title--float.o-title--small.o-title--light
+            .svg-icon--grapes
+              svg.svg__content(data-fallback="assets/images/fallbacks/icon_grapes.png")
+                use(xlink:href="#icon_grapes")
+            strong.t-smallcaps Popis vína
+          ul.m-detail__info.o-middot.o-middot--inline
+            each productInfo in instance.info
+              li= productInfo
+    .l-wrapper.l-offset
       .o-title.o-title--absolute.o-title--small.o-title--light
         .svg-icon--bottle
           svg.svg__content(data-fallback="assets/images/fallbacks/icon_bottle.png")
@@ -70,3 +74,6 @@ block template-body
                   span.o-holder__icon.ss-write
               .m-detail__button
                 input.o-submit(type="submit", value="Vložit do košíku")
+  footer.o-action
+    .l-wrapper
+      a.o-button--simple.ss-navigateleft(href="nabidka.html", data-pjax--whole) Zpět do nabídky
