@@ -1,6 +1,3 @@
-.is-ready:after {
-  z-index: -1;
-}
 .o-canvas--fixed {
   z-index: 5;
 }
@@ -24,9 +21,6 @@
 .m-hero__content,
 .m-order__total {
   z-index: 50;
-}
-.is-loading:after {
-  z-index: 600;
 }
 .m-header {
   z-index: 700;
