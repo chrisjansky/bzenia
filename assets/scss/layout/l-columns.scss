@@ -11,6 +11,14 @@
   [class*=" l-column--"] {
     @include collapse-children;
   }
+}
+@include media($tablet--portrait) {
+  .l-column--one,
+  .l-column--two {
+    @include span-columns(3);
+  }
+}
+@include media($tablet--landscape__up) {
   .l-column--one {
     @include span-columns(4);
   }
