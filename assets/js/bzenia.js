@@ -157,21 +157,16 @@ $(document).on("ready pjax:success", function() {
     paper.setup(paperCanvas);
     var width, height, center, tool;
     var points = 4;
-    if (tool == undefined) {
-      tool = new Tool();
-    }
+    tool = new Tool();
     tool.activate();
 
     var mousePos = view.center;
     var pathHeight = mousePos.y;
 
     var pathWave = new Path({
-      // fillColor: "#474a4d",
       fillColor: "black",
       opacity: 0.375
     });
-
-    initializePath();
 
     function initializePath() {
       center = view.center;
@@ -188,6 +183,8 @@ $(document).on("ready pjax:success", function() {
       pathWave.add(width, view.size.height * 0.125);
       pathWave.add(view.bounds.topRight);
     }
+
+    initializePath();
 
     if (!Modernizr.touch) {
       tool.onMouseMove = function(event) {
