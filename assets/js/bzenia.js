@@ -17,8 +17,6 @@ $(document).on("ready pjax:success", function() {
   // Set-up pjax.
   if ($.support.pjax) {
 
-    $body.addClass("is-ready");
-
     $(document).on("click", "[data-pjax--whole]", function(event) {
       $.pjax.click(event, {
         container: $pjaxWhole,
@@ -31,15 +29,6 @@ $(document).on("ready pjax:success", function() {
         container: $("#js-pjax--aside"),
         fragment: "#js-pjax--main"
       });
-    });
-
-    $pjaxWhole.on({
-      "pjax:send": function() {
-        $body.addClass("is-loading");
-      },
-      "pjax:complete": function() {
-        $body.removeClass("is-loading");
-      }
     });
 
   }
