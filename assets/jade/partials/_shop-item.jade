@@ -16,8 +16,5 @@ article.m-products__item.o-product
     .o-product__name
       h3.o-wine__name.t-h3= instance.name
       em.o-wine__type.o-product__type= instance.type
-  p.o-product__description
-    = instance.description
-    if (index % 2 == 0)
-      |  
-      a(href="#") Poznejte víno blíže.
+  p.o-product__description.t-smallcaps--small
+    = instance.info[0]
