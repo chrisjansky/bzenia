@@ -10,15 +10,13 @@
   margin-bottom: em($ratio--xxs);
 }
 .m-detail__type {
+  display: block;
   font-size: em($ratio--m);
   color: $c-grey4;
-}
-.m-detail__description {
-  font-size: em($unit--l);
-  color: $c-grey6;
+  margin-bottom: em($ratio--m);
 }
 .m-detail__info {
-  color: $c-grey4;
+  color: $c-grey6;
 }
 .m-detail__quantity {
   display: inline-block;
@@ -32,15 +30,8 @@
 
 // Responsive.
 @include media($phone) {
-  .m-detail__type {
-    display: block;
-    text-align: center;
-  }
   .m-detail__overview {
     text-align: center;
-  }
-  .m-detail__content {
-    text-align: left;
   }
   .m-detail__thumbnail {
     display: inline-block;
