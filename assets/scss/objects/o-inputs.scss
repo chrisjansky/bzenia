@@ -50,7 +50,7 @@
 }
 .o-input--primary,
 .o-textarea--primary {
-  color: $c-color1--black;
+  color: $c-color1--dark;
   border-bottom-color: $c-color1--light;
   @include placeholder {
     color: $c-color1--medium;
@@ -59,6 +59,7 @@
     border-bottom-color: $c-color2;
   }
   @include focus-state {
+    color: $c-color1--black;
     border-bottom-color: white;
   }
 }
