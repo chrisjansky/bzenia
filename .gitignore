@@ -20,7 +20,6 @@ ignore
 public
 source_files
 assets/css
-/*.html
 
 ## Sass
 .sass-cache
