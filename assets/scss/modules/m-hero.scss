@@ -27,6 +27,14 @@
   }
   .o-lead {
     color: $c-grey2;
+    a {
+      @include link-state {
+        color: $c-grey2;
+      }
+      @include active-state {
+        color: white;
+      }
+    }
   }
   &:after {
     content: "";
