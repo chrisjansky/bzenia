@@ -10,6 +10,15 @@ block template-body
   section.m-hero.m-hero--half(class="m-hero--#{pageSettings.theme}")
     .m-hero__content.l-wrapper.l-wrapper--lower
       h1.t-h1 Naše nabídka
+      .o-lead
+        p
+          | Prohlídněte si naši nabídku vín či využíjte dalších služeb &mdash; 
+          a(href="#section-adopt") adopce sudu
+          | , 
+          a(href="#section-invest") investice do vína
+          |  nebo 
+          a(href="#section-taste") organizace ochutnávky
+          | .
     .m-hero__bg(style="background-image: url('assets/images/cellar_big2.jpg')")
 
   section.l-layer--top
@@ -61,7 +70,8 @@ block template-body
       .l-offset.l-wrapper.l-wrapper--small
         strong.t-smallcaps Mohlo by Vás zajímat
     ul.m-accordion__list(data-accordion)
-      li.m-accordion__item--first.m-hero.m-hero--black(data-accordion-item, data-opened)
+
+      li#section-adopt.m-accordion__item--first.m-hero.m-hero--black(data-accordion-item, data-opened)
         .m-hero__content.l-wrapper.l-offset
           .o-title.o-title--absolute
             .svg-icon--barrel
@@ -94,7 +104,7 @@ block template-body
             p Celé toto dobrodružství s vínem, které Vás vtáhne do tajů jeho výroby, můžete mít za cenu 105.000,- Kč včetně DPH.
         .m-hero__bg(style="background-image: url('assets/images/barrel_big1.jpg')")
 
-      li.m-accordion__item--second.m-hero.m-hero--black(data-accordion-item)
+      li#section-invest.m-accordion__item--second.m-hero.m-hero--black(data-accordion-item)
         .m-hero__content.l-wrapper.l-offset
           .o-title.o-title--absolute
             .svg-icon--diamond
@@ -111,7 +121,7 @@ block template-body
                 p Každá láhev tohoto mimořádného meziročníkového vína, jež je namíchané z nejlepších ryzlinků rýnských z našeho archívu, obsahuje broušený diamant o velikosti 0,25 karátu až 3 karáty. Rádi vám poskytneme bližší informace.
         .m-hero__bg(style="background-image: url('assets/images/bottles_big1.jpg')")
 
-      li.m-accordion__item--third.m-hero.m-hero--black(data-accordion-item)
+      li#section-taste.m-accordion__item--third.m-hero.m-hero--black(data-accordion-item)
         .m-hero__content.l-wrapper.l-offset
           .o-title.o-title--absolute
             .svg-icon--tasting
@@ -126,5 +136,5 @@ block template-body
               .l-column--half
                 p Cenu degustací řešíme individuálně. Občerstvení pro nás připravují kuchaři Restaurace a penzionu Beta ve Bzenci, kde je i možnost ubytování.
                 p Řízené degustace pořádáme přímo v našem Bzeneckém vinařství, můžeme je však uskutečnit také přímo u vás doma nebo na firmě.
-            a.o-button--simple.ss-navigateright.right(href="navstivte-nas.html", data-pjax--whole) Objednat
+            a.o-button--simple.ss-navigateright.right(href="navstivte-nas.html#section-form", data-pjax--whole) Objednat
         .m-hero__bg(style="background-image: url('assets/images/tasting_big1.jpg')")
