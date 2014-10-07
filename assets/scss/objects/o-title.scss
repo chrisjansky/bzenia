@@ -21,9 +21,6 @@
   .o-title {
     text-align: center;
   }
-  .o-title--small {
-    text-align: left;
-  }
 }
 @include media($tablet__up) {
   .o-title {
