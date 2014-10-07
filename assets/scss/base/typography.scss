@@ -17,13 +17,20 @@ body {
 .t-big {
   font-size: em($unit--l);
 }
-.t-smallcaps {
+[class^="t-smallcaps"],
+[class*=" t-smallcaps"] {
   font-family: $font--sans;
-  font-weight: $sans--semibold;
-  font-size: em($unit--s);
   letter-spacing: .125em;
   text-transform: uppercase;
   vertical-align: middle;
+}
+.t-smallcaps {
+  font-weight: $sans--semibold;
+  font-size: em($unit--s);
+}
+.t-smallcaps--small {
+  font-weight: $sans--regular;
+  font-size: em($unit--xs);
 }
 .t-h1 {
   font-family: $font--display;
