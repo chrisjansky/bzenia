@@ -90,8 +90,21 @@ gulp.task("templates", function() {
 //     .pipe(gulp.dest(paths.production + paths.css));
 // });
 
+// Render PNG fallbacks for SVG.
+gulp.task("svg-fallbacks", ["wipe-fallbacks"], function() {
+  return gulp.src(paths.glob_svg)
+    .pipe(svgpng())
+    .pipe(gulp.dest(paths.fallbacks));
+});
+
+// Delete the assets/fallbacks/ folder.
+gulp.task("wipe-fallbacks", function() {
+  return gulp.src(paths.fallbacks, {read: false})
+    .pipe(clean());
+});
+
 // Combine all SVG assets into one.
-gulp.task("combine-svg", ["wipe-fallbacks"], function() {
+gulp.task("svg-combine", function() {
   return gulp.src(paths.glob_svg)
     .pipe(svgsprite({
       mode: "symbols",
@@ -109,19 +122,6 @@ gulp.task("combine-svg", ["wipe-fallbacks"], function() {
     }))
     .pipe(gulp.dest(paths.svg));
 })
-
-// Delete the assets/fallbacks/ folder.
-gulp.task("wipe-fallbacks", function() {
-  return gulp.src(paths.fallbacks, {read: false})
-    .pipe(clean());
-})
-
-// SVG automation task.
-gulp.task("svg", ["combine-svg"], function() {
-  return gulp.src(paths.glob_svg)
-    .pipe(svgpng())
-    .pipe(gulp.dest(paths.fallbacks));
-});
 
 // Minify CSS and JS.
 gulp.task("produce", ["wipe"], function() {
@@ -218,6 +218,7 @@ gulp.task("scan", function () {
 });
 
 // Wipe first. Move, produce, images. Strip after produce.
+gulp.task("svg", ["svg-fallbacks", "svg-combine"]);
 gulp.task("build", ["move", "images", "strip"]);
 gulp.task("compile", ["styles", "pages"]);
 gulp.task("default", ["compile", "server", "scan"]);
