@@ -95,6 +95,15 @@ $(document).on("ready pjax:success", function() {
     });
   }
 
+  // Scroll to anchor.
+  $("[href*='#']").click(function() {
+    $("html, body").animate(
+      {
+        scrollTop: $($(this).attr("href")).offset().top
+      }, "slow");
+    return false;
+  });
+
   // Google Maps.
   if (mapIframe !== null) {
     function initMaps() {
