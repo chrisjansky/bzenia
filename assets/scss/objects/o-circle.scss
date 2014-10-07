@@ -27,6 +27,7 @@
 .o-circle__note {
   position: absolute;
   left: 100%;
+  white-space: nowrap;
   margin-left: em($ratio--m);
 }
 
