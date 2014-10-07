@@ -28,6 +28,7 @@
   }
 }
 .o-product__type {
+  display: block;
   font-size: em($ratio--m);
 }
 .o-product__category {
@@ -38,20 +39,19 @@
 .o-product__price {
   position: absolute;
   top: .125em;
-  right: em(-$ratio--m);
+  // Magic number.
+  left: em(160);
+  white-space: nowrap;
 }
 .o-product__description {
-  a {
-    @include link-state {
-      color: $c-grey8;
-    }
-    @include active-state {
-      color: $c-grey6;
-    }
-  }
+  color: $c-grey4;
 }
 
 @include media($tablet--landscape__up) {
+  .o-product__description {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
   .o-product__name {
     min-height: em($ratio--xl);
   }
