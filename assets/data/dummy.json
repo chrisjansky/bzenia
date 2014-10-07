@@ -5,7 +5,6 @@
       "category": "rose",
       "type": "výběr z hroznů",
       "year": "&rsquo;13",
-      "description": "Hodí se k jeseteru a tvrdším sýrům.",
       "info": [
         "Sladké",
         "Alk. 13,5 %",
@@ -25,14 +24,13 @@
           "value": "5,6"
         }
       ],
-      "price": "240"
+      "price": "2400"
     },
     {
       "name": "Ryzlink rýnský",
       "category": "white",
       "type": "pozdní sběr",
       "year": "&rsquo;06",
-      "description": "To pravé víno pro horké letní večery.",
       "info": [
         "Suché",
         "Alk. 13,5 %",
@@ -59,7 +57,6 @@
       "category": "red",
       "type": "pozdní sběr",
       "year": "&rsquo;12",
-      "description": "Výborný k lososovi.",
       "info": [
         "Polosuché",
         "Alk. 13,5 %",
@@ -79,14 +76,13 @@
           "value": "5,6"
         }
       ],
-      "price": "180"
+      "price": "1800"
     },
     {
       "name": "Frankovka",
       "category": "red",
       "type": "jakostní",
       "year": "&rsquo;08",
-      "description": "Naše jedinečné červené víno.",
       "info": [
         "Polosuché",
         "Alk. 13,5 %",
@@ -113,7 +109,6 @@
       "category": "rose",
       "type": "výběr z hroznů",
       "year": "&rsquo;09",
-      "description": "Kvalitní české víno.",
       "info": [
         "Sladké",
         "Alk. 13,5 %",
@@ -140,7 +135,6 @@
       "category": "white",
       "type": "kabinet",
       "year": "&rsquo;06",
-      "description": "To pravé víno pro horké letní večery.",
       "info": [
         "Polosladké",
         "Alk. 13,5 %",
@@ -167,7 +161,6 @@
       "category": "rose",
       "type": "výběr z hroznů",
       "year": "&rsquo;13",
-      "description": "Hodí se k jeseteru a tvrdším sýrům.",
       "info": [
         "Sladké",
         "Alk. 13,5 %",
@@ -194,7 +187,6 @@
       "category": "white",
       "type": "kabinet",
       "year": "&rsquo;06",
-      "description": "To pravé víno pro horké letní večery.",
       "info": [
         "Suché",
         "Alk. 13,5 %",
@@ -214,14 +206,13 @@
           "value": "5,6"
         }
       ],
-      "price": "215"
+      "price": "2150"
     },
     {
       "name": "Sauvignon",
       "category": "red",
       "type": "pozdní sběr",
       "year": "&rsquo;12",
-      "description": "Výborný k lososovi.",
       "info": [
         "Polosuché",
         "Alk. 13,5 %",
