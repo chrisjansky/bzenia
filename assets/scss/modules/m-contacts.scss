@@ -14,7 +14,6 @@
   }
 }
 @include media($phone--landscape) {
-  .m-contacts__block,
   .m-contacts__person {
     @include span-columns(2);
   }
@@ -23,23 +22,9 @@
   .m-contacts__content {
     margin-top: em($ratio--m);
   }
-  .m-contacts__block {
-    @include collapse-children;
-  }
-}
-@include media($tablet--portrait) {
-  .m-contacts__block {
-    & + & {
-      margin-top: em($ratio--b);
-    }
-  }
 }
 @include media($tablet--landscape__up) {
-  .m-contacts__block {
-    @include span-columns(3 of 6);
-    @include collapse-children;
-  }
   .m-contacts__person {
-    @include span-columns(3 of 6);
+    @include span-columns(4 of 8);
   }
 }
