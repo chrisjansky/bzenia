@@ -84,6 +84,12 @@
     border-bottom-color: $c-grey2;
   }
 }
+// Fuck Firefox.
+@-moz-document url-prefix() {
+  .o-dropdown .o-holder__icon {
+    display: none;
+  }
+}
 .o-dropdown__select {
   width: 100%;
   padding: em($ratio--xs) em($ratio--m) em($ratio--xs) 0;
