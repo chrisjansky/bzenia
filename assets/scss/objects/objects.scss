@@ -52,6 +52,9 @@
 // Text object.
 .o-lead {
   max-width: 40em;
+  @include media($phone) {
+    text-align: center;
+  }
 }
 // Views.
 .o-whole {
