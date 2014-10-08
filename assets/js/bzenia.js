@@ -169,8 +169,7 @@ $(document).on("ready pjax:success", function() {
     tool = new Tool();
     tool.activate();
 
-    var mousePos = view.center;
-    var pathHeight = mousePos.y;
+    var pathHeight = view.center.y;
 
     var pathWave = new Path({
       fillColor: "black",
@@ -195,14 +194,8 @@ $(document).on("ready pjax:success", function() {
 
     initializePath();
 
-    if (!Modernizr.touch) {
-      tool.onMouseMove = function(event) {
-        mousePos = event.point;
-      }
-    }
-
     view.onFrame = function(event) {
-      pathHeight += (center.y - mousePos.y - pathHeight) / 10;
+      pathHeight += (center.y - pathHeight) / 10;
       for (var i = 2; i < points; i++) {
         var sinSeed = event.count + (i + i % 10) * 150;
         var sinHeight = Math.sin(sinSeed / 50) * pathHeight;
