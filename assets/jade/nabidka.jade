@@ -10,15 +10,6 @@ block template-body
   section.m-hero.m-hero--half(class="m-hero--#{pageSettings.theme}")
     .m-hero__content.l-wrapper.l-wrapper--lower
       h1.t-h1 Naše nabídka
-      .o-lead
-        p
-          | Prohlídněte si naši nabídku vín či využíjte dalších služeb &mdash; 
-          a(href="#section-adopt") adopce sudu
-          | , 
-          a(href="#section-invest") investice do vína
-          |  nebo 
-          a(href="#section-taste") organizace ochutnávky
-          | .
     .m-hero__bg(style="background-image: url('assets/images/cellar_big2.jpg')")
 
   section.l-layer--top
@@ -64,11 +55,11 @@ block template-body
               a.o-pagination__content(href="#")
                 = instance
         a.o-pagination__side-link.ss-cart.o-button--simple.t-link--secondary(href="nakupni-kosik.html", data-pjax--whole) Nákupní košík
+      a(href="#section-adopt").o-hint.o-hint--last
+        h4.t-h4.o-hint__content Dále by Vás mohlo zajímat
+        .o-hint__icon.o-icon.ss-down
 
   section.m-accordion
-    header.o-action
-      .l-offset.l-wrapper.l-wrapper--small
-        strong.t-smallcaps Mohlo by Vás zajímat
     ul.m-accordion__list(data-accordion)
 
       li#section-adopt.m-accordion__item--first.m-hero.m-hero--black(data-accordion-item, data-opened)
