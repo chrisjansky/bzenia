@@ -56,6 +56,34 @@
     text-align: center;
   }
 }
+// Hint anchor.
+.o-hint {
+  display: block;
+  margin: em($ratio--m) 0;
+  text-align: center;
+  text-decoration: none;
+  @include link-state {
+    color: $c-grey6;
+  }
+  @include active-state {
+    color: black;
+    .o-hint__icon {
+      color: $c-grey6;
+    }
+  }
+}
+@include media($tablet--landscape__up) {
+  .o-hint {
+    margin: em($ratio--l) 0;
+  }
+  .o-hint--last {
+    // Hack alert.
+    margin-bottom: em(-$ratio--m) !important;
+  }
+}
+.o-hint__icon {
+  color: $c-grey4;
+}
 // Views.
 .o-whole {
   height: 100%;
