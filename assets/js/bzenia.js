@@ -74,7 +74,7 @@ $(document).on("ready pjax:success", function() {
   });
 
   // Trigger Featherlight lightbox on click.
-  $("[data-js-featherlight]").on("click", function(e) {
+  $("[data-lightbox]").on("click", function(e) {
     e.preventDefault();
     if (!swiperActive) {
       $.featherlight(this.href, {
@@ -83,6 +83,9 @@ $(document).on("ready pjax:success", function() {
       });
     }
   });
+
+  // Featherlight modal.
+  $("[data-modal]").featherlight();
 
   // SVG fallbacks.
   if (!Modernizr.svg) {
