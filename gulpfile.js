@@ -165,7 +165,7 @@ gulp.task("images", ["wipe"], function() {
 });
 
 // Wait for "produce" and strip unused CSS afterwards if --uncss provided.
-gulp.task("strip", ["produce"], function() {
+gulp.task("strip-css", ["produce"], function() {
   if (argv.uncss) {
     return gulp.src(paths.production + paths.glob_css)
       .pipe(plumber())
@@ -217,8 +217,9 @@ gulp.task("scan", function () {
   // watch(paths.kss, ["kss"]);
 });
 
-// Wipe first. Move, produce, images. Strip after produce.
+// Main SVG task.
 gulp.task("svg", ["svg-fallbacks", "svg-combine"]);
-gulp.task("build", ["move", "images", "strip"]);
+// Wipe first. Move, produce. Images if --full. Strip if --uncss.
+gulp.task("build", ["move", "images", "strip-css"]);
 gulp.task("compile", ["styles", "pages"]);
 gulp.task("default", ["compile", "server", "scan"]);
