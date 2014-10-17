@@ -1,21 +1,10 @@
 // General wrapper.
 .l-wrapper {
-  margin: 0 auto;
-  padding: em($ratio--m) em($ratio--b);
+  margin-right: auto;
+  margin-left: auto;
+  @include wrapper--padding;
   @include clearfix;
   @include collapse-children;
-  @include media($phone--landscape) {
-    padding: em($ratio--m);
-  }
-  @include media($tablet) {
-    padding: em($ratio--l);
-  }
-  @include media($desktop) {
-    padding: em($ratio--l) 6.5%;
-  }
-  @include media($desktop--wide) {
-    padding: em($ratio--l) 10%;
-  }
 }
 .l-wrapper--small {
   padding-top: em($ratio--s);
