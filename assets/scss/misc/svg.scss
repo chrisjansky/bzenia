@@ -42,6 +42,10 @@
   height: em($svg--b);
   vertical-align: middle;
 }
+.svg-icon--big {
+  width: em($ratio--xxl);
+  height: em($ratio--xxl);
+}
 .svg-icon--barrel {
   fill: $c-color1;
 }
