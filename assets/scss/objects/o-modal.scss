@@ -1,0 +1,19 @@
+.o-modal {
+  max-width: em(800);
+  color: white;
+  text-align: center;
+}
+.o-modal__text {
+  margin-top: em($ratio--m);
+  margin-bottom: em($ratio--m);
+}
+@include media($tablet__up) {
+  .o-modal__text {
+    margin-top: em($ratio--l);
+    color: $c-grey3;
+  }
+  .o-modal__lead {
+    color: white;
+    font-size: em($unit--l);
+  }
+}
