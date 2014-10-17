@@ -1,12 +1,18 @@
 // Custom styles overriding the default ones from bower_components/
 .featherlight {
+  @include media($phone) {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 
   .featherlight-content {
+    border: 0;
     padding: 0;
-    border-bottom: 0;
     min-width: initial;
+    max-height: initial;
     background-color: transparent;
     overflow: visible;
+    @include wrapper--margin;
   }
 
   .featherlight-image {
