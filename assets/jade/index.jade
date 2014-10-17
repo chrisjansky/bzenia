@@ -47,12 +47,22 @@ block template-body
           | Víno rozšiřující 
           span.line-break realitu
       .o-lead
-        p Ač v Bzenii věříme v tradiční vinařské postupy, pro komunikaci se svými zákazníky jsme vsadili na moderní technologie.
-        p Do každé etikety láhve jsme ukryli multimediální obsah, který si můžete přehrát na svém chytrém telefonu pomocí mobilní aplikace Layar. Stáhněte si aplikaci do svého mobilu, naskenujte přední část láhve s logem a nahlédněte s osobním sommelierem za kulisy našeho vinařství.
-        a(href="#").svg-button--app_store
-          svg.svg__content(data-fallback="assets/images/fallbacks/symbol_app-store.png")
-            use(xlink:href="#symbol_app-store")
-        a(href="#").svg-button--google_play
-          svg.svg__content(data-fallback="assets/images/fallbacks/symbol_google-play.png")
-            use(xlink:href="#symbol_google-play")
+        p Nahlédněte s osobním sommelierem za kulisy našeho vinařství! Do každé etikety láhve jsme ukryli multimediální obsah, který si můžete přehrát pomocí aplikace Layar na svém chytrém mobilním telefonu či tabletu.
+      a.o-button--simple.ss-help.t-link--contrast(data-modal, href="#how-to") Jak to funguje
     .m-hero__bg(style="background-image: url('assets/images/archive_medium1.jpg')")
+
+block template-aside
+  aside.o-aside
+    section.o-modal#how-to
+      .svg-icon--big
+        svg.svg__content(data-fallback="assets/images/fallbacks/icon_reality.png")
+          use(xlink:href="#icon_layar")
+      .o-modal__text
+        p.o-modal__lead Stáhněte si aplikaci Layar a naskenujte přední část láhve ze vzdálenosti cca 5&ndash;10&thinsp;cm, přičemž střed fotoaparátu svého zařízení miřte na průsečík názvu vína a vlnky.
+        p Vlnka by měla spolu s tělem láhve zaplnit celý displej tak, aby fotoaparát neskenoval okolí láhve. Etiketu skenujte na pevném podkladu. Také se ujistěte, že v daném místě není tma či šero nebo že na láhvi není příliš mnoho odlesků.
+      a(href="#").svg-button--app_store
+        svg.svg__content(data-fallback="assets/images/fallbacks/symbol_app-store.png")
+          use(xlink:href="#symbol_app-store")
+      a(href="#").svg-button--google_play
+        svg.svg__content(data-fallback="assets/images/fallbacks/symbol_google-play.png")
+          use(xlink:href="#symbol_google-play")
