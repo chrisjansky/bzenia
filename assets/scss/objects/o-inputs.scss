@@ -113,7 +113,7 @@
   }
   .o-dropdown__select {
     @include focus-state {
-      color: white;
+      color: black;
     }
   }
 }
