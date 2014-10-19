@@ -4,6 +4,9 @@
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
+  &:last-of-type {
+    background: rgba(black, .85);
+  }
 
   .featherlight-content {
     border: 0;
